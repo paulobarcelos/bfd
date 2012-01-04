@@ -143,6 +143,12 @@ body{
   margin:0 auto;
 }
 
+#main ul.slider .caption{
+  width:850px;
+  margin:0 auto;
+  text-align:right; 
+}
+
 
 /*footer*/
 #footer{
