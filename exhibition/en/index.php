@@ -23,7 +23,7 @@
 			
 			<div class="captioncontainer">
 				<div class="caption">
-					<h1>1Sérgio Matos</h1>
+					<h1>2Sérgio Matos</h1>
 					<p>Balaio Chair  | 2008</p>
 				</div>
 			</div>			
@@ -37,7 +37,7 @@
 			
 			<div class="captioncontainer">
 				<div class="caption">
-					<h1>1Sérgio Matos</h1>
+					<h1>3Sérgio Matos</h1>
 					<p>Balaio Chair  | 2008</p>
 				</div>
 			</div>			
@@ -51,7 +51,7 @@
 			
 			<div class="captioncontainer">
 				<div class="caption">
-					<h1>1Sérgio Matos</h1>
+					<h1>4Sérgio Matos</h1>
 					<p>Balaio Chair  | 2008</p>
 				</div>
 			</div>			
