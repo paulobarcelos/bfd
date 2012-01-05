@@ -23,7 +23,7 @@
 <body class="en">
   <header id="header" class="clearfix">
 
-    <h1 class="logo">Brazilian Design</h1>
+    <h1 class="logo ir">Brazilian Design</h1>
 
     <nav id="mainnav">
       <ul>

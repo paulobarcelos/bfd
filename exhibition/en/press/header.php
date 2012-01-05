@@ -8,9 +8,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Brazilian Design</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <title>Press - Brazilian Design - Modern &amp; Contenporary Furniture </title>
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -23,7 +21,7 @@
 <body class="en">
   <header id="header" class="clearfix">
 
-    <h1 class="logo">Brazilian Design</h1>
+    <h1 class="logo ir">Brazilian Design</h1>
 
     <nav id="mainnav">
       <ul>

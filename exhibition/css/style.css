@@ -85,8 +85,7 @@ a:hover {
 		 url('../fonts/pastelar-webfont.ttf') format('truetype'),
 		 url('../fonts/pastelar-webfont.svg#') format('svg');
 	font-weight: normal;
-	font-style: normal;
-}
+	font-style: normal;}
 
 /*header*/
 #header{
@@ -99,8 +98,17 @@ a:hover {
 	position:absolute;
 	top:60px;
 	right:55px;
+	width:336px;
+	height:48px;
 	margin:0;
 }
+.en #header .logo{
+	background:url('../img/logo_en.png') no-repeat;
+}
+.de #header .logo{
+	background:url('../img/logo_de.png') no-repeat;
+}
+
 #mainnav{
 	position:absolute;
 	top:60px;
@@ -183,7 +191,7 @@ a:hover {
 }
 #main ul.slider .caption h1{
 	position:absolute;
-	bottom:19px;
+	bottom:33px;
 	right:0;
 	font-size: 19px;
 	text-transform:uppercase;
@@ -192,7 +200,8 @@ a:hover {
 	position:absolute;
 	bottom:0;
 	right:0;
-	text-transform:lowercase;
+	text-align:right;
+	line-height:18px;
 }
 
 /*content*/
@@ -202,12 +211,12 @@ a:hover {
 }
 
 .content .leftcolumn{
-	width: 445px;
+	width: 455px;
 	float: left;
 	margin-left:55px;
 }
 .content .rightcolumn{
-	width: 390px;
+	width: 380px;
 	float: right;
 }
 
@@ -235,7 +244,7 @@ a:hover {
 }
 .content ul,
 .content p{
-	margin:1em 0 0 30px;
+	margin:1em 0 0 50px;
 	font-size: 14px;
 }
 .content p{
