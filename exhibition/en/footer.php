@@ -5,6 +5,11 @@
       <div class="address">Mall Stilwerk. Kantstraße 17<br />10623 Berlin - Germany</div>
     </div>
 
+    <div class="logos">
+      <a href="http://www.zeitlos-berlin.de/" class="zeitlos ir">Zeitlos</a>
+      <a href="http://www.pontosdefuga.com.br/" class="vanishingpoints ir">Vanishing Points</a>
+    </div>
+
   </footer>
 
 
@@ -24,7 +29,7 @@
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    var _gaq=[['_setAccount','UA-28153119-1'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));

@@ -301,7 +301,21 @@ a:hover {
 	line-height: 12px;
 }
 
+#footer .logos .vanishingpoints{
+	float:right;
+	margin:0 15px 0 0;
+	width:88px;
+	height:29px;
+	background:url('../img/footer_vanishingpoints.png') no-repeat;
+}
 
+#footer .logos .zeitlos{
+	float:right;
+	margin:0;
+	width:23px;
+	height:29px;
+	background:url('../img/footer_zeitlos.png') no-repeat;
+}
 
 
 
