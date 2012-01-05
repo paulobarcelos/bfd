@@ -237,6 +237,16 @@ a:hover {
 	margin-left:2px;
 }
 
+.content .composedtitle h2,
+.content .composedtitle .curated{
+	float:left;
+}
+.content .curated{
+	font-size:14px;
+	color: #9B9797;
+	margin: 13px 0 0 12px;
+}
+
 .content ul{
 	list-style:none;
 	margin:0;

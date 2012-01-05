@@ -3,7 +3,9 @@
 
 <div class="content">
 	<div class="leftcolumn">
-		<h2>Donwloads</h2>
+		<div>
+			<h2>Donwloads</h2>
+		</div>
 		
 		<ul>
 			<li>
@@ -35,9 +37,9 @@
 	</div>
 
 	<div class="rightcolumn">
-
-		<h2>Press Contact</h2>
-		
+		<div>
+			<h2>Press Contact</h2>
+		</div>
 		<p>Anne Maier PR<br/>
 			<a href="mailto:a™@a.com">annemaier@berlin.de</a><br/>
 			+49 (0) 5555.555555 (mobile)<br/>
