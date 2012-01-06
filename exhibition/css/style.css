@@ -85,7 +85,25 @@ a:hover {
 		 url('../fonts/pastelar-webfont.ttf') format('truetype'),
 		 url('../fonts/pastelar-webfont.svg#') format('svg');
 	font-weight: normal;
-	font-style: normal;}
+	font-style: normal;
+}
+
+.heading {
+	font-weight: normal;
+	font-size: 15px;
+	text-transform:uppercase;
+}
+
+.heading::before{
+	content: '[';
+	font-size: 16px;
+	margin-right:2px;
+}
+
+.heading::after{
+	content: ']';
+	margin-left:2px;
+}
 
 /*header*/
 #header{
@@ -268,7 +286,22 @@ a:hover {
 	background:url('../img/arrow_down.png') left no-repeat;
 	padding-left:20px;
 }
+/*sponsors*/
+.sponsors .vanishingpoints{
+	
+	width:289px;
+	height:116px;
+	background:url('../img/sponsors_vanishingpoints.png') no-repeat;
+	margin: 40px 0 0 0 ;
+}
 
+.sponsors .zeitlos{
+	
+	width:80px;
+	height:116px;
+	background:url('../img/sponsors_zeitlos.png') no-repeat;
+	margin:90px 0 50px 0;
+}
 
 /*footer*/
 #footer{
