@@ -16,7 +16,7 @@
 
   <link rel="stylesheet" href="/exhibition/css/style.css">
   
-  <script type="text/javascript" src="http://fast.fonts.com/jsapi/f0e82288-322d-4fc9-9735-1a70db5e0a30.js"></script>
+  <link href="http://fast.fonts.com/cssapi/6b71cd19-d93a-4402-be6f-0a2a9c58ac1d.css" rel="stylesheet" type="text/css" />
   <script src="/exhibition/js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 

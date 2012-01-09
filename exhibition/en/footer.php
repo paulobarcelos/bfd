@@ -2,13 +2,15 @@
   <footer id="footer">
     <div class="box">
       <div class="date">22. <span class="copyfont">March</span> - 5. <span class="copyfont">May</span> 2012</div>
-      <div class="address">Mall Stilwerk. Kantstraße 17<br />10623 Berlin - Germany</div>
+      <div class="address">Mall stilwerk. Kantstraße 17<br />10623 Berlin - Germany</div>
     </div>
 
     <div class="logos">
       <a href="http://www.zeitlos-berlin.de/" class="zeitlos ir">Zeitlos</a>
       <a href="http://www.pontosdefuga.com.br/" class="vanishingpoints ir">Vanishing Points</a>
     </div>
+
+    <a href="mailto:vpointsberlin@gmail.com" class="mailing">Join Mailing List</a>
 
   </footer>
 

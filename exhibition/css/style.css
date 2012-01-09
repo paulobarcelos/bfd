@@ -209,14 +209,15 @@ a:hover {
 }
 #main ul.slider .caption h1{
 	position:absolute;
-	bottom:33px;
+	bottom:63px;
 	right:0;
 	font-size: 19px;
 	text-transform:uppercase;
+	font-weight:normal;
 }
 #main ul.slider .caption p{
 	position:absolute;
-	bottom:0;
+	bottom:30px;
 	right:0;
 	text-align:right;
 	line-height:18px;
@@ -312,10 +313,8 @@ a:hover {
 }
 
 #footer .box{
-	position:absolute;
-	bottom:20px;
-	left:55px;
-	margin:0;
+	float:left;
+	margin:0 0 0 55px;
 }
 
 #footer .date{
@@ -334,6 +333,24 @@ a:hover {
 	line-height: 12px;
 }
 
+#footer .mailing {
+	float:right;
+	margin: 9px 30px 0 0;
+	font-weight: normal;
+	font-size: 13px;
+	text-transform:uppercase;
+}
+
+#footer .mailing::before{
+	content: '[';
+	margin-right:1px;
+}
+
+#footer .mailing::after{
+	content: ']';
+	margin-left:1px;
+}
+
 #footer .logos .vanishingpoints{
 	float:right;
 	margin:0 15px 0 0;
@@ -344,7 +361,7 @@ a:hover {
 
 #footer .logos .zeitlos{
 	float:right;
-	margin:0;
+	margin:0 55px 0 0 ;
 	width:23px;
 	height:29px;
 	background:url('../img/footer_zeitlos.png') no-repeat;

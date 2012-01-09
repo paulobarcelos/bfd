@@ -4,7 +4,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/zalzupin.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
