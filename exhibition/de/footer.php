@@ -2,18 +2,18 @@
 	<footer id="footer">
 		<div calss="clearfix">
 			<div class="box">
-				<div class="date">22. <span class="copyfont">March</span> - 5. <span class="copyfont">May</span> 2012</div>
+				<div class="date">22. <span class="copyfont">März</span> - 5. <span class="copyfont">Mai</span> 2012</div>
 				<div class="address">Mall stilwerk. Kantstraße 17<br />10623 Berlin - Germany</div>
 			</div>
 
 			<div class="logos clearfix">
 				<a href="http://www.zeitlos-berlin.de/" class="zeitlos ir">Zeitlos</a>
 				<a href="http://www.pontosdefuga.com.br/" class="vanishingpoints ir">Vanishing Points</a>
-				<a href="mailto:vpointsberlin@gmail.com" class="mailing">Join Mailing List</a>
+				<a href="mailto:vpointsberlin@gmail.com" class="mailing">Newsletter abonnieren</a>
 			</div>
 
 		</div>
-		<div class="fb-like" data-send="true" data-width="90" data-show-faces="false" data-url="http://brazilianfurnituredesign.com/exhibition/en/" data-layout="button_count"></div>
+		<div class="fb-like" data-send="true" data-width="90" data-show-faces="false" data-url="http://brazilianfurnituredesign.com/exhibition/de/" data-layout="button_count"></div>
 
 	</footer>
 

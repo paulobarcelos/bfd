@@ -44,7 +44,7 @@
 			+49 (0)30 81 49 45 68 (fax)<br/>
 		</p>
 
-		<h2>Press Contact</h2>
+		<h2>EXHIBITION INFO CONTACT</h2>
 		
 		<p>Luciana Nemer Wiegmann - Curator<br/>
 			<a href="mailto:luciana@brazilianfurnituredesign.com">luciana@brazilianfurnituredesign.com</a><br/>

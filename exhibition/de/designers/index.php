@@ -4,10 +4,10 @@
 <div class="content">
 	<div class="leftcolumn">
 		<div class="composedtitle clearfix">
-			<h2>Modern</h2>
-			<span class="curated">Curated by Luciana Wiegmann</span>
+			<h2>Moderne</h2>
+			<span class="curated">kuratiert von Luciana Wiegmann</span>
 		</div>
-		<span class="location">Shown in zeitlos design gallery</span>
+		<span class="location">ausgestellt in den Räumen der Galerie ZEITLOS</span>
 		
 		<ul>
 			<li>
@@ -38,10 +38,10 @@
 	<div class="rightcolumn">
 
 		<div class="composedtitle clearfix">
-			<h2>Contemporary</h2>
-			<span class="curated">Curated by Zanini de Zanine</span>
+			<h2>Gegenwart</h2>
+			<span class="curated">kuratiert von Zanini de Zanine</span>
 		</div>
-		<span class="location">Shown in the ground floor of stilwerk Mall</span>
+		<span class="location">präsentiert in der Mall des stilwerk Berlin</span>
 		
 		<ul>
 			<li>
