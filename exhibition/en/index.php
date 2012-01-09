@@ -4,7 +4,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/1_tenreiro.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -20,7 +20,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/2_motta.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -36,7 +36,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/slider/zalzupin.jpg"/>
+				<img src="/exhibition/img/slider/3_campanas.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -52,7 +52,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/4_ovo.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -68,7 +68,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/5_zanini.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -84,7 +84,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/6_totora.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -100,7 +100,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/7_zanine.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -116,7 +116,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/8_zanini2.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -133,7 +133,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/9_almeida.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -149,7 +149,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/10_niemeyer.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -165,7 +165,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/11_rodrigues.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -181,7 +181,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -197,7 +197,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -213,7 +213,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/13_matos.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -229,7 +229,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/14_jahara.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -245,7 +245,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/.jpg"/>
+				<img src="/exhibition/img/slider/.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
