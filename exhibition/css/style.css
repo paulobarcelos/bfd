@@ -73,6 +73,9 @@ a:hover {
 	color: inherit;
 	text-decoration:underline;
 }
+a:visited {
+	color: inherit;
+}
 .copyfont{
 	font-family:'Orator W01 Medium';
 }
@@ -243,6 +246,7 @@ a:hover {
 	font-weight: normal;
 	font-size: 15px;
 	text-transform:uppercase;
+	margin-bottom:0;
 }
 
 .content h2::before{
@@ -264,6 +268,14 @@ a:hover {
 	font-size:14px;
 	color: #9B9797;
 	margin: 13px 0 0 12px;
+	text-transform:lowercase;
+}
+
+.content .location{
+	font-size:14px;
+	color: #9B9797;
+	margin: 13px 0 0 0;
+	text-transform:lowercase;
 }
 
 .content ul{
@@ -281,7 +293,7 @@ a:hover {
 }
 
 .content li{
-	margin-bottom:10px;
+	margin-bottom:15px;
 }
 .content a.download{
 	background:url('../img/arrow_down.png') left no-repeat;

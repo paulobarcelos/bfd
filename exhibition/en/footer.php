@@ -12,6 +12,8 @@
 
     <a href="mailto:vpointsberlin@gmail.com" class="mailing">Join Mailing List</a>
 
+    <a name="fb_share"></a>
+
   </footer>
 
 
@@ -20,6 +22,15 @@
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/exhibition/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=129796940458789";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 
   <!-- scripts concatenated and minified via build script -->
