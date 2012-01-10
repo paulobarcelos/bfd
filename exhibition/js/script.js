@@ -17,7 +17,7 @@ $(function(){
 			else{
 				previousItem.data('next', $(this));
 			}
-			previousItem = $(this)
+			previousItem = $(this);
 		});
 		previousItem.data('next', firstItem);
 		animateSlider(firstItem);

@@ -187,8 +187,8 @@
 			<div class="captioncontainer">
 				<div class="caption">
 					<h1>JOAQUIM TENREIRO</h1>
-					<p>Stool | 1961<br/>
-					Iron and two types of wood</p>
+					<p>Barhocker | 1961<br/>
+					Eisen und zwei Arten Holz</p>
 				</div>
 			</div>			
 		</article>
@@ -245,7 +245,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/slider/.jpg"/>
+				<img src="/exhibition/img/slider/15_zalszupin.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -267,8 +267,8 @@
 			<div class="captioncontainer">
 				<div class="caption">
 					<h1>Maneco Quinderé</h1>
-					<p>? | ?<br/>
-					?</p>
+					<p><em>Itaipava</em> light | 2010<br/>
+					wood</p>
 				</div>
 			</div>			
 		</article>

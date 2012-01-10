@@ -13,7 +13,7 @@
 			</div>
 
 		</div>
-		<div class="fb-like" data-send="true" data-width="90" data-show-faces="false" data-url="http://brazilianfurnituredesign.com/exhibition/de/" data-layout="button_count"></div>
+		<div class="fb-like" data-send="true" data-width="80" data-show-faces="false" data-url="http://brazilianfurnituredesign.com/exhibition/de/" data-layout="button_count"></div>
 
 	</footer>
 

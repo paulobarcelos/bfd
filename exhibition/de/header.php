@@ -15,6 +15,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <link rel="stylesheet" href="/exhibition/css/style.css">
+  <link rel="shortcut icon" href="/exhibition/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/exhibition/apple-touch-icon-114x114-precomposed.png">
   
   <link href="http://fast.fonts.com/cssapi/6b71cd19-d93a-4402-be6f-0a2a9c58ac1d.css" rel="stylesheet" type="text/css" />
   <script src="/exhibition/js/libs/modernizr-2.0.6.min.js"></script>
