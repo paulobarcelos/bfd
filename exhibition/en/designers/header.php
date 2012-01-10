@@ -9,6 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Designers - Brazilian Design - Modern &amp; Contemporary Furniture </title>
+  <meta property="og:image" content="brazilianfurnituredesign.com/exhibition/default.jpg"/>
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
 

@@ -9,8 +9,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Brazilian Design - Klassiker der Moderne &amp; Zeitgenössiche Avantgard</title>
+  <meta property="og:image" content="brazilianfurnituredesign.com/exhibition/default.jpg"/>
   <meta name="description" content="">
-  <meta name="author" content="">
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
 

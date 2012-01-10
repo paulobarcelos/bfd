@@ -1,14 +1,11 @@
-/* Author:
-
-*/
-
-
 $(function(){
+	console.log($('.slider'));
 	if($('.slider').length){
 		var firstItem;
 		var previousItem;
 		var lis = $('.slider').find('li');
 		lis.each(function(i){
+			console.log($(this));
 			$(this).hide();
 			
 			if(i==0){

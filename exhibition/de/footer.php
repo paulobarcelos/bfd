@@ -35,8 +35,8 @@
 
 
 	<!-- scripts concatenated and minified via build script -->
-	<script defer src="/exhibition/js/plugins.js"></script>
-	<script defer src="/exhibition/js/script.js"></script>
+	<script src="/exhibition/js/plugins.js"></script>
+	<script src="/exhibition/js/script.js?999"></script>
 	<!-- end scripts -->
 
 
