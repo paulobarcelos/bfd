@@ -9,20 +9,20 @@
 		
 		<ul>
 			<li>
-				<a href='#' target="_blank" class="download">Exhibition Press Release English (pdf)</a>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QYzIyMmVjNDEtZGJkYi00ODdkLWE0ZTYtOTU3MjkzMmFkMzU4' target="_blank" class="download">Exhibition Press Release English (pdf)</a>
 			</li>
 			<li>
-				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QZmYzMWYzNWQtNjc3Ny00OWIxLWJlMmQtMTZlMTA5NDgyM2Ew' target="_blank" class="download">Exhibition Press Release Deutsch (pdf)</a>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QMWNiZDZhYjUtZTkxNi00OWVhLTk5YTctMmExMTY5OWFjMzQ4' target="_blank" class="download">Exhibition Press Release Deutsch (pdf)</a>
 			</li>
 			<li>
 				<a href='#' target="_blank" class="download">Press Images (high res)</a>
 			</li>
-			<li>
+			<!--<li>
 				<a href='#' target="_blank" class="download">Curatorial and Critic’s Texts (pdf)</a>
-			</li>
-			<li>
+			</li>-->
+			<!--<li>
 				<a href='#' target="_blank" class="download">Exhibition Presentation (pdf)</a>
-			</li>
+			</li>-->
 			<li>
 				<a href='#' target="_blank" class="download">Exhibition Information (pdf)</a>
 			</li>

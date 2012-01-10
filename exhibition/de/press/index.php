@@ -9,20 +9,20 @@
 		
 		<ul>
 			<li>
-				<a href='#' target="_blank" class="download">Pressemitteilung Ausstellung Englisch (pdf)</a>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QYzIyMmVjNDEtZGJkYi00ODdkLWE0ZTYtOTU3MjkzMmFkMzU4' target="_blank" class="download">Pressemitteilung Ausstellung Englisch (pdf)</a>
 			</li>
 			<li>
-				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QZmYzMWYzNWQtNjc3Ny00OWIxLWJlMmQtMTZlMTA5NDgyM2Ew' target="_blank" class="download">Pressemitteilung Ausstellung Deutsch (pdf)</a>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QMWNiZDZhYjUtZTkxNi00OWVhLTk5YTctMmExMTY5OWFjMzQ4' target="_blank" class="download">Pressemitteilung Ausstellung Deutsch (pdf)</a>
 			</li>
 			<li>
 				<a href='#' target="_blank" class="download">Pressefotos (hohe Auflösung)</a>
 			</li>
-			<li>
+			<!--<li>
 				<a href='#' target="_blank" class="download">Kuratorische Texte (pdf)</a>
-			</li>
-			<li>
+			</li>-->
+			<!--<li>
 				<a href='#' target="_blank" class="download">Ausstellungspräsentation (pdf)</a>
-			</li>
+			</li>-->
 			<li>
 				<a href='#' target="_blank" class="download">Ausstellung Informationen (pdf)</a>
 			</li>
