@@ -181,7 +181,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/slider/.jpg"/>
+				<img src="/exhibition/img/slider/12_tenreiro.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -197,7 +197,7 @@
 	<li>
 		<article>
 			<div class="imagecontainer">
-				<img src="/exhibition/img/slider/.jpg"/>
+				<img src="/exhibition/img/slider/13_zanini.jpg"/>
 			</div>
 			
 			<div class="captioncontainer">
@@ -253,6 +253,22 @@
 					<h1>JORGE ZALSZUPIN</h1>
 					<p>Desk | 1958<br/>
 					Caviuna wood, painted wood, glass</p>
+				</div>
+			</div>			
+		</article>
+	</li>
+
+	<li>
+		<article>
+			<div class="imagecontainer">
+				<img src="/exhibition/img/slider/16_quindere.jpg"/>
+			</div>
+			
+			<div class="captioncontainer">
+				<div class="caption">
+					<h1>Maneco Quinderé</h1>
+					<p>? | ?<br/>
+					?</p>
 				</div>
 			</div>			
 		</article>

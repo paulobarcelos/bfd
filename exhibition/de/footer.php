@@ -3,7 +3,7 @@
 		<div calss="clearfix">
 			<div class="box">
 				<div class="date">22. <span class="copyfont">März</span> - 5. <span class="copyfont">Mai</span> 2012</div>
-				<div class="address">Mall stilwerk. Kantstraße 17<br />10623 Berlin - Germany</div>
+				<div class="address">stilwerk Mall &amp; Zeitlos Gallery<br />Kantstraße 17 - 10623 Berlin - Germany</div>
 			</div>
 
 			<div class="logos clearfix">

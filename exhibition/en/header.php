@@ -8,7 +8,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Brazilian Design</title>
+  <title>Brazilian Design - Modern &amp; Contemporary Furniture </title>
   <meta name="description" content="">
   <meta name="author" content="">
 
