@@ -68,6 +68,9 @@
 			<li>
 				<a href='http://www.studiozanini.com.br/' target="_blank">Zanini de Zanine</a>
 			</li>
+			<li>
+				<a href='http://manecoquindere.com.br/' target="_blank">Maneco Quinderé</a>
+			</li>
 		</ul>
 		
 	</div>
