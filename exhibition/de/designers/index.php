@@ -11,25 +11,25 @@
 		
 		<ul>
 			<li>
-				<a href='http://en.wikipedia.org/wiki/Joaquim_Tenreiro' target="_blank">Joaquim Tenreiro</a>
+				<span>Joaquim Tenreiro</span>
 			</li>
 			<li>
-				<a href='http://espasso.com/biography.asp?id=10' target="_blank">Jorge Zalszupin</a>
+				<span>Jorge Zalszupin</span>
 			</li>
 			<li>
-				<a href='http://www.r20thcentury.com/biography_detail.cfm?designer_id=39' target="_blank">José Zanine Caldas</a>
+				<span>José Zanine Caldas</span>
 			</li>
 			<li>
-				<a href='http://www.institutobardi.com.br/eng/lina/biografia/index.html' target="_blank">Lina Bo Bardi</a>
+				<span>Lina Bo Bardi</span>
 			</li>
 			<li>
-				<a href='http://en.wikipedia.org/wiki/Oscar_Niemeyer' target="_blank">Oscar Niemeyer</a>
+				<span>Oscar Niemeyer</span>
 			</li>
 			<li>
-				<a href='http://en.wikipedia.org/wiki/Paulo_Mendes_da_Rocha' target="_blank">Paulo Mendes da Rocha</a>
+				<span>Paulo Mendes da Rocha</span>
 			</li>
 			<li>
-				<a href='http://www.sergiorodrigues.com.br/english/index.asp' target="_blank">Sergio Rodrigues</a>
+				<span>Sergio Rodrigues</span>
 			</li>
 		</ul>
 		
@@ -45,31 +45,31 @@
 		
 		<ul>
 			<li>
-				<a href='http://www.brunnojahara.com/info.html' target="_blank">Bruno Jahara</a>
+				<span>Brunno Jahara</span>
 			</li>
 			<li>
-				<a href='http://www.campanas.com.br/home_en.html' target="_blank">Campana Brothers</a>
+				<span>Campana Brothers</span>
 			</li>
 			<li>
-				<a href='http://www.carlosmotta.com.br/index2.asp?lingua=eng' target="_blank">Carlos Motta</a>
+				<span>Carlos Motta</span>
 			</li>
 			<li>
-				<a href='http://www.domingostotora.com.br/' target="_blank">Domingos Tótora</a>
+				<span>Domingos Tótora</span>
 			</li>
 			<li>
-				<a href='http://www.ovo.art.br/sobre_a_ovo.php ' target="_blank">,Ovo</a>
+				<span>,Ovo</span>
 			</li>
 			<li>
-				<a href='http://rodrigoalmeidadesign.com/2008/Rodrigo_Almeida.html' target="_blank">Rodrigo Almeida</a>
+				<span>Rodrigo Almeida</span>
 			</li>
 			<li>
-				<a href='http://sergiojmatos.blogspot.com/' target="_blank">Sergio Matos</a>
+				<span>Sergio Matos</span>
 			</li>
 			<li>
-				<a href='http://www.studiozanini.com.br/' target="_blank">Zanini de Zanine</a>
+				<span>Zanini de Zanine</span>
 			</li>
 			<li>
-				<a href='http://manecoquindere.com.br/' target="_blank">Maneco Quinderé</a>
+				<span>Maneco Quinderé</span>
 			</li>
 		</ul>
 		

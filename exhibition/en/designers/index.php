@@ -7,9 +7,32 @@
 			<h2>Modern</h2>
 			<span class="curated">Curated by Luciana Wiegmann</span>
 		</div>
-		<span class="location">Shown in zeitlos design gallery</span>
+		<span class="location">Shown in design gallery zeitlos</span>
 		
 		<ul>
+			<li>
+				<span>Joaquim Tenreiro</span>
+			</li>
+			<li>
+				<span>Jorge Zalszupin</span>
+			</li>
+			<li>
+				<span>José Zanine Caldas</span>
+			</li>
+			<li>
+				<span>Lina Bo Bardi</span>
+			</li>
+			<li>
+				<span>Oscar Niemeyer</span>
+			</li>
+			<li>
+				<span>Paulo Mendes da Rocha</span>
+			</li>
+			<li>
+				<span>Sergio Rodrigues</span>
+			</li>
+		</ul>
+		<!--<ul>
 			<li>
 				<a href='http://en.wikipedia.org/wiki/Joaquim_Tenreiro' target="_blank">Joaquim Tenreiro</a>
 			</li>
@@ -31,7 +54,7 @@
 			<li>
 				<a href='http://www.sergiorodrigues.com.br/english/index.asp' target="_blank">Sergio Rodrigues</a>
 			</li>
-		</ul>
+		</ul>-->
 		
 	</div>
 
@@ -45,7 +68,36 @@
 		
 		<ul>
 			<li>
-				<a href='http://www.brunnojahara.com/info.html' target="_blank">Bruno Jahara</a>
+				<span>Brunno Jahara</span>
+			</li>
+			<li>
+				<span>Campana Brothers</span>
+			</li>
+			<li>
+				<span>Carlos Motta</span>
+			</li>
+			<li>
+				<span>Domingos Tótora</span>
+			</li>
+			<li>
+				<span>,Ovo</span>
+			</li>
+			<li>
+				<span>Rodrigo Almeida</span>
+			</li>
+			<li>
+				<span>Sergio Matos</span>
+			</li>
+			<li>
+				<span>Zanini de Zanine</span>
+			</li>
+			<li>
+				<span>Maneco Quinderé</span>
+			</li>
+		</ul>
+		<!--<ul>
+			<li>
+				<a href='http://www.brunnojahara.com/info.html' target="_blank">Brunno Jahara</a>
 			</li>
 			<li>
 				<a href='http://www.campanas.com.br/home_en.html' target="_blank">Campana Brothers</a>
@@ -71,7 +123,7 @@
 			<li>
 				<a href='http://manecoquindere.com.br/' target="_blank">Maneco Quinderé</a>
 			</li>
-		</ul>
+		</ul>-->
 		
 	</div>
 </div>

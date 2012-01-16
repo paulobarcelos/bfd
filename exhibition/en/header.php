@@ -10,7 +10,7 @@
 
   <title>Brazilian Design - Modern &amp; Contemporary Furniture </title>
   <meta property="og:image" content="brazilianfurnituredesign.com/exhibition/default.jpg"/>
-  <meta name="description" content="Brazilian Design: Modern and Contemporary Furniture exhibition shows the best of modernist and current design produced in Brazil with works by Oscar Niemeyer, Joaquim Tenreiro, Jorge Zalzsupin, Campana Brothers, Lina Bo Bardi, José Zanine Caldas, Paulo Mendes da Rocha, Sergio Rodrigues, Bruno Jahara, Carlos Motta, Domingos Tótora, ,Ovo, Rodrigo Almeida, Sergio Matos, Zanini de Zanine e Maneco Quinderé.">
+  <meta name="description" content="Brazilian Design: Modern and Contemporary Furniture exhibition shows the best of modernist and current design produced in Brazil with works by Oscar Niemeyer, Joaquim Tenreiro, Jorge Zalzsupin, Campana Brothers, Lina Bo Bardi, José Zanine Caldas, Paulo Mendes da Rocha, Sergio Rodrigues, Brunno Jahara, Carlos Motta, Domingos Tótora, ,Ovo, Rodrigo Almeida, Sergio Matos, Zanini de Zanine e Maneco Quinderé.">
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -33,7 +33,7 @@
         <li><a href="/exhibition/en/press/">Press</a></li>
         <li><a href="/exhibition/en/designers/">Designers</a></li>
         <li><a href="/exhibition/en/sponsors/">Sponsors</a></li>
-        <li class="language"><a href="/exhibition/de/">Deustche</a></li>
+        <li class="language"><a href="/exhibition/de/">Deutsch</a></li>
       </ul>
     </nav>
 

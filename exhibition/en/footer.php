@@ -3,13 +3,13 @@
 		<div calss="clearfix">
 			<div class="box">
 				<div class="date">22. <span class="copyfont">March</span> - 5. <span class="copyfont">May</span> 2012</div>
-				<div class="address">stilwerk Mall &amp; Zeitlos Gallery<br />Kantstraße 17 - 10623 Berlin - Germany</div>
+				<div class="address">stilwerk Mall &amp; Galerie Zeitlos<br />Kantstraße 17 - 10623 Berlin D</div>
 			</div>
 
 			<div class="logos clearfix">
 				<a href="http://www.zeitlos-berlin.de/" class="zeitlos ir">Zeitlos</a>
-				<a href="http://www.pontosdefuga.com.br/" class="vanishingpoints ir">Vanishing Points</a>
-				<a href="mailto:vpointsberlin@gmail.com" class="mailing">Join Mailing List</a>
+				<span class="vanishingpoints ir">Vanishing Points</span>
+				<a href="mailto:newsletter@brazilianfurnituredesign.com" class="mailing">Join Mailing List</a>
 			</div>
 
 		</div>

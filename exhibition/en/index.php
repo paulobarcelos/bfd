@@ -123,7 +123,7 @@
 				<div class="caption">
 					<h1>ZANINI DE ZANINE</h1>
 					<p><em>Pássaros</em> shelves | 2008<br/>
-					Solid wood and steel clables</p>
+					Solid wood and steel cables</p>
 
 				</div>
 			</div>			
@@ -235,7 +235,7 @@
 			<div class="captioncontainer">
 				<div class="caption">
 					<h1>BRUNO JAHARA</h1>
-					<p><em>Batucada</em> Series | 2010<br/>
+					<p><em>Batucada</em> collection | 2010<br/>
 					Anodized aluminum</p>
 				</div>
 			</div>			

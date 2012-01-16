@@ -7,7 +7,7 @@
 			<h2>Organisatoren</h2>
 		</div>
 		
-		<a href="http://www.pontosdefuga.com.br/" class="vanishingpoints ir">Vanishing Points</a>
+		<span class="vanishingpoints ir">Vanishing Points</span>
 		
 	</div>
 

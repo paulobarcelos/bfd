@@ -33,7 +33,7 @@
         <li><a href="/exhibition/en/press/">Press</a></li>
         <li><a href="/exhibition/en/designers/">Designers</a></li>
         <li class="current"><a href="/exhibition/en/sponsors/">Sponsors</a></li>
-        <li class="language"><a href="/exhibition/de/">Deustche</a></li>
+        <li class="language"><a href="/exhibition/de/">Deutsch</a></li>
       </ul>
     </nav>
 

@@ -4,19 +4,19 @@
 <div class="content">
 	<div class="leftcolumn">
 		<div>
-			<h2>Donwloads</h2>
+			<h2>Downloads</h2>
 		</div>
 		
 		<ul>
 			<li>
-				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QYzIyMmVjNDEtZGJkYi00ODdkLWE0ZTYtOTU3MjkzMmFkMzU4' target="_blank" class="download">Exhibition Press Release English (pdf)</a>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QYTAzY2ZjMjQtNjVkYS00MTVhLWFiYTctMzMzMDJlOTNiYzQ2' target="_blank" class="download">Exhibition Press Release English (pdf)</a>
 			</li>
 			<li>
 				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QMWNiZDZhYjUtZTkxNi00OWVhLTk5YTctMmExMTY5OWFjMzQ4' target="_blank" class="download">Exhibition Press Release Deutsch (pdf)</a>
 			</li>
-			<li>
-				<a href='#' target="_blank" class="download">Press Images (high res)</a>
-			</li>
+			<!--<li>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QNDJkNzQ4YWEtZWYwNi00YjYyLWIxZDgtOTMxNzlhMGZjOTQ2' target="_blank" class="download">Press Images (high res)</a>
+			</li>-->
 			<!--<li>
 				<a href='#' target="_blank" class="download">Curatorial and Critic’s Texts (pdf)</a>
 			</li>-->
@@ -24,7 +24,7 @@
 				<a href='#' target="_blank" class="download">Exhibition Presentation (pdf)</a>
 			</li>-->
 			<li>
-				<a href='#' target="_blank" class="download">Exhibition Information (pdf)</a>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QNmI3ZmQwYWEtOTc4Yi00ZGUzLWEyNDEtMTUxNjg4ZmY5MWUz' target="_blank" class="download">Exhibition Information (pdf)</a>
 			</li>
 			<li>
 				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QNjExOGZmZDAtMzJjYy00NjRmLThmNzQtYmFiNTMyNTAyNTU1' target="_blank" class="download">Designer’s Portraits (high res)</a>

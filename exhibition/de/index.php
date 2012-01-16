@@ -27,7 +27,7 @@
 				<div class="caption">
 					<h1>CARLOS MOTTA</h1>
 					<p><em>Astúrias</em> Schaukelstuhl | 2002<br/>
-					ecyceltes Massivholz</p>
+					recyceltes Massivholz</p>
 				</div>
 			</div>			
 		</article>
@@ -106,7 +106,7 @@
 			<div class="captioncontainer">
 				<div class="caption">
 					<h1>JOSÉ ZANINE CALDAS</h1>
-					<p>Sideboard | 1970s<br/>
+					<p>Sideboard | 1970er<br/>
 					Massivholz, Glas</p>
 				</div>
 			</div>			
@@ -156,7 +156,7 @@
 				<div class="caption">
 					<h1>OSCAR NIEMEYER</h1>
 					<p><em>Rio</em> Liegestuhl | 1978-1979<br/>
-					Schichtholz, Korbgeflecht</p>
+					Schichtholz, Rohrgeflecht</p>
 				</div>
 			</div>			
 		</article>
@@ -172,7 +172,7 @@
 				<div class="caption">
 					<h1>SERGIO RODRIGUES</h1>
 					<p><em>Oscar</em> Stuhl | 1956<br/>
-					Massivholz, Rohrgeflech</p>
+					Massivholz, Rohrgeflecht</p>
 				</div>
 			</div>			
 		</article>
@@ -267,8 +267,8 @@
 			<div class="captioncontainer">
 				<div class="caption">
 					<h1>Maneco Quinderé</h1>
-					<p><em>Itaipava</em> light | 2010<br/>
-					wood</p>
+					<p><em>Itaipava</em> Leuchte | 2010<br/>
+					holz</p>
 				</div>
 			</div>			
 		</article>
