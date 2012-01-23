@@ -59,7 +59,7 @@
 				<div class="caption">
 					<h1>,OVO</h1>
 					<p><em>Ciranda</em> table | 2000<br/>
-					stainless steel and transparent glass</p>
+					stainless steel and white fiberglass</p>
 				</div>
 			</div>			
 		</article>
@@ -139,7 +139,7 @@
 			<div class="captioncontainer">
 				<div class="caption">
 					<h1>RODRIGO ALMEIDA</h1>
-					<p><em>África</em> armchair | 2009<br/>
+					<p><em>África</em> armchair | 2006<br/>
 					wood and pvc rope</p>
 				</div>
 			</div>			
@@ -154,7 +154,7 @@
 			
 			<div class="captioncontainer">
 				<div class="caption">
-					<h1>OSCAR NIEMEYER</h1>
+					<h1>OSCAR NIEMEYER & ANA MARIA NIEMEYER</h1>
 					<p><em>Rio</em> Chaise | 1978-1979<br/>
 					Laminated wood and straw mesh</p>
 				</div>
@@ -219,7 +219,7 @@
 			<div class="captioncontainer">
 				<div class="caption">
 					<h1>SÉRGIO MATOS</h1>
-					<p><em>Balaio</em> Chair | 2011<br/>
+					<p><em>Balão</em> Chair | 2011<br/>
 					Carbon steel frame and cotton thread</p>
 				</div>
 			</div>			

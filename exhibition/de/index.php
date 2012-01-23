@@ -59,7 +59,7 @@
 				<div class="caption">
 					<h1>,OVO</h1>
 					<p><em>Ciranda</em> Tisch | 2000<br/>
-					Stahlrohr, Glas</p>
+					Stahlrohr und weißen Fiberglas</p>
 				</div>
 			</div>			
 		</article>
@@ -139,7 +139,7 @@
 			<div class="captioncontainer">
 				<div class="caption">
 					<h1>RODRIGO ALMEIDA</h1>
-					<p><em>África</em> Sessel | 2009<br/>
+					<p><em>África</em> Sessel | 2006<br/>
 					Holz, Kunststoffseile</p>
 				</div>
 			</div>			
@@ -154,7 +154,7 @@
 			
 			<div class="captioncontainer">
 				<div class="caption">
-					<h1>OSCAR NIEMEYER</h1>
+					<h1>OSCAR NIEMEYER & ANA MARIA NIEMEYER</h1>
 					<p><em>Rio</em> Liegestuhl | 1978-1979<br/>
 					Schichtholz, Rohrgeflecht</p>
 				</div>

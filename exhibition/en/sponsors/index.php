@@ -9,6 +9,12 @@
 		
 		<span class="vanishingpoints ir">Vanishing Points</span>
 		
+		<div class="composedtitle clearfix">
+			<h2>Sponsors</h2>
+		</div>
+
+		<a href="http://www.brasilianische-botschaft.de" class="brasilien ir">Brasilien Brasil</a>
+		
 	</div>
 
 	<div class="rightcolumn">
