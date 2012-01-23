@@ -9,14 +9,14 @@
 		
 		<ul>
 			<li>
-				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QYTAzY2ZjMjQtNjVkYS00MTVhLWFiYTctMzMzMDJlOTNiYzQ2' target="_blank" class="download">Pressemitteilung Ausstellung Englisch (pdf)</a>
+				<a href='https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0B62Zu6ZNhDzROGUyM2U0MDQtZjMwMy00Y2ZhLWIwNmQtNDQwYTYzOGQ3NWMy&hl=en_US&pli=1' target="_blank" class="download">Pressemitteilung Ausstellung Englisch (pdf)</a>
 			</li>
 			<li>
-				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QMWNiZDZhYjUtZTkxNi00OWVhLTk5YTctMmExMTY5OWFjMzQ4' target="_blank" class="download">Pressemitteilung Ausstellung Deutsch (pdf)</a>
+				<a href='https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0B62Zu6ZNhDzRY2UxZjdhMjUtYzllMC00M2Y5LTg4MTYtNTA5YjU1YTg2Yzlh&hl=en_US&pli=1' target="_blank" class="download">Pressemitteilung Ausstellung Deutsch (pdf)</a>
 			</li>
-			<!--<li>
-				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QNDJkNzQ4YWEtZWYwNi00YjYyLWIxZDgtOTMxNzlhMGZjOTQ2' target="_blank" class="download">Pressefotos (hohe Auflösung)</a>
-			</li>-->
+			<li>
+				<a href='https://docs.google.com/leaf?id=0B62Zu6ZNhDzRZDAxZWIyMDUtZDMzOC00ZmVlLWFhYzctOGJkZTU5NTYyNmQx&hl=en_US' target="_blank" class="download">Pressefotos (hohe Auflösung)</a>
+			</li>
 			<!--<li>
 				<a href='#' target="_blank" class="download">Kuratorische Texte (pdf)</a>
 			</li>-->
@@ -24,10 +24,10 @@
 				<a href='#' target="_blank" class="download">Ausstellungspräsentation (pdf)</a>
 			</li>-->
 			<li>
-				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QNmI3ZmQwYWEtOTc4Yi00ZGUzLWEyNDEtMTUxNjg4ZmY5MWUz' target="_blank" class="download">Informationen zur Ausstellung (pdf)</a>
+				<a href='https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0B62Zu6ZNhDzRODQ4NzY1ZGUtMjcwNi00NzI1LTlkMDgtYzRjOWQwODkwOTAx&hl=en_US' target="_blank" class="download">Informationen zur Ausstellung (pdf)</a>
 			</li>
 			<li>
-				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QNjExOGZmZDAtMzJjYy00NjRmLThmNzQtYmFiNTMyNTAyNTU1' target="_blank" class="download">Designerportraits (hohe Auflösung)</a>
+				<a href='https://docs.google.com/leaf?id=0B62Zu6ZNhDzRZWI1YWJjOGQtMGRhOS00Yjk1LThmMjYtNWFkYjkxMzUzMTAy&hl=en_US' target="_blank" class="download">Designerportraits (hohe Auflösung)</a>
 			</li>
 		</ul>
 		

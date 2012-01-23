@@ -5,7 +5,7 @@
 	<div class="leftcolumn">
 		<div class="composedtitle clearfix">
 			<h2>Moderne</h2>
-			<span class="curated">kuratiert von Luciana Wiegmann</span>
+			<span class="curated">kuratiert von Luciana Nemer Wiegmann</span>
 		</div>
 		<span class="location">ausgestellt in den Räumen der Galerie ZEITLOS</span>
 		

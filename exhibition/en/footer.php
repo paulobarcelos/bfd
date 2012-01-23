@@ -2,7 +2,7 @@
 	<footer id="footer">
 		<div calss="clearfix">
 			<div class="box">
-				<div class="date">22. <span class="copyfont">March</span> - 5. <span class="copyfont">May</span> 2012</div>
+				<div class="date">23. <span class="copyfont">March</span> - 5. <span class="copyfont">May</span> 2012</div>
 				<div class="address">stilwerk Mall &amp; Galerie Zeitlos<br />Kantstraße 17 - 10623 Berlin D</div>
 			</div>
 

@@ -5,7 +5,7 @@
 	<div class="leftcolumn">
 		<div class="composedtitle clearfix">
 			<h2>Modern</h2>
-			<span class="curated">Curated by Luciana Wiegmann</span>
+			<span class="curated">Curated by Luciana Nemer Wiegmann</span>
 		</div>
 		<span class="location">Shown in design gallery zeitlos</span>
 		

@@ -41,8 +41,8 @@
 			
 			<div class="captioncontainer">
 				<div class="caption">
-					<h1>CAMPANAS BROTHER</h1>
-					<p><em>Peixe</em> Stuhl | 1999<br/>
+					<h1>CAMPANA BROTHERS</h1>
+					<p><em>Peixe</em> Stuhl | 1989<br/>
 					gebogenes und gekantetes Stahlblech</p>
 				</div>
 			</div>			
@@ -234,7 +234,7 @@
 			
 			<div class="captioncontainer">
 				<div class="caption">
-					<h1>BRUNO JAHARA</h1>
+					<h1>BRUNNO JAHARA</h1>
 					<p><em>Batucada</em> Kollektion | 2010<br/>
 					eloxiertes Aluminium</p>
 				</div>
