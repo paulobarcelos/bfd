@@ -1,4 +1,5 @@
 <?php
+print_r($q_config['enabled_languages']);
     #header('Location: /exhibition/en/');
     #exit();
 ?>
