@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-index
+PRODUCT
 <?php get_footer(); ?>

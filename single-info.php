@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-index
+INFO
 <?php get_footer(); ?>

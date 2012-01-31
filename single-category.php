@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-index
+CATEGORY
 <?php get_footer(); ?>

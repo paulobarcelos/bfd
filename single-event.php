@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-index
+EVENT
 <?php get_footer(); ?>

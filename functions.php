@@ -2,23 +2,23 @@
 
 // CUSTOM POST TYPES
 /**
-* @category Text
+* @category Info
 */
-	add_action( 'init', 'register_cpt_text' );
-	function register_cpt_text() {
+	add_action( 'init', 'register_cpt_info' );
+	function register_cpt_info() {
 		$labels = array( 
-			'name' => _x( 'Texts', 'text' ),
-			'singular_name' => _x( 'Text', 'text' ),
-			'add_new' => _x( 'Add New', 'text' ),
-			'add_new_item' => _x( 'Add New Text', 'text' ),
-			'edit_item' => _x( 'Edit Text', 'text' ),
-			'new_item' => _x( 'New Text', 'text' ),
-			'view_item' => _x( 'View Text', 'text' ),
-			'search_items' => _x( 'Search Texts', 'text' ),
-			'not_found' => _x( 'No texts found', 'text' ),
-			'not_found_in_trash' => _x( 'No texts found in Trash', 'text' ),
-			'parent_item_colon' => _x( 'Parent Text:', 'text' ),
-			'menu_name' => _x( 'Texts', 'text' ),
+			'name' => _x( 'Infos', 'info' ),
+			'singular_name' => _x( 'Info', 'info' ),
+			'add_new' => _x( 'Add New', 'info' ),
+			'add_new_item' => _x( 'Add New Info', 'info' ),
+			'edit_item' => _x( 'Edit Info', 'info' ),
+			'new_item' => _x( 'New Info', 'info' ),
+			'view_item' => _x( 'View Info', 'info' ),
+			'search_items' => _x( 'Search Infos', 'info' ),
+			'not_found' => _x( 'No infos found', 'info' ),
+			'not_found_in_trash' => _x( 'No infos found in Trash', 'info' ),
+			'parent_item_colon' => _x( 'Parent:', 'info' ),
+			'menu_name' => _x( 'Infos', 'info' ),
 		);
 		$args = array( 
 			'labels' => $labels,
@@ -35,28 +35,28 @@
 			'has_archive' => true,
 			'query_var' => true,
 			'can_export' => true,
-			'rewrite' => false,
+			'rewrite' => array('slug'=>'info','with_front'=>false),
 			'capability_type' => 'post'
 		);
-		register_post_type( 'text', $args );
+		register_post_type( 'info', $args );
 	}
 
 	/**
 	 * Remove metaboxes
 	 */
-	function text_remove_meta_box_handler (){
-		remove_meta_box('pageparentdiv', 'text', 'normal');
-		remove_meta_box('commentstatusdiv', 'text', 'normal');
-		remove_meta_box('commentsdiv', 'text', 'normal');
-		remove_meta_box('authordiv', 'text', 'normal');
-		remove_meta_box('postcustom', 'text', 'normal');
-		remove_meta_box('postexcerpt', 'text', 'normal');
-		remove_meta_box('trackbacksdiv', 'text', 'normal');
-		remove_meta_box('postimagediv', 'text', 'normal');
-		remove_meta_box('formatdiv', 'text', 'normal');
-		remove_meta_box('categorydiv', 'text', 'normal');
+	function info_remove_meta_box_handler (){
+		remove_meta_box('pageparentdiv', 'info', 'normal');
+		remove_meta_box('commentstatusdiv', 'info', 'normal');
+		remove_meta_box('commentsdiv', 'info', 'normal');
+		remove_meta_box('authordiv', 'info', 'normal');
+		remove_meta_box('postcustom', 'info', 'normal');
+		remove_meta_box('postexcerpt', 'info', 'normal');
+		remove_meta_box('trackbacksdiv', 'info', 'normal');
+		remove_meta_box('postimagediv', 'info', 'normal');
+		remove_meta_box('formatdiv', 'info', 'normal');
+		remove_meta_box('categorydiv', 'info', 'normal');
 	}
-	add_action('admin_menu', 'text_remove_meta_box_handler');
+	add_action('admin_menu', 'info_remove_meta_box_handler');
 /**
 * @category Style
 */
@@ -132,7 +132,7 @@
 			'search_items' => _x( 'Search Designers', 'designer' ),
 			'not_found' => _x( 'No designers found', 'designer' ),
 			'not_found_in_trash' => _x( 'No designers found in Trash', 'designer' ),
-			'parent_item_colon' => _x( 'Parent Circulo:', 'designer' ),
+			'parent_item_colon' => _x( 'Parent:', 'designer' ),
 			'menu_name' => _x( 'Designers', 'designer' ),
 		);
 		$args = array( 
@@ -175,10 +175,10 @@
 	 * Add metaboxes
 	 */
 	function designer_add_meta_box_handler (){
-		add_meta_box('designer-parent', 'Designer Style', 'designer_parent_meta_box', 'designer', 'side', 'high');
+		add_meta_box('designer-parent', 'Style', 'designer_parent_meta_box', 'designer', 'normal', 'high');
 	}
 	function designer_parent_meta_box($post) {
-		post_custom_parent_meta_box( $post, 'style', 'designer Style' );
+		post_custom_parent_meta_box( $post, 'style' );
 	}
 	add_action('add_meta_boxes', 'designer_add_meta_box_handler');
 /**
@@ -197,7 +197,7 @@
 			'search_items' => _x( 'Search Categories', 'category' ),
 			'not_found' => _x( 'No categories found', 'category' ),
 			'not_found_in_trash' => _x( 'No categories found in Trash', 'category' ),
-			'parent_item_colon' => _x( 'Parent Category:', 'category' ),
+			'parent_item_colon' => _x( 'Parent:', 'category' ),
 			'menu_name' => _x( 'Categories', 'category' ),
 		);
 		$args = array( 
@@ -255,15 +255,13 @@
 			'search_items' => _x( 'Search Products', 'product' ),
 			'not_found' => _x( 'No products found', 'product' ),
 			'not_found_in_trash' => _x( 'No products found in Trash', 'product' ),
-			'parent_item_colon' => _x( 'Parent Circulo:', 'product' ),
+			'parent_item_colon' => _x( 'Parent:', 'product' ),
 			'menu_name' => _x( 'Products', 'product' ),
 		);
 		$args = array( 
 			'labels' => $labels,
 			'hierarchical' => true,
-			
-			'supports' => array( 'title', 'post-formats' ),
-			
+				
 			'public' => true,
 			'show_ui' => true,
 			'show_in_menu' => true,
@@ -301,11 +299,64 @@
 	 */
 	add_action('add_meta_boxes', 'product_add_meta_box_handler');
 	function product_add_meta_box_handler (){
-		add_meta_box('product-parent', 'Product Category', 'product_parent_meta_box', 'product', 'side', 'high');
+		add_meta_box('product-parent', 'Category', 'product_parent_meta_box', 'product', 'normal', 'high');
 	}
 	function product_parent_meta_box($post) {
-		post_custom_parent_meta_box( $post, 'category', 'Product Category' );
+		post_custom_parent_meta_box( $post, 'category' );
 	}
+	/**
+	 * Add custom metaboxes via the metabox class
+	 */
+	add_filter( 'cmb_meta_boxes', 'product_cmb_metaboxes' );
+	function product_cmb_metaboxes( array $meta_boxes ) {
+		global $q_config;
+
+		$prefix = '_cmb_';
+				
+		$fields = array();
+
+		// Designed by
+		$fields[] = array(
+			'name' => 'Designed by',
+			'desc' => 'The name of the designer who did this product',
+			'id'   => 'text_signature_'.$language_code,
+			'type' => 'select',
+			'options' => generate_product_designed_by_list(),
+		);
+		//foreach ($q_config['enabled_languages'] as $language_code ) {
+			// Signature field
+			//$fields[] = text_signature_field_creator( $language_code );
+		//}
+		$meta_boxes[] = array(
+			'id'         => 'product_metaboxes',
+			'title'      => 'Product Info',
+			'pages'      => array( 'product' ),
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true,
+			'fields'     => $fields,
+		);
+
+		return $meta_boxes;
+	}
+	function generate_product_designed_by_list(){
+			$array = array();
+
+			$array[] = array( 
+				'name' => 'None', 
+				'value' => 0
+			);
+
+			$designer_posts = get_posts ( array( 'post_type' => 'designer' ) );
+			foreach ($designer_posts as $designer_post){
+				$array[] = array( 
+					'name' => get_the_title($designer_post->ID), 
+					'value' => $designer_post->ID
+				);
+			}
+			
+			return $array;
+		}
 /**
 * @category Event
 */
@@ -322,15 +373,13 @@
 			'search_items' => _x( 'Search Events', 'event' ),
 			'not_found' => _x( 'No events found', 'event' ),
 			'not_found_in_trash' => _x( 'No events found in Trash', 'event' ),
-			'parent_item_colon' => _x( 'Parent Circulo:', 'event' ),
+			'parent_item_colon' => _x( 'Parent:', 'event' ),
 			'menu_name' => _x( 'Events', 'event' ),
 		);
 		$args = array( 
 			'labels' => $labels,
 			'hierarchical' => true,
-			
-			'supports' => array( 'title', 'post-formats' ),
-			
+						
 			'public' => true,
 			'show_ui' => true,
 			'show_in_menu' => true,
@@ -369,9 +418,8 @@
 * Helper to create a metabox with a list of post parent's to chose from a specif post type
 * @param $post - current post obejct
 * @param string $type - The post type from the parent
-* @param string $type_name - Will be the title of the metabox
 */
-	function post_custom_parent_meta_box($post, $type, $type_name) {
+	function post_custom_parent_meta_box($post, $type) {
 		$post_type_object = get_post_type_object($post->post_type);
 		if ( $post_type_object->hierarchical ) {
 			$current_parent_id = $post->post_parent;
@@ -441,10 +489,31 @@
 	}
 
 
+/**
+* print_pre
+* Prints Recursive (print_r) the content wrapped in <pre> tags
+* @param $content - content to be printend
+*/
+function print_pre( $content ){
+	echo '<pre>';
+	print_r( $content );
+	echo '</pre>';
+}
 
 
+/**
+* Hide admin bar
+*/
+show_admin_bar(false);
 
-
+/**
+* Redirect to exhibition page when on maintence mode
+*/
+function maintece_mode_redirect() {
+    echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://wordpress.dev/exhibition/en">';
+    exit();
+}
+add_action( 'wm_head', 'maintece_mode_redirect' );
 
 
 // CUSTOM IMAGE SIZES --------------------------------------------------------------

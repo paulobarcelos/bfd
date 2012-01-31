@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-index
+DESIGNER
 <?php get_footer(); ?>

@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-index
+STYLE
 <?php get_footer(); ?>
