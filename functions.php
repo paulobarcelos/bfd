@@ -181,6 +181,37 @@
 		post_custom_parent_meta_box( $post, 'style' );
 	}
 	add_action('add_meta_boxes', 'designer_add_meta_box_handler');
+	/**
+	 * Add custom metaboxes via the metabox class
+	 */
+	add_filter( 'cmb_meta_boxes', 'designer_cmb_metaboxes' );
+	function designer_cmb_metaboxes( array $meta_boxes ) {
+		global $q_config;
+
+		$fields = array();
+
+		// Video 
+		$fields[] = array(
+			'name' => 'Vimeo Video ID',
+			'desc' => '',
+			'id' => 'vimeo_video_id',
+			'type' => 'text_small'
+		);
+
+
+		$meta_boxes[] = array(
+			'id'         => 'designer_metaboxes',
+			'title'      => 'Desiger Media',
+			'pages'      => array( 'designer' ),
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true,
+			'fields'     => $fields,
+		);
+
+		return $meta_boxes;
+	}
+
 /**
 * @category Category
 */
@@ -311,22 +342,57 @@
 	function product_cmb_metaboxes( array $meta_boxes ) {
 		global $q_config;
 
-		$prefix = '_cmb_';
-				
 		$fields = array();
 
 		// Designed by
 		$fields[] = array(
 			'name' => 'Designed by',
 			'desc' => 'The name of the designer who did this product',
-			'id'   => 'text_signature_'.$language_code,
+			'id'   => 'designed_by',
 			'type' => 'select',
 			'options' => generate_product_designed_by_list(),
 		);
-		//foreach ($q_config['enabled_languages'] as $language_code ) {
-			// Signature field
-			//$fields[] = text_signature_field_creator( $language_code );
-		//}
+
+		// Feature in slideshow
+		$fields[] = array(
+			'name' => 'Feature in Slideshow',
+			'desc' => 'Should this product be displayed in the slideshow in the homepage?',
+			'id' => 'feature_in_slideshow',
+			'type' => 'checkbox',
+		);
+
+		// Featured image
+		$fields[] = array(
+			'name' => 'Featured Image',
+			'desc' => 'Main product image, used in the thumbnail and slideshow (if featured).',
+			'id' => 'featured_image',
+			'type' => 'file',
+			'save_id' => true, // save ID using true
+			'allow' => array( 'attachment' ) // limit to just attachments with array( 'attachment' )
+		);
+
+		// Image Gallery
+		$fields[] = array(
+			'name' => 'Image Gallery',
+			'desc' => '',
+			'id' => 'image_gallery_title',
+			'type' => 'title',
+		);
+
+		for($i = 0; $i < 10; $i++){
+			// Image 
+			$fields[] = array(
+				'name' => 'Image '. ($i + 1),
+				'desc' => '',
+				'id' => 'gallery_image_'.$i,
+				'type' => 'file',
+				'save_id' => true,
+				'allow' => array( 'attachment' )
+			);
+		}
+		
+
+
 		$meta_boxes[] = array(
 			'id'         => 'product_metaboxes',
 			'title'      => 'Product Info',
@@ -356,7 +422,7 @@
 			}
 			
 			return $array;
-		}
+	}
 /**
 * @category Event
 */
@@ -436,7 +502,7 @@
 	}
 
 /**
-* Text siganture
+* Global metaboxes
 * Create custom metaboxes (via the metabox class) that will apply to multiple post types
 * @package 	Custom metaboxes
 */
@@ -450,14 +516,70 @@
 		$prefix = '_cmb_';
 				
 		$fields = array();
+		// SEO
+		$fields[] = array(
+			'name' => 'SEO',
+			'desc' => '',
+			'type' => 'title',
+			'id' => 'seo_title'
+		);
 		foreach ($q_config['enabled_languages'] as $language_code ) {
-			// Signature field
-			$fields[] = text_signature_field_creator( $language_code );
+			$fields[] = seo_custom_title_field_creator( $language_code );
+			$fields[] = seo_meta_description_field_creator( $language_code );
 		}
+		// Text information
+		$fields[] = array(
+			'name' => 'Main Text',
+			'desc' => '',
+			'type' => 'title',
+			'id' => 'main_text_title'
+		);
+		foreach ($q_config['enabled_languages'] as $language_code ) {
+			$fields[] = text_title_field_creator( $language_code );
+			$fields[] = text_heading_continuation_field_creator( $language_code );
+			$fields[] = text_closure_field_creator( $language_code );
+		}
+		// Extra text 1 
+		$fields[] = array(
+			'name' => 'Extra Text 1',
+			'desc' => 'Optional extra text box with title.',
+			'type' => 'title',
+			'id' => 'extra_text_1_title'
+		);
+		foreach ($q_config['enabled_languages'] as $language_code ) {
+			$fields[] = extra_text_1_title_field_creator( $language_code );
+			$fields[] = extra_text_1_field_creator( $language_code );
+		}
+		// Extra text 2 
+		$fields[] = array(
+			'name' => 'Extra Text 2',
+			'desc' => 'Optional extra text box with title.',
+			'type' => 'title',
+			'id' => 'extra_text_2_title'
+		);
+		foreach ($q_config['enabled_languages'] as $language_code ) {
+			$fields[] = extra_text_1_title_field_creator( $language_code );
+			$fields[] = extra_text_1_field_creator( $language_code );
+		}
+
+		// Downloads
+		$fields[] = array(
+			'name' => 'Downloads',
+			'desc' => '',
+			'type' => 'title',
+			'id' => 'downloads_title'
+		);
+		for($i = 0; $i < 10; $i++){
+			foreach ($q_config['enabled_languages'] as $language_code ) {
+				$fields[] = download_file_field_creator( $language_code, $i );
+				$fields[] = download_title_field_creator( $language_code, $i );
+			}
+		}
+		
 		$meta_boxes[] = array(
-			'id'         => 'text_signature',
-			'title'      => 'Text Siganture',
-			'pages'      => array( 'text', 'style', 'designer', 'category', 'product', 'event' ),
+			'id'         => 'information',
+			'title'      => 'Information',
+			'pages'      => array( 'info', 'style', 'designer', 'category', 'product', 'event' ),
 			'context'    => 'normal',
 			'priority'   => 'high',
 			'show_names' => true,
@@ -467,14 +589,143 @@
 
 		return $meta_boxes;
 	}
-	function text_signature_field_creator($language_code){
+	function seo_custom_title_field_creator($language_code){
 		global $q_config;
 		$array = array(
-					'name' => 'Text Signature ('.$q_config['language_name'][$language_code].')',
-					'desc' => 'The closing signature at the end of a text.',
+					'name' => 'Custom Page Title ('.$q_config['language_name'][$language_code].')',
+					'desc' => 'If provided, will be used as the custom title of the page.',
+					'id'   => 'seo_custom_title_'.$language_code,
+					'type' => 'text'
+				);
+		return $array;
+	}
+	function seo_meta_description_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Page Meta description ('.$q_config['language_name'][$language_code].')',
+					'desc' => 'Short description of the contents of this page.',
+					'id'   => 'seo_meta_description_'.$language_code,
+					'type' => 'textarea_small'
+				);
+		return $array;
+	}
+	function text_title_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Text Title ('.$q_config['language_name'][$language_code].')',
+					'desc' => 'The title of the text.',
+					'id'   => 'text_heading_'.$language_code,
+					'type' => 'text'
+				);
+		return $array;
+	}
+	function text_heading_continuation_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Text Title - continuation ('.$q_config['language_name'][$language_code].')',
+					'desc' => 'If provided, will show up under the text title',
+					'id'   => 'text_heading_continuation_'.$language_code,
+					'type' => 'text'
+				);
+		return $array;
+	}
+	function text_closure_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Text Closure ('.$q_config['language_name'][$language_code].')',
+					'desc' => 'The closing line at the end of the text.',
 					'id'   => 'text_signature_'.$language_code,
 					'type' => 'text'
 				);
+		return $array;
+	}
+	function extra_text_1_title_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Title ('.$q_config['language_name'][$language_code].')',
+					'desc' => '',
+					'id'   => 'extra_text_1_title_'.$language_code,
+					'type' => 'text'
+				);
+		return $array;
+	}
+	function extra_text_1_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Content ('.$q_config['language_name'][$language_code].')',
+					'desc' => '',
+					'id'   => 'extra_text_1_'.$language_code,
+					'type' => 'wysiwyg',
+					'options' => array(
+					    'wpautop' => true, // use wpautop?
+					    'media_buttons' => FALSE, // show insert/upload button(s)
+					    'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
+					    'textarea_rows' => get_option('default_post_edit_rows', 5), // rows="..."
+					    'tabindex' => '',
+					    'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the <style> tags, can use "scoped".
+					    'editor_class' => '', // add extra class(es) to the editor textarea
+					    'teeny' => false, // output the minimal editor config used in Press This
+					    'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
+					    'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+					    'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()	
+					),
+				);
+		return $array;
+	}
+	function extra_text_2_title_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Title ('.$q_config['language_name'][$language_code].')',
+					'desc' => '',
+					'id'   => 'extra_text_2_title_'.$language_code,
+					'type' => 'text'
+				);
+		return $array;
+	}
+	function extra_text_2_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Content ('.$q_config['language_name'][$language_code].')',
+					'desc' => '',
+					'id'   => 'extra_text_2_'.$language_code,
+					'type' => 'wysiwyg',
+					'options' => array(
+					    'wpautop' => true, // use wpautop?
+					    'media_buttons' => FALSE, // show insert/upload button(s)
+					    'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
+					    'textarea_rows' => get_option('default_post_edit_rows', 5), // rows="..."
+					    'tabindex' => '',
+					    'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the <style> tags, can use "scoped".
+					    'editor_class' => '', // add extra class(es) to the editor textarea
+					    'teeny' => false, // output the minimal editor config used in Press This
+					    'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
+					    'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+					    'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()	
+					),
+				);
+		return $array;
+	}
+	function download_file_field_creator($language_code, $i){
+		global $q_config;
+		$array = array(
+				'name' => 'File '. ($i + 1).' ('.$q_config['language_name'][$language_code].')',
+				'desc' => '',
+				'id' => 'dowload_file_'.$i,
+				'type' => 'text_medium'
+				/*'type' => 'file',
+				'save_id' => true,
+				'allow' => array( 'url' )*/
+			);
+		return $array;
+	}
+	function download_title_field_creator($language_code, $i){
+		global $q_config;
+		$array = array(
+				'name' => 'Title '. ($i + 1).' ('.$q_config['language_name'][$language_code].')',
+				'desc' => '',
+				'id' => 'dowload_title_'.$i,
+				'type' => 'text'
+			);
 		return $array;
 	}
 
@@ -524,7 +775,7 @@ if ( function_exists( 'add_image_size' ) ) {
 
 
 // Customize media upload tabs --------------------------------------------------
-add_filter( 'media_upload_tabs', 'custom_media_upload_tabs');
+/*add_filter( 'media_upload_tabs', 'custom_media_upload_tabs');
 add_filter( 'media_upload_default_tab', 'custom_media_upload_default_tab');
 function custom_media_upload_tabs($arr_tabs) {
 	if ( (isset($_GET["simple_fields_action"]) || isset($_GET["simple_fields_action"]) ) && ($_GET["simple_fields_action"] == "select_file" || $_GET["simple_fields_action"] == "select_file_for_tiny") ) {
@@ -535,7 +786,7 @@ function custom_media_upload_tabs($arr_tabs) {
 function custom_media_upload_default_tab($tab) {
 	$tab = 'library';
 	return $tab;
-}
+}*/
 // OPTIONS -------------------------------------------------------------------------------
 add_action('admin_init', 'settings_init' );
 add_action('admin_menu', 'settings_add_options_page');
@@ -549,6 +800,7 @@ function settings_add_options_page() {
 }
 // Render the Plugin options form
 function settings_render_form() {
+	global $q_config;
 	?>
 	<div class="wrap">		
 		<!-- Display Plugin Icon, Header, and Description -->
@@ -558,97 +810,157 @@ function settings_render_form() {
 		<form method="post" action="options.php">
 			<?php settings_fields('settings_plugin_options'); ?>
 			<?php $options = get_option('settings_options'); ?>
-			<!-- Table Structure Containing Form Controls -->
-			<!-- Each Plugin Option Defined on a New Table Row -->
 			<table class="form-table">
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row">Título do Site</th>
-					<td>
-						<input type="text" size="57" name="settings_options[site_title]" value="<?php echo $options['site_title']; ?>" />
-					</td>
-				</tr>				
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row">Tagline</th>
-					<td>
-						<input type="text" size="57" name="settings_options[tagline]" value="<?php echo $options['tagline']; ?>" />
-					</td>
-				</tr>
-				<!-- Text Style Control -->
-				<tr>
-					<th scope="row">Meta Descrição</th>
-					<td>
-						<textcategory name="settings_options[description]" rows="3" cols="50" type='textcategory'><?php echo $options['description']; ?></textcategory>
-						<br />
-						<span category="color:#666666;margin-left:2px;">Aparecerá abaixo da logo e também na meta-description da home.<br />Use palavras chave pois este conteúdo é muito relevante para SEO.</span>
-					</td>
-				</tr>				
-				<!-- Text Style Control -->
-				<tr>
-					<th scope="row">Introdução</th>
-					<td>
-						<textcategory name="settings_options[intro]" rows="7" cols="50" type='textcategory'><?php echo $options['intro']; ?></textcategory>
-						<br />
-						<span category="color:#666666;margin-left:2px;">Aparecerá abaixo das áreas de atuação na home.</span>
-					</td>
-				</tr>
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row">Label dos Clientes</th>
-					<td>
-						<input type="text" size="57" name="settings_options[clients_label]" value="<?php echo $options['clients_label']; ?>" />
-						<br />
-						<span category="color:#666666;margin-left:2px;">Exemplo: "Alguns de nossos clientes:"</span>
-					</td>
-				</tr>
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row">Logos dos Clientes (ID da image)</th>
-					<td>
-						<input type="text" size="10" name="settings_options[clients_logos]" value="<?php echo $options['clients_logos']; ?>" />
-						<br />
-						<span category="color:#666666;margin-left:2px;">Para encontrar a ID, abra a imagem na "Media Library" e olhe a URL,<br />a ID esterá incluída lá como "attachment_id".<br />Exemplo(a ID é 16): www.hibrido.cc/wp-admin/media.php?attachment_id=16&action=edit</span>
-					</td>
-				</tr>
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row">Contatos</th>
-					<td>
-						<textcategory name="settings_options[contacts]" rows="2" cols="50" type='textcategory'><?php echo $options['contacts']; ?></textcategory>
-						<br />
-						<span category="color:#666666;margin-left:2px;">Não se esqueça de utilizar a tag <?php echo htmlentities('<br />');?> para quebrar a linha.</span>
-					</td>
-				</tr>				
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row">Endereço do Blog</th>
-					<td>
-						<input type="text" size="57" name="settings_options[blog]" value="<?php echo $options['blog']; ?>" />
-					</td>
-				</tr>
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row">Página no Facebook</th>
-					<td>
-						<input type="text" size="57" name="settings_options[facebook]" value="<?php echo $options['facebook']; ?>" />
-					</td>
-				</tr>
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row">Página no Twitter</th>
-					<td>
-						<input type="text" size="57" name="settings_options[twitter]" value="<?php echo $options['twitter']; ?>" />
-					</td>
-				</tr>
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row">Google Analytics Track ID</th>
-					<td>
-						<input type="text" size="57" name="settings_options[analytics]" value="<?php echo $options['analytics']; ?>" />
-					</td>
-				</tr>
-			</table>
+				<!-- SEO -->
+				<h2>SEO</h2>
+				<h3>Site Title</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[site_title_<?php echo $language_code;?>]" value="<?php echo $options['site_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Site Meta Description</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<textarea  rows="3" cols="57" name="settings_options[site_meta_description_<?php echo $language_code;?>]"><?php echo $options['site_meta_description_'.$language_code]; ?></textarea>
+					<br>
+				<?php endforeach;?>
+
+				<br>
+				<hr>
+
+				<!-- Exhibition Details -->
+				<h2>Exhibition Details</h2>
+				<h3>Date</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[exhibition_date_<?php echo $language_code;?>]" value="<?php echo $options['exhibition_date_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Address</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<textarea  rows="3" cols="57" name="settings_options[exhibition_address_<?php echo $language_code;?>]"><?php echo $options['exhibition_address_'.$language_code]; ?></textarea>
+					<br>
+				<?php endforeach;?>
+
+				<br>
+				<hr>
+
+				<!-- Internal Titles -->
+				<h2>Internal Titles</h2>
+				<h3>Designers</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[designers_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['designers_internal_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Products</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[products_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['products_internal_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Events</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[events_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['events_internal_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>News</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[news_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['news_internal_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Download</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[download_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['download_internal_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Sponsors</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[sponsors_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['sponsors_internal_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Organizers</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[organizers_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['organizers_internal_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Product Search</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[product_search_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['product_search_internal_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Copyright</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="57" name="settings_options[copyright_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['copyright_internal_title_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<br>
+				<hr>
+
+				<!-- Menu Items -->
+				<h2>Menu Items</h2>
+				<h3>About ID</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="5" name="settings_options[menu_item_about_id_<?php echo $language_code;?>]" value="<?php echo $options['menu_item_about_id_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<h3>Press ID</h3>
+				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+					<input type="text" size="5" name="settings_options[menu_item_press_id_<?php echo $language_code;?>]" value="<?php echo $options['menu_item_about_id_'.$language_code]; ?>" />
+					<br>
+				<?php endforeach;?>
+
+				<br>
+				<hr>
+
+				<!-- Other -->
+				<h2>Other</h2>
+				<h3>Video Vimeo ID</h3>
+				<input type="text" size="10" name="settings_options[video_vimeo_id]" value="<?php echo $options['video_vimeo_id']; ?>" />
+				<br>
+
+				<h3>Twitter user</h3>
+				<input type="text" size="40" name="settings_options[twitter_user]" value="<?php echo $options['twitter_user']; ?>" />
+				<br>
+				
+				<h3>Facebook page</h3>
+				<input type="text" size="40" name="settings_options[facebook_page_url]" value="<?php echo $options['facebook_page_url']; ?>" />
+				<br>
+
+				<h3>Vanishing Points Website</h3>
+				<input type="text" size="40" name="settings_options[vanishing_points_url]" value="<?php echo $options['vanishing_points_url']; ?>" />
+				<br>
+
+				<h3>Zeitlos Website</h3>
+				<input type="text" size="40" name="settings_options[zeitlos_url]" value="<?php echo $options['zeitlos_url']; ?>" />
+				<br>
+
+
+				<br>
+				<hr>
 			<p class="submit">
 				<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 			</p>
