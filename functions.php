@@ -740,31 +740,33 @@
 	}
 
 
+// HELPERS
 /**
 * print_pre
 * Prints Recursive (print_r) the content wrapped in <pre> tags
 * @param $content - content to be printend
 */
-function print_pre( $content ){
-	echo '<pre>';
-	print_r( $content );
-	echo '</pre>';
-}
+	function print_pre( $content ){
+		echo '<pre>';
+		print_r( $content );
+		echo '</pre>';
+	}
 
 
 /**
 * Hide admin bar
 */
-show_admin_bar(false);
+	show_admin_bar(false);
 
+// PLUGIN CONFIG
 /**
 * Redirect to exhibition page when on maintence mode
 */
-function maintece_mode_redirect() {
-    echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://wordpress.dev/exhibition/en">';
-    exit();
-}
-add_action( 'wm_head', 'maintece_mode_redirect' );
+	function maintece_mode_redirect() {
+	    echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://wordpress.dev/exhibition/en">';
+	    exit();
+	}
+	add_action( 'wm_head', 'maintece_mode_redirect' );
 
 
 // CUSTOM IMAGE SIZES --------------------------------------------------------------
@@ -773,217 +775,206 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'gallery-image', 750, 9999 ); //(unlimited height)
 }
 
-
-// Customize media upload tabs --------------------------------------------------
-/*add_filter( 'media_upload_tabs', 'custom_media_upload_tabs');
-add_filter( 'media_upload_default_tab', 'custom_media_upload_default_tab');
-function custom_media_upload_tabs($arr_tabs) {
-	if ( (isset($_GET["simple_fields_action"]) || isset($_GET["simple_fields_action"]) ) && ($_GET["simple_fields_action"] == "select_file" || $_GET["simple_fields_action"] == "select_file_for_tiny") ) {
-		unset($arr_tabs["type"], $arr_tabs["gallery"], $arr_tabs["type_url"]);
-	return $arr_tabs;
+// SETTINGS
+/**
+* Options
+*/
+	add_action('admin_init', 'settings_init' );
+	add_action('admin_menu', 'settings_add_options_page');
+	// Init plugin options to white list our options
+	function settings_init(){
+		register_setting( 'settings_plugin_options', 'settings_options', 'settings_validate_options' );
 	}
-}
-function custom_media_upload_default_tab($tab) {
-	$tab = 'library';
-	return $tab;
-}*/
-// OPTIONS -------------------------------------------------------------------------------
-add_action('admin_init', 'settings_init' );
-add_action('admin_menu', 'settings_add_options_page');
-// Init plugin options to white list our options
-function settings_init(){
-	register_setting( 'settings_plugin_options', 'settings_options', 'settings_validate_options' );
-}
-// Add menu page
-function settings_add_options_page() {
-	add_options_page('Options Page', 'Options', 'manage_options', __FILE__, 'settings_render_form');
-}
-// Render the Plugin options form
-function settings_render_form() {
-	global $q_config;
-	?>
-	<div class="wrap">		
-		<!-- Display Plugin Icon, Header, and Description -->
-		<div class="icon32" id="icon-options-general"><br></div>
-		<h2>Options</h2>
-		<!-- Beginning of the Plugin Options Form -->
-		<form method="post" action="options.php">
-			<?php settings_fields('settings_plugin_options'); ?>
-			<?php $options = get_option('settings_options'); ?>
-			<table class="form-table">
-				<!-- SEO -->
-				<h2>SEO</h2>
-				<h3>Site Title</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[site_title_<?php echo $language_code;?>]" value="<?php echo $options['site_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Site Meta Description</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<textarea  rows="3" cols="57" name="settings_options[site_meta_description_<?php echo $language_code;?>]"><?php echo $options['site_meta_description_'.$language_code]; ?></textarea>
-					<br>
-				<?php endforeach;?>
-
-				<br>
-				<hr>
-
-				<!-- Exhibition Details -->
-				<h2>Exhibition Details</h2>
-				<h3>Date</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[exhibition_date_<?php echo $language_code;?>]" value="<?php echo $options['exhibition_date_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Address</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<textarea  rows="3" cols="57" name="settings_options[exhibition_address_<?php echo $language_code;?>]"><?php echo $options['exhibition_address_'.$language_code]; ?></textarea>
-					<br>
-				<?php endforeach;?>
-
-				<br>
-				<hr>
-
-				<!-- Internal Titles -->
-				<h2>Internal Titles</h2>
-				<h3>Designers</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[designers_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['designers_internal_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Products</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[products_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['products_internal_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Events</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[events_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['events_internal_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>News</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[news_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['news_internal_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Download</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[download_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['download_internal_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Sponsors</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[sponsors_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['sponsors_internal_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Organizers</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[organizers_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['organizers_internal_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Product Search</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[product_search_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['product_search_internal_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Copyright</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="57" name="settings_options[copyright_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['copyright_internal_title_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<br>
-				<hr>
-
-				<!-- Menu Items -->
-				<h2>Menu Items</h2>
-				<h3>About ID</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="5" name="settings_options[menu_item_about_id_<?php echo $language_code;?>]" value="<?php echo $options['menu_item_about_id_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<h3>Press ID</h3>
-				<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-					<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-					<input type="text" size="5" name="settings_options[menu_item_press_id_<?php echo $language_code;?>]" value="<?php echo $options['menu_item_about_id_'.$language_code]; ?>" />
-					<br>
-				<?php endforeach;?>
-
-				<br>
-				<hr>
-
-				<!-- Other -->
-				<h2>Other</h2>
-				<h3>Video Vimeo ID</h3>
-				<input type="text" size="10" name="settings_options[video_vimeo_id]" value="<?php echo $options['video_vimeo_id']; ?>" />
-				<br>
-
-				<h3>Twitter user</h3>
-				<input type="text" size="40" name="settings_options[twitter_user]" value="<?php echo $options['twitter_user']; ?>" />
-				<br>
-				
-				<h3>Facebook page</h3>
-				<input type="text" size="40" name="settings_options[facebook_page_url]" value="<?php echo $options['facebook_page_url']; ?>" />
-				<br>
-
-				<h3>Vanishing Points Website</h3>
-				<input type="text" size="40" name="settings_options[vanishing_points_url]" value="<?php echo $options['vanishing_points_url']; ?>" />
-				<br>
-
-				<h3>Zeitlos Website</h3>
-				<input type="text" size="40" name="settings_options[zeitlos_url]" value="<?php echo $options['zeitlos_url']; ?>" />
-				<br>
-
-
-				<br>
-				<hr>
-			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
-			</p>
-		</form>
-	</div>
-	<?php	
-}
-// Sanitize and validate input. Accepts an array, return a sanitized array.
-function settings_validate_options($input) {
-	 // strip html from textboxes
-	$input['textcategory_one'] =  wp_filter_nohtml_kses($input['textcategory_one']); // Sanitize textcategory input (strip html tags, and escape characters)
-	$input['txt_one'] =  wp_filter_nohtml_kses($input['txt_one']); // Sanitize textbox input (strip html tags, and escape characters)
-	return $input;
-}
-add_filter( 'plugin_action_links', 'settings_plugin_action_links', 10, 2 );
-// Display a Settings link on the main Plugins page
-function settings_plugin_action_links( $links, $file ) {
-	if ( $file == plugin_basename( __FILE__ ) ) {
-		$settings_links = '<a href="'.get_admin_url().'options-general.php?page=plugin-options-starter-kit/plugin-options-starter-kit.php">'.__('Settings').'</a>';
-		// make the 'Settings' link appear first
-		array_unshift( $links, $settings_links );
+	// Add menu page
+	function settings_add_options_page() {
+		add_options_page('Options Page', 'Options', 'manage_options', __FILE__, 'settings_render_form');
 	}
-	return $links;
-}
+	// Render the Plugin options form
+	function settings_render_form() {
+		global $q_config;
+		?>
+		<div class="wrap">		
+			<!-- Display Plugin Icon, Header, and Description -->
+			<div class="icon32" id="icon-options-general"><br></div>
+			<h2>Options</h2>
+			<!-- Beginning of the Plugin Options Form -->
+			<form method="post" action="options.php">
+				<?php settings_fields('settings_plugin_options'); ?>
+				<?php $options = get_option('settings_options'); ?>
+				<table class="form-table">
+					<!-- SEO -->
+					<h2>SEO</h2>
+					<h3>Site Title</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[site_title_<?php echo $language_code;?>]" value="<?php echo $options['site_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Site Meta Description</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<textarea  rows="3" cols="57" name="settings_options[site_meta_description_<?php echo $language_code;?>]"><?php echo $options['site_meta_description_'.$language_code]; ?></textarea>
+						<br>
+					<?php endforeach;?>
+
+					<br>
+					<hr>
+
+					<!-- Exhibition Details -->
+					<h2>Exhibition Details</h2>
+					<h3>Date</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[exhibition_date_<?php echo $language_code;?>]" value="<?php echo $options['exhibition_date_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Address</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<textarea  rows="3" cols="57" name="settings_options[exhibition_address_<?php echo $language_code;?>]"><?php echo $options['exhibition_address_'.$language_code]; ?></textarea>
+						<br>
+					<?php endforeach;?>
+
+					<br>
+					<hr>
+
+					<!-- Internal Titles -->
+					<h2>Internal Titles</h2>
+					<h3>Designers</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[designers_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['designers_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Products</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[products_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['products_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Events</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[events_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['events_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>News</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[news_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['news_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Download</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[download_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['download_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Sponsors</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[sponsors_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['sponsors_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Organizers</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[organizers_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['organizers_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Product Search</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[product_search_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['product_search_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Copyright</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[copyright_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['copyright_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<br>
+					<hr>
+
+					<!-- Menu Items -->
+					<h2>Menu Items</h2>
+					<h3>About ID</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="5" name="settings_options[menu_item_about_id_<?php echo $language_code;?>]" value="<?php echo $options['menu_item_about_id_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Press ID</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="5" name="settings_options[menu_item_press_id_<?php echo $language_code;?>]" value="<?php echo $options['menu_item_about_id_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<br>
+					<hr>
+
+					<!-- Other -->
+					<h2>Other</h2>
+					<h3>Video Vimeo ID</h3>
+					<input type="text" size="10" name="settings_options[video_vimeo_id]" value="<?php echo $options['video_vimeo_id']; ?>" />
+					<br>
+
+					<h3>Twitter user</h3>
+					<input type="text" size="40" name="settings_options[twitter_user]" value="<?php echo $options['twitter_user']; ?>" />
+					<br>
+					
+					<h3>Facebook page</h3>
+					<input type="text" size="40" name="settings_options[facebook_page_url]" value="<?php echo $options['facebook_page_url']; ?>" />
+					<br>
+
+					<h3>Vanishing Points Website</h3>
+					<input type="text" size="40" name="settings_options[vanishing_points_url]" value="<?php echo $options['vanishing_points_url']; ?>" />
+					<br>
+
+					<h3>Zeitlos Website</h3>
+					<input type="text" size="40" name="settings_options[zeitlos_url]" value="<?php echo $options['zeitlos_url']; ?>" />
+					<br>
+
+
+					<br>
+					<hr>
+				<p class="submit">
+					<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+				</p>
+			</form>
+		</div>
+		<?php	
+	}
+	// Sanitize and validate input. Accepts an array, return a sanitized array.
+	function settings_validate_options($input) {
+		 // strip html from textboxes
+		$input['textcategory_one'] =  wp_filter_nohtml_kses($input['textcategory_one']); // Sanitize textcategory input (strip html tags, and escape characters)
+		$input['txt_one'] =  wp_filter_nohtml_kses($input['txt_one']); // Sanitize textbox input (strip html tags, and escape characters)
+		return $input;
+	}
+	add_filter( 'plugin_action_links', 'settings_plugin_action_links', 10, 2 );
+	// Display a Settings link on the main Plugins page
+	function settings_plugin_action_links( $links, $file ) {
+		if ( $file == plugin_basename( __FILE__ ) ) {
+			$settings_links = '<a href="'.get_admin_url().'options-general.php?page=plugin-options-starter-kit/plugin-options-starter-kit.php">'.__('Settings').'</a>';
+			// make the 'Settings' link appear first
+			array_unshift( $links, $settings_links );
+		}
+		return $links;
+	}
 
 ?>
