@@ -181,6 +181,37 @@
 		post_custom_parent_meta_box( $post, 'style' );
 	}
 	add_action('add_meta_boxes', 'designer_add_meta_box_handler');
+	/**
+	 * Add custom metaboxes via the metabox class
+	 */
+	add_filter( 'cmb_meta_boxes', 'designer_cmb_metaboxes' );
+	function designer_cmb_metaboxes( array $meta_boxes ) {
+		global $q_config;
+
+		$fields = array();
+
+		// Video 
+		$fields[] = array(
+			'name' => 'Vimeo Video ID',
+			'desc' => '',
+			'id' => 'vimeo_video_id',
+			'type' => 'text_small'
+		);
+
+
+		$meta_boxes[] = array(
+			'id'         => 'designer_metaboxes',
+			'title'      => 'Desiger Media',
+			'pages'      => array( 'designer' ),
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true,
+			'fields'     => $fields,
+		);
+
+		return $meta_boxes;
+	}
+
 /**
 * @category Category
 */
@@ -311,22 +342,57 @@
 	function product_cmb_metaboxes( array $meta_boxes ) {
 		global $q_config;
 
-		$prefix = '_cmb_';
-				
 		$fields = array();
 
 		// Designed by
 		$fields[] = array(
 			'name' => 'Designed by',
 			'desc' => 'The name of the designer who did this product',
-			'id'   => 'text_signature_'.$language_code,
+			'id'   => 'designed_by',
 			'type' => 'select',
 			'options' => generate_product_designed_by_list(),
 		);
-		//foreach ($q_config['enabled_languages'] as $language_code ) {
-			// Signature field
-			//$fields[] = text_signature_field_creator( $language_code );
-		//}
+
+		// Feature in slideshow
+		$fields[] = array(
+			'name' => 'Feature in Slideshow',
+			'desc' => 'Should this product be displayed in the slideshow in the homepage?',
+			'id' => 'feature_in_slideshow',
+			'type' => 'checkbox',
+		);
+
+		// Featured image
+		$fields[] = array(
+			'name' => 'Featured Image',
+			'desc' => 'Main product image, used in the thumbnail and slideshow (if featured).',
+			'id' => 'featured_image',
+			'type' => 'file',
+			'save_id' => true, // save ID using true
+			'allow' => array( 'attachment' ) // limit to just attachments with array( 'attachment' )
+		);
+
+		// Image Gallery
+		$fields[] = array(
+			'name' => 'Image Gallery',
+			'desc' => '',
+			'id' => 'image_gallery_title',
+			'type' => 'title',
+		);
+
+		for($i = 0; $i < 10; $i++){
+			// Image 
+			$fields[] = array(
+				'name' => 'Image '. ($i + 1),
+				'desc' => '',
+				'id' => 'gallery_image_'.$i,
+				'type' => 'file',
+				'save_id' => true,
+				'allow' => array( 'attachment' )
+			);
+		}
+		
+
+
 		$meta_boxes[] = array(
 			'id'         => 'product_metaboxes',
 			'title'      => 'Product Info',
@@ -356,7 +422,7 @@
 			}
 			
 			return $array;
-		}
+	}
 /**
 * @category Event
 */
@@ -495,6 +561,21 @@
 			$fields[] = extra_text_1_title_field_creator( $language_code );
 			$fields[] = extra_text_1_field_creator( $language_code );
 		}
+
+		// Downloads
+		$fields[] = array(
+			'name' => 'Downloads',
+			'desc' => '',
+			'type' => 'title',
+			'id' => 'downloads_title'
+		);
+		for($i = 0; $i < 10; $i++){
+			foreach ($q_config['enabled_languages'] as $language_code ) {
+				$fields[] = download_file_field_creator( $language_code, $i );
+				$fields[] = download_title_field_creator( $language_code, $i );
+			}
+		}
+		
 		$meta_boxes[] = array(
 			'id'         => 'information',
 			'title'      => 'Information',
@@ -622,6 +703,29 @@
 					    'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()	
 					),
 				);
+		return $array;
+	}
+	function download_file_field_creator($language_code, $i){
+		global $q_config;
+		$array = array(
+				'name' => 'File '. ($i + 1).' ('.$q_config['language_name'][$language_code].')',
+				'desc' => '',
+				'id' => 'dowload_file_'.$i,
+				'type' => 'text_medium'
+				/*'type' => 'file',
+				'save_id' => true,
+				'allow' => array( 'url' )*/
+			);
+		return $array;
+	}
+	function download_title_field_creator($language_code, $i){
+		global $q_config;
+		$array = array(
+				'name' => 'Title '. ($i + 1).' ('.$q_config['language_name'][$language_code].')',
+				'desc' => '',
+				'id' => 'dowload_title_'.$i,
+				'type' => 'text'
+			);
 		return $array;
 	}
 
