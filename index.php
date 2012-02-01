@@ -1,3 +1,4 @@
+<?php $options = get_option('settings_options');?>
+<?php print_pre($options);?>
 <?php get_header(); ?>
-index
 <?php get_footer(); ?>

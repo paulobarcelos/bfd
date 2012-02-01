@@ -757,6 +757,12 @@
 * Hide admin bar
 */
 	show_admin_bar(false);
+/**
+* Remove unwanted wordpress head tags
+*/
+	remove_action('wp_head', 'wp_generator');
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wlwmanifest_link');
 
 // PLUGIN CONFIG
 /**
