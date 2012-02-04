@@ -361,16 +361,6 @@
 			'type' => 'checkbox',
 		);
 
-		// Featured image
-		$fields[] = array(
-			'name' => 'Featured Image',
-			'desc' => 'Main product image, used in the thumbnail and slideshow (if featured).',
-			'id' => 'featured_image',
-			'type' => 'file',
-			'save_id' => true, // save ID using true
-			'allow' => array( 'attachment' ) // limit to just attachments with array( 'attachment' )
-		);
-
 		// Image Gallery
 		$fields[] = array(
 			'name' => 'Image Gallery',
@@ -529,10 +519,18 @@
 		}
 		// Text information
 		$fields[] = array(
-			'name' => 'Main Text',
+			'name' => 'Main content',
 			'desc' => '',
 			'type' => 'title',
 			'id' => 'main_text_title'
+		);
+		$fields[] = array(
+			'name' => 'Featured Image',
+			'desc' => '',
+			'id' => 'featured_image',
+			'type' => 'file',
+			'save_id' => true, // save ID using true
+			'allow' => array( 'attachment' ) // limit to just attachments with array( 'attachment' )
 		);
 		foreach ($q_config['enabled_languages'] as $language_code ) {
 			$fields[] = text_title_field_creator( $language_code );
@@ -848,6 +846,13 @@ if ( function_exists( 'add_image_size' ) ) {
 
 					<!-- Internal Titles -->
 					<h2>Internal Titles</h2>
+					<h3>Home</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[home_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['home_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
 					<h3>Designers</h3>
 					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
 						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
@@ -953,6 +958,10 @@ if ( function_exists( 'add_image_size' ) ) {
 
 					<h3>Zeitlos Website</h3>
 					<input type="text" size="40" name="settings_options[zeitlos_url]" value="<?php echo $options['zeitlos_url']; ?>" />
+					<br>
+
+					<h3>Google Analytics Tracker</h3>
+					<input type="text" size="40" name="settings_options[google_analytics_tracker]" value="<?php echo $options['google_analytics_tracker']; ?>" />
 					<br>
 
 
