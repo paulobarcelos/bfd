@@ -1,3 +1,8 @@
+<?php
+	global $q_config;
+	$settings_options = get_option('settings_options');
+	print_pre($q_config);
+?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
@@ -46,6 +51,16 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<header>
+		<?php # MAIN NAVIGATION;?>
+		<nav>
+			<ul>
+				<li>
+					
+				</li>
+			</ul>
+		</nav>
+	</header>
 <?php qtrans_generateLanguageSelectCode();?>
 <?php print_pre(the_post());?>
 	<?php #get_search_form(); ?>
