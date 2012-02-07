@@ -31,6 +31,9 @@
 			<li>
 				<span>Sergio Rodrigues</span>
 			</li>
+			<li>
+				<span>Cimo</span>
+			</li>
 		</ul>
 		<!--<ul>
 			<li>
@@ -71,7 +74,7 @@
 				<span>Brunno Jahara</span>
 			</li>
 			<li>
-				<span>Campana Brothers</span>
+				<span>Campana Brothers (special guests)</span>
 			</li>
 			<li>
 				<span>Carlos Motta</span>
