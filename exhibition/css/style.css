@@ -334,6 +334,13 @@ a:visited {
 	margin:55px 0 50px 35px;
 }
 
+/*video player*/
+.videoplayer{
+	width:890px;
+	margin: 0 auto;
+	padding-top:20px;
+	height: 90%;
+}
 /*footer*/
 #footer{
 	position:relative;
