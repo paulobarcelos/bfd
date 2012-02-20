@@ -57,8 +57,8 @@
 		<nav>
 			<ul>
 				<?php # Home ?>
-				<?php $home_url = $q_config['url_info']['home'];?>
-				<?php $home_active = ( $home_url == $q_config['url_info']['original_url'] );?>
+				<?php $home_url = qtrans_convertURL( get_bloginfo( 'home' ) ) . '/';?>
+				<?php $home_active = ( $home_url == $q_config['url_info']['url'] );?>
 				<li class="<?php echo ($home_active) ? 'active' : '';?>">
 					<?php if (!$home_active):?><a href="<?php echo $home_url;?>"><?php endif;?>
 						<span><?php echo $settings_options['home_internal_title_' . $q_config['language']];?></span>
@@ -74,28 +74,94 @@
 					<?php if (!$about_active):?></a><?php endif;?>
 				</li>
 
-				<?php # Designers ?>
-				<?php $about_url = get_permalink( $settings_options['menu_item_about_id'] );?>
-				<?php $designers_active = ( $about_url == $q_config['url_info']['url'] );?>
-				<li class="dropdown <?php echo ($designers_active) ? 'active' : '';?>">
+				<?php # Styles(designers) ?>
+				<?php $styles = get_posts( array('post_type' => 'style') );?>
+				<?php $styles_active = false;?>
+				<?php ob_start();?>
+				<?php foreach ($styles as $style) : ?>
+					<?php $style_url = get_permalink( $style->ID );?>
+					<?php $style_active = ( $style_url == $q_config['url_info']['url'] );?>
+					<?php if ($style_active) $styles_active = true;?>
+					<li class="<?php echo ($style_active) ? 'active' : '';?>">
+						<?php if (!$style_active):?><a href="<?php echo $style_url;?>"><?php endif;?>
+							<span><?php echo __($style->post_title);?></span>
+						<?php if (!$style_active):?></a><?php endif;?>
+					</li>
+				<?php endforeach;?>
+				<?php $styles_string = ob_get_contents();  ob_end_clean();?>
+
+				<li class="dropdown <?php echo ($styles_active) ? 'active' : '';?>">
 					<span><?php echo $settings_options['designers_internal_title_' . $q_config['language']];?></span>
 					<ul>
-						<?php $styles = get_posts( array('post_type' => 'style') );?>
-						<?php foreach ($styles as $style) : ?>
-							<?php $style_url = get_permalink( $style->ID );?>
-							<?php $style_active = ( $style_url == $q_config['url_info']['url'] );?>
-							<li class="<?php echo ($style_active) ? 'active' : '';?>">
-								<?php if (!$style_active):?><a href="<?php echo $style_url;?>"><?php endif;?>
-									<span><?php echo __($style->post_title);?></span>
-								<?php if (!$style_active):?></a><?php endif;?>
-							</li>
-						<?php endforeach;?>
+						<?php echo $styles_string;?>
 					</ul>
+				</li>
+
+				<?php # Categories(products) ?>
+				<?php $categories = get_posts( array('post_type' => 'category') );?>
+				<?php $categories_active = false;?>
+				<?php ob_start();?>
+				<?php foreach ($categories as $category) : ?>
+					<?php $category_url = get_permalink( $category->ID );?>
+					<?php $category_active = ( $category_url == $q_config['url_info']['url'] );?>
+					<?php if ($category_active) $categories_active = true;?>
+					<li class="<?php echo ($category_active) ? 'active' : '';?>">
+						<?php if (!$category_active):?><a href="<?php echo $category_url;?>"><?php endif;?>
+							<span><?php echo __($category->post_title);?></span>
+						<?php if (!$category_active):?></a><?php endif;?>
+					</li>
+				<?php endforeach;?>
+				<?php $categories_string = ob_get_contents();  ob_end_clean();?>
+
+				<li class="dropdown <?php echo ($categories_active) ? 'active' : '';?>">
+					<span><?php echo $settings_options['products_internal_title_' . $q_config['language']];?></span>
+					<ul>
+						<?php echo $categories_string;?>
+					</ul>
+				</li>
+
+				<?php # Events ?>
+				<?php $events = get_posts( array('post_type' => 'event') );?>
+				<?php $events_active = false;?>
+				<?php ob_start();?>
+				<?php foreach ($events as $event) : ?>
+					<?php $event_url = get_permalink( $event->ID );?>
+					<?php $event_active = ( $event_url == $q_config['url_info']['url'] );?>
+					<?php if ($event_active) $events_active = true;?>
+					<li class="<?php echo ($event_active) ? 'active' : '';?>">
+						<?php if (!$event_active):?><a href="<?php echo $event_url;?>"><?php endif;?>
+							<span><?php echo __($event->post_title);?></span>
+						<?php if (!$event_active):?></a><?php endif;?>
+					</li>
+				<?php endforeach;?>
+				<?php $events_string = ob_get_contents();  ob_end_clean();?>
+
+				<li class="dropdown <?php echo ($events_active) ? 'active' : '';?>">
+					<span><?php echo $settings_options['events_internal_title_' . $q_config['language']];?></span>
+					<ul>
+						<?php echo $events_string;?>
+					</ul>
+				</li>
+
+				<?php # Press ?>
+				<?php $press_url = get_permalink( $settings_options['menu_item_press_id'] );?>
+				<?php $press_active = ( $press_url == $q_config['url_info']['url'] );?>
+				<li class="<?php echo ($press_active) ? 'active' : '';?>">
+					<?php if (!$press_active):?><a href="<?php echo $press_url;?>"><?php endif;?>
+						<span><?php echo $settings_options['press_internal_title_' . $q_config['language']];?></span>
+					<?php if (!$press_active):?></a><?php endif;?>
 				</li>
 
 			</ul>
 		</nav>
 	</header>
 <?php qtrans_generateLanguageSelectCode();?>
-<?php print_pre(the_post());?>
+<?php
+while ( have_posts() ) : the_post();
+	echo '<h2>';
+	the_title();
+	echo '</h2>';
+	the_content();
+endwhile;
+?>
 	<?php #get_search_form(); ?>

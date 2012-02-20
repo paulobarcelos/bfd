@@ -780,8 +780,10 @@
 
 // CUSTOM IMAGE SIZES --------------------------------------------------------------
 if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'thumbnail', 350, 196, true ); //(cropped)
-	add_image_size( 'gallery-image', 750, 9999 ); //(unlimited height)
+	add_image_size( 'slideshow', 864, 484, true ); 
+	add_image_size( 'medium', 532, 298, true );
+	add_image_size( 'thumbnail', 211, 118, true );
+	add_image_size( 'mini', 105, 59, true );
 }
 
 // SETTINGS
@@ -883,6 +885,13 @@ if ( function_exists( 'add_image_size' ) ) {
 					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
 						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
 						<input type="text" size="57" name="settings_options[events_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['events_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
+					<h3>Press</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[press_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['press_internal_title_'.$language_code]; ?>" />
 						<br>
 					<?php endforeach;?>
 
