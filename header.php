@@ -1,7 +1,8 @@
 <?php
 	global $q_config;
 	$settings_options = get_option('settings_options');
-	print_pre($q_config);
+#print_pre($settings_options);
+#print_pre($q_config);
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
@@ -55,9 +56,43 @@
 		<?php # MAIN NAVIGATION;?>
 		<nav>
 			<ul>
-				<li>
-					
+				<?php # Home ?>
+				<?php $home_url = $q_config['url_info']['home'];?>
+				<?php $home_active = ( $home_url == $q_config['url_info']['original_url'] );?>
+				<li class="<?php echo ($home_active) ? 'active' : '';?>">
+					<?php if (!$home_active):?><a href="<?php echo $home_url;?>"><?php endif;?>
+						<span><?php echo $settings_options['home_internal_title_' . $q_config['language']];?></span>
+					<?php if (!$home_active):?></a><?php endif;?>
 				</li>
+
+				<?php # About ?>
+				<?php $about_url = get_permalink( $settings_options['menu_item_about_id'] );?>
+				<?php $about_active = ( $about_url == $q_config['url_info']['url'] );?>
+				<li class="<?php echo ($about_active) ? 'active' : '';?>">
+					<?php if (!$about_active):?><a href="<?php echo $about_url;?>"><?php endif;?>
+						<span><?php echo $settings_options['about_internal_title_' . $q_config['language']];?></span>
+					<?php if (!$about_active):?></a><?php endif;?>
+				</li>
+
+				<?php # Designers ?>
+				<?php $about_url = get_permalink( $settings_options['menu_item_about_id'] );?>
+				<?php $designers_active = ( $about_url == $q_config['url_info']['url'] );?>
+				<li class="dropdown <?php echo ($designers_active) ? 'active' : '';?>">
+					<span><?php echo $settings_options['designers_internal_title_' . $q_config['language']];?></span>
+					<ul>
+						<?php $styles = get_posts( array('post_type' => 'style') );?>
+						<?php foreach ($styles as $style) : ?>
+							<?php $style_url = get_permalink( $style->ID );?>
+							<?php $style_active = ( $style_url == $q_config['url_info']['url'] );?>
+							<li class="<?php echo ($style_active) ? 'active' : '';?>">
+								<?php if (!$style_active):?><a href="<?php echo $style_url;?>"><?php endif;?>
+									<span><?php echo __($style->post_title);?></span>
+								<?php if (!$style_active):?></a><?php endif;?>
+							</li>
+						<?php endforeach;?>
+					</ul>
+				</li>
+
 			</ul>
 		</nav>
 	</header>

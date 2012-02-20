@@ -764,6 +764,11 @@
 
 // PLUGIN CONFIG
 /**
+* Make sure q_translate will provide the correct permalink when calling get_permalink
+*/
+	add_filter('post_type_link','qtrans_convertURL');
+
+/**
 * Redirect to exhibition page when on maintence mode
 */
 	function maintece_mode_redirect() {
@@ -853,6 +858,13 @@ if ( function_exists( 'add_image_size' ) ) {
 						<br>
 					<?php endforeach;?>
 
+					<h3>About</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[about_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['about_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
 					<h3>Designers</h3>
 					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
 						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
@@ -922,18 +934,11 @@ if ( function_exists( 'add_image_size' ) ) {
 					<!-- Menu Items -->
 					<h2>Menu Items</h2>
 					<h3>About ID</h3>
-					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-						<input type="text" size="5" name="settings_options[menu_item_about_id_<?php echo $language_code;?>]" value="<?php echo $options['menu_item_about_id_'.$language_code]; ?>" />
-						<br>
-					<?php endforeach;?>
+					<input type="text" size="5" name="settings_options[menu_item_about_id]" value="<?php echo $options['menu_item_about_id']; ?>" />
 
 					<h3>Press ID</h3>
-					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
-						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
-						<input type="text" size="5" name="settings_options[menu_item_press_id_<?php echo $language_code;?>]" value="<?php echo $options['menu_item_about_id_'.$language_code]; ?>" />
-						<br>
-					<?php endforeach;?>
+					<input type="text" size="5" name="settings_options[menu_item_press_id]" value="<?php echo $options['menu_item_about_id']; ?>" />
+
 
 					<br>
 					<hr>
