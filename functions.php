@@ -2,7 +2,7 @@
 
 // CUSTOM POST TYPES
 /**
-* @category Info
+* Info
 */
 	add_action( 'init', 'register_cpt_info' );
 	function register_cpt_info() {
@@ -58,7 +58,7 @@
 	}
 	add_action('admin_menu', 'info_remove_meta_box_handler');
 /**
-* @category Style
+* Style
 */
 	add_action( 'init', 'register_cpt_style' );
 	function register_cpt_style() {
@@ -117,7 +117,7 @@
 	}
 	add_action('admin_menu', 'style_remove_meta_box_handler');
 /**
-* @category Designer
+* Designer
 */
 	add_action( 'init', 'register_cpt_designer' );
 	function register_cpt_designer() {
@@ -213,7 +213,7 @@
 	}
 
 /**
-* @category Category
+* Category
 */
 	add_action( 'init', 'register_cpt_category' );
 	function register_cpt_category() {
@@ -270,8 +270,9 @@
 		remove_meta_box('formatdiv', 'category', 'normal');
 		remove_meta_box('categorydiv', 'category', 'normal');
 	}	
+
 /**
-* @category Product
+* Product
 */
 	add_action( 'init', 'register_cpt_product' );
 	function register_cpt_product() {
@@ -353,6 +354,12 @@
 			'options' => generate_product_designed_by_list(),
 		);
 
+		foreach ($q_config['enabled_languages'] as $language_code ) {
+			$fields[] = product_year_field_creator( $language_code );
+			$fields[] = product_material_field_creator( $language_code );
+			$fields[] = product_specifications_field_creator( $language_code );
+		}
+
 		// Feature in slideshow
 		$fields[] = array(
 			'name' => 'Feature in Slideshow',
@@ -413,8 +420,38 @@
 			
 			return $array;
 	}
+	function product_year_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Product Date ('.$q_config['language_name'][$language_code].')',
+					'desc' => '',
+					'id'   => 'product_date_'.$language_code,
+					'type' => 'text'
+				);
+		return $array;
+	}
+	function product_material_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Product Material ('.$q_config['language_name'][$language_code].')',
+					'desc' => '',
+					'id'   => 'product_material_'.$language_code,
+					'type' => 'text'
+				);
+		return $array;
+	}
+	function product_specifications_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Product Specifications ('.$q_config['language_name'][$language_code].')',
+					'desc' => '',
+					'id'   => 'product_specifications_'.$language_code,
+					'type' => 'text'
+				);
+		return $array;
+	}
 /**
-* @category Event
+* Event
 */
 	add_action( 'init', 'register_cpt_event' );
 	function register_cpt_event() {
