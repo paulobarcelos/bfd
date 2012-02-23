@@ -789,6 +789,18 @@
 
 
 /**
+* display_vimeo_video
+* @param $id - video id
+* @param $width - video width
+* @param $height - video height
+*/
+	function display_vimeo_video( $id, $width, $height ){
+		?>
+		<iframe src="http://player.vimeo.com/video/<?php echo $id;?>" width="<?php echo $width;?>" height="<?php echo $height;?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<?php
+	}
+
+/**
 * Hide admin bar
 */
 	show_admin_bar(false);
