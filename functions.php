@@ -1030,15 +1030,15 @@ if ( function_exists( 'add_image_size' ) ) {
 					<input type="text" size="40" name="settings_options[twitter_user]" value="<?php echo $options['twitter_user']; ?>" />
 					<br>
 					
-					<h3>Facebook page</h3>
-					<input type="text" size="40" name="settings_options[facebook_page_url]" value="<?php echo $options['facebook_page_url']; ?>" />
+					<h3>Facebook Like URL</h3>
+					<input type="text" size="40" name="settings_options[facebook_like_url]" value="<?php echo $options['facebook_like_url']; ?>" />
 					<br>
 
 					<h3>Vanishing Points Website</h3>
 					<input type="text" size="40" name="settings_options[vanishing_points_url]" value="<?php echo $options['vanishing_points_url']; ?>" />
 					<br>
 
-					<h3>Mailing url</h3>
+					<h3>Mailing URL</h3>
 					<input type="text" size="40" name="settings_options[mailing_url]" value="<?php echo $options['mailing_url']; ?>" />
 					<br>
 

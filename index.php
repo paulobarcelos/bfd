@@ -55,4 +55,9 @@
 <?php # VIDEO?>
 <?php display_vimeo_video( $settings_options['video_vimeo_id'], 100, 100);?>
 
+<?php # NEWS?>
+<section>
+	<h1><?php echo $settings_options['news_internal_title_' . $q_config['language']];?></h1>
+</section>
+
 <?php get_footer(); ?>

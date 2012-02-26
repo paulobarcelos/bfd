@@ -3,6 +3,10 @@
 	$settings_options = get_option('settings_options');
 ?>
 
+<?php # FACEBOOK?>
+<?php echo $settings_options['facebook_like_url'];?>
+
+
 <?php # BOTTOM NAV?>
 <nav>
 	<ul>

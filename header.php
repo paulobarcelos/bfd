@@ -154,8 +154,20 @@
 
 			</ul>
 		</nav>
+
+		<?php qtrans_generateLanguageSelectCode();?>
+
+		<?php # LOGO?>
+		<a class="logo " href="<?php echo  qtrans_convertURL( get_bloginfo( 'home' ) ) . '/';?>"><?php echo $settings_options['site_title_' . $q_config['language']];?></a>
+
+		<?php # DATE?>
+		<div>
+			<span><?php echo $settings_options['exhibition_date_' . $q_config['language']];?></span>
+			<span><?php echo $settings_options['exhibition_address_' . $q_config['language']];?></span>
+		</div>
+
 	</header>
-<?php qtrans_generateLanguageSelectCode();?>
+
 <?php
 while ( have_posts() ) : the_post();
 	echo '<h2>';
