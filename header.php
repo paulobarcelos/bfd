@@ -1,6 +1,9 @@
 <?php
-	global $q_config;
+	global $q_config, $META_TITLE, $META_DESCRIPTION, $META_URL, $META_IMAGE, $META_TYPE;
 	$settings_options = get_option('settings_options');
+
+	if( !$META_IMAGE ) $META_IMAGE =  bloginfo('stylesheet_directory') . 'img/default.png';
+
 #print_pre($settings_options);
 #print_pre($q_config);
 ?>
