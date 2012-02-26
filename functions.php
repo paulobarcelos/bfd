@@ -965,6 +965,13 @@ if ( function_exists( 'add_image_size' ) ) {
 						<br>
 					<?php endforeach;?>
 
+					<h3>Mailing</h3>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="57" name="settings_options[mailing_internal_title_<?php echo $language_code;?>]" value="<?php echo $options['mailing_internal_title_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
+
 					<h3>Organizers</h3>
 					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
 						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
@@ -997,6 +1004,18 @@ if ( function_exists( 'add_image_size' ) ) {
 					<h3>Press ID</h3>
 					<input type="text" size="5" name="settings_options[menu_item_press_id]" value="<?php echo $options['menu_item_about_id']; ?>" />
 
+					<h3>Footer 1 ID</h3>
+					<input type="text" size="5" name="settings_options[menu_item_footer_1_id]" value="<?php echo $options['menu_item_footer_1_id']; ?>" />
+
+					<h3>Footer 2 ID</h3>
+					<input type="text" size="5" name="settings_options[menu_item_footer_2_id]" value="<?php echo $options['menu_item_footer_2_id']; ?>" />
+
+					<h3>Footer 3 ID</h3>
+					<input type="text" size="5" name="settings_options[menu_item_footer_3_id]" value="<?php echo $options['menu_item_footer_3_id']; ?>" />
+
+					<h3>Footer 4 ID</h3>
+					<input type="text" size="5" name="settings_options[menu_item_footer_4_id]" value="<?php echo $options['menu_item_footer_4_id']; ?>" />
+
 
 					<br>
 					<hr>
@@ -1017,6 +1036,10 @@ if ( function_exists( 'add_image_size' ) ) {
 
 					<h3>Vanishing Points Website</h3>
 					<input type="text" size="40" name="settings_options[vanishing_points_url]" value="<?php echo $options['vanishing_points_url']; ?>" />
+					<br>
+
+					<h3>Mailing url</h3>
+					<input type="text" size="40" name="settings_options[mailing_url]" value="<?php echo $options['mailing_url']; ?>" />
 					<br>
 
 					<h3>Zeitlos Website</h3>
