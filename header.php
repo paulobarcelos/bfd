@@ -1,6 +1,9 @@
 <?php
-	global $q_config;
+	global $q_config, $META_TITLE, $META_DESCRIPTION, $META_URL, $META_IMAGE, $META_TYPE;
 	$settings_options = get_option('settings_options');
+
+	if( !$META_IMAGE ) $META_IMAGE =  get_bloginfo('stylesheet_directory') . 'img/default.png';
+
 #print_pre($settings_options);
 #print_pre($q_config);
 ?>
@@ -158,7 +161,11 @@
 		<?php qtrans_generateLanguageSelectCode();?>
 
 		<?php # LOGO?>
-		<a class="logo " href="<?php echo  qtrans_convertURL( get_bloginfo( 'home' ) ) . '/';?>"><?php echo $settings_options['site_title_' . $q_config['language']];?></a>
+		<h1>
+			<a class="logo " href="<?php echo  qtrans_convertURL( get_bloginfo( 'home' ) ) . '/';?>">
+				<?php echo $settings_options['site_title_' . $q_config['language']];?>
+			</a>
+		</h1>
 
 		<?php # DATE?>
 		<div>
@@ -168,12 +175,4 @@
 
 	</header>
 
-<?php
-while ( have_posts() ) : the_post();
-	echo '<h2>';
-	the_title();
-	echo '</h2>';
-	the_content();
-endwhile;
-?>
 	<?php #get_search_form(); ?>

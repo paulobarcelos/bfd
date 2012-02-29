@@ -593,19 +593,25 @@
 			'id' => 'extra_text_2_title'
 		);
 		foreach ($q_config['enabled_languages'] as $language_code ) {
-			$fields[] = extra_text_1_title_field_creator( $language_code );
-			$fields[] = extra_text_1_field_creator( $language_code );
+			$fields[] = extra_text_2_title_field_creator( $language_code );
+			$fields[] = extra_text_2_field_creator( $language_code );
 		}
 
 		// Downloads
-		$fields[] = array(
-			'name' => 'Downloads',
-			'desc' => '',
-			'type' => 'title',
-			'id' => 'downloads_title'
-		);
-		for($i = 0; $i < 10; $i++){
-			foreach ($q_config['enabled_languages'] as $language_code ) {
+		foreach ($q_config['enabled_languages'] as $language_code ) {
+			$fields[] = array(
+				'name' => 'Downloads '.$q_config['language_name'][$language_code],
+				'desc' => '',
+				'type' => 'title',
+				'id' => 'downloads_title_' . $language_code
+			);
+			$fields[] = array(
+				'name' => 'Heading',
+				'desc' => 'Optional heading for the download list',
+				'type' => 'text',
+				'id' => 'downloads_heading_' . $language_code
+			);
+			for($i = 0; $i < 10; $i++){
 				$fields[] = download_file_field_creator( $language_code, $i );
 				$fields[] = download_title_field_creator( $language_code, $i );
 			}
@@ -692,17 +698,17 @@
 					'id'   => 'extra_text_1_'.$language_code,
 					'type' => 'wysiwyg',
 					'options' => array(
-					    'wpautop' => true, // use wpautop?
-					    'media_buttons' => FALSE, // show insert/upload button(s)
-					    'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
-					    'textarea_rows' => get_option('default_post_edit_rows', 5), // rows="..."
-					    'tabindex' => '',
-					    'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the <style> tags, can use "scoped".
-					    'editor_class' => '', // add extra class(es) to the editor textarea
-					    'teeny' => false, // output the minimal editor config used in Press This
-					    'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
-					    'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
-					    'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()	
+					    //'wpautop' => true, // use wpautop?
+					    'media_buttons' => false, // show insert/upload button(s)
+					    //'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
+					    //'textarea_rows' => get_option('default_post_edit_rows', 5), // rows="..."
+					    //'tabindex' => '',
+					    //'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the <style> tags, can use "scoped".
+					   // 'editor_class' => '', // add extra class(es) to the editor textarea
+					   'teeny' => true, // output the minimal editor config used in Press This
+					   // 'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
+					    'tinymce' => false, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+					    //'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()	
 					),
 				);
 		return $array;
@@ -743,9 +749,9 @@
 	function download_file_field_creator($language_code, $i){
 		global $q_config;
 		$array = array(
-				'name' => 'File '. ($i + 1).' ('.$q_config['language_name'][$language_code].')',
+				'name' => 'File '. ($i + 1),
 				'desc' => '',
-				'id' => 'dowload_file_'.$i,
+				'id' => 'download_file_'. $i . '_' . $language_code,
 				'type' => 'text_medium'
 				/*'type' => 'file',
 				'save_id' => true,
@@ -756,9 +762,9 @@
 	function download_title_field_creator($language_code, $i){
 		global $q_config;
 		$array = array(
-				'name' => 'Title '. ($i + 1).' ('.$q_config['language_name'][$language_code].')',
+				'name' => 'Title '. ($i + 1),
 				'desc' => '',
-				'id' => 'dowload_title_'.$i,
+				'id' => 'download_title_'. $i . '_' . $language_code,
 				'type' => 'text'
 			);
 		return $array;

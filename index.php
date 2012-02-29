@@ -1,6 +1,11 @@
 <?php
 	$settings_options = get_option('settings_options');
 ?>
+<?php
+	$META_TITLE = $settings_options['site_title_' . $q_config['language']];
+	$META_URL = qtrans_convertURL( get_bloginfo( 'home' ) ) . '/';
+	$META_DESCRIPTION = $settings_options['site_meta_description_' . $q_config['language']];
+?>
 <?php get_header(); ?>
 
 <?php # SLIDEDSHOW ?>

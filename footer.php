@@ -54,8 +54,8 @@
 
 
 	<!-- scripts concatenated and minified via build script -->
-	<script defer src="<?php bloginfo('stylesheet_directory');?>/js/plugins.js"></script>
-	<script defer src="<?php bloginfo('stylesheet_directory');?>/js/script.js"></script>
+	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/plugins.js"></script>
+	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/script.js"></script>
 	<!-- end scripts -->
 
 	<script>
