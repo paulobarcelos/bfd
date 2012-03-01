@@ -77,26 +77,26 @@
 					<?php if (!$about_active):?></a><?php endif;?>
 				</li>
 
-				<?php # Styles(designers) ?>
-				<?php $styles = get_posts( array('post_type' => 'style') );?>
-				<?php $styles_active = false;?>
+				<?php # Types(designers) ?>
+				<?php $types = get_posts( array('post_type' => 'type') );?>
+				<?php $types_active = false;?>
 				<?php ob_start();?>
-				<?php foreach ($styles as $style) : ?>
-					<?php $style_url = get_permalink( $style->ID );?>
-					<?php $style_active = ( $style_url == $q_config['url_info']['url'] );?>
-					<?php if ($style_active) $styles_active = true;?>
-					<li class="<?php echo ($style_active) ? 'active' : '';?>">
-						<?php if (!$style_active):?><a href="<?php echo $style_url;?>"><?php endif;?>
-							<span><?php echo __($style->post_title);?></span>
-						<?php if (!$style_active):?></a><?php endif;?>
+				<?php foreach ($types as $type) : ?>
+					<?php $type_url = get_permalink( $type->ID );?>
+					<?php $type_active = ( $type_url == $q_config['url_info']['url'] );?>
+					<?php if ($type_active) $types_active = true;?>
+					<li class="<?php echo ($type_active) ? 'active' : '';?>">
+						<?php if (!$type_active):?><a href="<?php echo $type_url;?>"><?php endif;?>
+							<span><?php echo __($type->post_title);?></span>
+						<?php if (!$type_active):?></a><?php endif;?>
 					</li>
 				<?php endforeach;?>
-				<?php $styles_string = ob_get_contents();  ob_end_clean();?>
+				<?php $types_string = ob_get_contents();  ob_end_clean();?>
 
-				<li class="dropdown <?php echo ($styles_active) ? 'active' : '';?>">
+				<li class="dropdown <?php echo ($types_active) ? 'active' : '';?>">
 					<span><?php echo $settings_options['designers_internal_title_' . $q_config['language']];?></span>
 					<ul>
-						<?php echo $styles_string;?>
+						<?php echo $types_string;?>
 					</ul>
 				</li>
 

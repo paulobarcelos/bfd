@@ -21,14 +21,18 @@
 					<li>
 						<article>
 							<div>
-								<h1><?php echo __($product_designer->post_title);?></h1>
-								<p>
-									<?php echo __($product->post_title);?>
-									<?php if( isset( $product_custom['product_date_' . $q_config['language']] ) ) : ?>| <?php echo $product_custom['product_date_' . $q_config['language']][0]; endif;?>
-									<?php if( isset( $product_custom['product_material_' . $q_config['language']] ) ) : ?><br><?php echo $product_custom['product_material_' . $q_config['language']][0]; endif;?>
-								</p>
+								<a href="<?php echo get_permalink( $product_designer->ID );?>">
+									<h1><?php echo __($product_designer->post_title);?></h1>
+									<p>
+										<?php echo __($product->post_title);?>
+										<?php if( isset( $product_custom['product_date_' . $q_config['language']] ) ) : ?>| <?php echo $product_custom['product_date_' . $q_config['language']][0]; endif;?>
+										<?php if( isset( $product_custom['product_material_' . $q_config['language']] ) ) : ?><br><?php echo $product_custom['product_material_' . $q_config['language']][0]; endif;?>
+									</p>
+								</a>
 							</div>
-							<img src='<?php echo $product_image[0];?>' alt='<?php echo __($product->post_title);?>' width='<?php echo $product_image[1];?>' height='<?php echo $product_image[2];?>'/>
+							<a href="<?php echo get_permalink( $product_designer->ID );?>">
+								<img src='<?php echo $product_image[0];?>' alt='<?php echo __($product->post_title);?>' width='<?php echo $product_image[1];?>' height='<?php echo $product_image[2];?>'/>
+							</a>
 						</article>
 					</li>
 				<?php endif;?>
@@ -47,8 +51,10 @@
 			<?php if( $category_image ):?>
 				<li>
 					<article>
-						<h1><?php echo __($category->post_title);?></h1>
-						<img src='<?php echo $category_image[0];?>' alt='<?php echo __($category->post_title);?>' width='<?php echo $category_image[1];?>' height='<?php echo $category_image[2];?>'/>
+						<a href="<?php echo get_permalink( $category->ID );?>">
+							<h1><?php echo __($category->post_title);?></h1>
+							<img src='<?php echo $category_image[0];?>' alt='<?php echo __($category->post_title);?>' width='<?php echo $category_image[1];?>' height='<?php echo $category_image[2];?>'/>
+						</a>
 					</article>
 				</li>
 			<?php endif;?>

@@ -58,23 +58,23 @@
 	}
 	add_action('admin_menu', 'info_remove_meta_box_handler');
 /**
-* Style
+* Type
 */
-	add_action( 'init', 'register_cpt_style' );
-	function register_cpt_style() {
+	add_action( 'init', 'register_cpt_type' );
+	function register_cpt_type() {
 		$labels = array( 
-			'name' => _x( 'Styles', 'style' ),
-			'singular_name' => _x( 'Style', 'style' ),
-			'add_new' => _x( 'Add New', 'style' ),
-			'add_new_item' => _x( 'Add New Style', 'style' ),
-			'edit_item' => _x( 'Edit Style', 'style' ),
-			'new_item' => _x( 'New Style', 'style' ),
-			'view_item' => _x( 'View Style', 'style' ),
-			'search_items' => _x( 'Search Styles', 'style' ),
-			'not_found' => _x( 'No styles found', 'style' ),
-			'not_found_in_trash' => _x( 'No styles found in Trash', 'style' ),
-			'parent_item_colon' => _x( 'Parent Style:', 'style' ),
-			'menu_name' => _x( 'Styles', 'style' ),
+			'name' => _x( 'Types', 'type' ),
+			'singular_name' => _x( 'Type', 'type' ),
+			'add_new' => _x( 'Add New', 'type' ),
+			'add_new_item' => _x( 'Add New Type', 'type' ),
+			'edit_item' => _x( 'Edit Type', 'type' ),
+			'new_item' => _x( 'New Type', 'type' ),
+			'view_item' => _x( 'View Type', 'type' ),
+			'search_items' => _x( 'Search Types', 'type' ),
+			'not_found' => _x( 'No types found', 'type' ),
+			'not_found_in_trash' => _x( 'No types found in Trash', 'type' ),
+			'parent_item_colon' => _x( 'Parent Type:', 'type' ),
+			'menu_name' => _x( 'Types', 'type' ),
 		);
 		$args = array( 
 			'labels' => $labels,
@@ -91,31 +91,31 @@
 			'has_archive' => true,
 			'query_var' => true,
 			'can_export' => true,
-			'rewrite' => false,
+			'rewrite' => array('slug'=>'type','with_front'=>false),
 			'capability_type' => 'post'
 		);
-		register_post_type( 'style', $args );
-		global $wp_rewrite;
-		$wp_rewrite->add_rewrite_tag("%style%", '([^/]+)', "style=");
-		$wp_rewrite->add_permastruct('style', '%style%', false);
+		register_post_type( 'type', $args );
+		//global $wp_rewrite;
+		//$wp_rewrite->add_rewrite_tag("%type%", '([^/]+)', "type=");
+		//$wp_rewrite->add_permastruct('type', '%type%', false);
 	}
 
 	/**
 	 * Remove metaboxes
 	 */
-	function style_remove_meta_box_handler (){
-		remove_meta_box('pageparentdiv', 'style', 'normal');
-		remove_meta_box('commentstatusdiv', 'style', 'normal');
-		remove_meta_box('commentsdiv', 'style', 'normal');
-		remove_meta_box('authordiv', 'style', 'normal');
-		remove_meta_box('postcustom', 'style', 'normal');
-		remove_meta_box('postexcerpt', 'style', 'normal');
-		remove_meta_box('trackbacksdiv', 'style', 'normal');
-		remove_meta_box('postimagediv', 'style', 'normal');
-		remove_meta_box('formatdiv', 'style', 'normal');
-		remove_meta_box('categorydiv', 'style', 'normal');
+	function type_remove_meta_box_handler (){
+		remove_meta_box('pageparentdiv', 'type', 'normal');
+		remove_meta_box('commentstatusdiv', 'type', 'normal');
+		remove_meta_box('commentsdiv', 'type', 'normal');
+		remove_meta_box('authordiv', 'type', 'normal');
+		remove_meta_box('postcustom', 'type', 'normal');
+		remove_meta_box('postexcerpt', 'type', 'normal');
+		remove_meta_box('trackbacksdiv', 'type', 'normal');
+		remove_meta_box('postimagediv', 'type', 'normal');
+		remove_meta_box('formatdiv', 'type', 'normal');
+		remove_meta_box('categorydiv', 'type', 'normal');
 	}
-	add_action('admin_menu', 'style_remove_meta_box_handler');
+	add_action('admin_menu', 'type_remove_meta_box_handler');
 /**
 * Designer
 */
@@ -175,10 +175,10 @@
 	 * Add metaboxes
 	 */
 	function designer_add_meta_box_handler (){
-		add_meta_box('designer-parent', 'Style', 'designer_parent_meta_box', 'designer', 'normal', 'high');
+		add_meta_box('designer-parent', 'Type', 'designer_parent_meta_box', 'designer', 'normal', 'high');
 	}
 	function designer_parent_meta_box($post) {
-		post_custom_parent_meta_box( $post, 'style' );
+		post_custom_parent_meta_box( $post, 'type' );
 	}
 	add_action('add_meta_boxes', 'designer_add_meta_box_handler');
 	/**
@@ -246,13 +246,13 @@
 			'has_archive' => true,
 			'query_var' => true,
 			'can_export' => true,
-			'rewrite' => false,
+			'rewrite' => array('slug'=>'category','with_front'=>false),
 			'capability_type' => 'post'
 		);
 		register_post_type( 'category', $args );
-		global $wp_rewrite;
-		$wp_rewrite->add_rewrite_tag("%category%", '([^/]+)', "category=");
-		$wp_rewrite->add_permastruct('category', '%category%', false);
+		//global $wp_rewrite;
+		//$wp_rewrite->add_rewrite_tag("%category%", '([^/]+)', "category=");
+		//$wp_rewrite->add_permastruct('category', '%category%', false);
 	}
 	/**
 	 * Remove metaboxes
@@ -620,7 +620,7 @@
 		$meta_boxes[] = array(
 			'id'         => 'information',
 			'title'      => 'Information',
-			'pages'      => array( 'info', 'style', 'designer', 'category', 'product', 'event' ),
+			'pages'      => array( 'info', 'type', 'designer', 'category', 'product', 'event' ),
 			'context'    => 'normal',
 			'priority'   => 'high',
 			'show_names' => true,
@@ -703,7 +703,7 @@
 					    //'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
 					    //'textarea_rows' => get_option('default_post_edit_rows', 5), // rows="..."
 					    //'tabindex' => '',
-					    //'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the <style> tags, can use "scoped".
+					    //'editor_css' => '', // intended for extra types for both visual and HTML editors buttons, needs to include the <type> tags, can use "scoped".
 					   // 'editor_class' => '', // add extra class(es) to the editor textarea
 					   'teeny' => true, // output the minimal editor config used in Press This
 					   // 'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
@@ -736,7 +736,7 @@
 					    'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
 					    'textarea_rows' => get_option('default_post_edit_rows', 5), // rows="..."
 					    'tabindex' => '',
-					    'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the <style> tags, can use "scoped".
+					    'editor_css' => '', // intended for extra types for both visual and HTML editors buttons, needs to include the <type> tags, can use "scoped".
 					    'editor_class' => '', // add extra class(es) to the editor textarea
 					    'teeny' => false, // output the minimal editor config used in Press This
 					    'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
