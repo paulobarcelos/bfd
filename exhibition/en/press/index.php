@@ -9,10 +9,13 @@
 		
 		<ul>
 			<li>
-				<a href='https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0B62Zu6ZNhDzROGUyM2U0MDQtZjMwMy00Y2ZhLWIwNmQtNDQwYTYzOGQ3NWMy&hl=en_US&pli=1' target="_blank" class="download">Exhibition Press Release English (pdf)</a>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QaU5hVDFNR2tROEtNbFRHSE8zY0pOdw' target="_blank" class="download">Press Kit (pdf)</a>
 			</li>
 			<li>
-				<a href='https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0B62Zu6ZNhDzRY2UxZjdhMjUtYzllMC00M2Y5LTg4MTYtNTA5YjU1YTg2Yzlh&hl=en_US&pli=1' target="_blank" class="download">Exhibition Press Release Deutsch (pdf)</a>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QdjFySHNqWjJTdkdINWNqUUZFakw0dw' target="_blank" class="download">Exhibition Press Release English (pdf)</a>
+			</li>
+			<li>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QNXlNb1ItSHVRVEtKLXBGMmNXLWtxQQ' target="_blank" class="download">Exhibition Press Release Deutsch (pdf)</a>
 			</li>
 			<li>
 				<a href='https://docs.google.com/leaf?id=0B62Zu6ZNhDzRZDAxZWIyMDUtZDMzOC00ZmVlLWFhYzctOGJkZTU5NTYyNmQx&hl=en_US' target="_blank" class="download">Press Images (high res)</a>
@@ -24,7 +27,7 @@
 				<a href='#' target="_blank" class="download">Exhibition Presentation (pdf)</a>
 			</li>-->
 			<li>
-				<a href='https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0B62Zu6ZNhDzRODQ4NzY1ZGUtMjcwNi00NzI1LTlkMDgtYzRjOWQwODkwOTAx&hl=en_US' target="_blank" class="download">Exhibition Information (pdf)</a>
+				<a href='https://docs.google.com/open?id=0B2cBMBKhPT1QSzhQTnVKbFhRdjZBVjBEY0NXa3A4UQ' target="_blank" class="download">Exhibition Information (pdf)</a>
 			</li>
 			<li>
 				<a href='https://docs.google.com/leaf?id=0B62Zu6ZNhDzRZWI1YWJjOGQtMGRhOS00Yjk1LThmMjYtNWFkYjkxMzUzMTAy&hl=en_US' target="_blank" class="download">Designer’s Portraits (high res)</a>
@@ -35,13 +38,13 @@
 
 	<div class="rightcolumn">
 		<div>
-			<h2>Press Contact</h2>
+			<h2>international pr & communication</h2>
 		</div>
-		<p>Anne Maier PR-<br/>
-			<a href="mailto:annemaier@berlin.de">annemaier@berlin.de</a><br/>
-			+49 (0)17 02 90 75 85 (mobile)<br/>
-			+49 (0)30 81 49 45 67 (phone)<br/>
-			+49 (0)30 81 49 45 68 (fax)<br/>
+		<p>Aboli Janine Lion-<br/>
+			<a href="ausstellung@zeitlos-berlin.de">ausstellung@zeitlos-berlin.de</a><br/>
+			+49 (0) 1577 1973 311 (mobile)<br/>
+			+49 (0) 30 - 31 51 56 31 (phone)<br/>
+			+49 (0) 30 - 31 51 56 32 (fax)<br/>
 		</p>
 
 		<h2>EXHIBITION INFO CONTACT</h2>

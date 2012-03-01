@@ -315,7 +315,7 @@ a:visited {
 	width:289px;
 	height:116px;
 	background:url('../img/sponsors_vanishingpoints.png') no-repeat;
-	margin: 40px 0 0 0 ;
+	margin: 23px 0 0 0 ;
 }
 
 .sponsors .zeitlos{
@@ -323,7 +323,7 @@ a:visited {
 	width:80px;
 	height:116px;
 	background:url('../img/sponsors_zeitlos.png') no-repeat;
-	margin:90px 0 90px 0;
+	margin:45px 0 10px 0;
 }
 
 .sponsors .brasilien{
@@ -332,6 +332,37 @@ a:visited {
 	height:100px;
 	background:url('../img/sponsors_brasilien.jpg') no-repeat;
 	margin:55px 0 50px 35px;
+}
+
+.sponsors .berlin-city-west{
+	width:282px;
+	height:45px;
+	background:url('../img/sponsors_berlin-city-west.jpg') no-repeat;
+	margin:0 0 50px 0;
+}
+
+.sponsors .stillwerk{
+	width:156px;
+	height:45px;
+	background:url('../img/sponsors_stillwerk.jpg') no-repeat;
+	float:left;
+	margin: 25px 0 0 71px;
+}
+
+.sponsors .design-miele{
+	width:107px;
+	height:100px;
+	background:url('../img/sponsors_design-miele.jpg') no-repeat;
+	float:left;
+	margin: 0 0 25px 0;
+}
+
+.sponsors .zitty{
+	width:258px;
+	height:60px;
+	background:url('../img/sponsors_zitty.jpg') no-repeat;
+	float:left;
+	margin: 10px 0 0 0;
 }
 
 /*video player*/
