@@ -4,7 +4,7 @@
 ?>
 
 <?php # FACEBOOK?>
-<?php echo $settings_options['facebook_like_url'];?>
+<?php display_facebook_like($settings_options['facebook_like_url'], $settings_options['facebook_app_id']);?>
 
 
 <?php # BOTTOM NAV?>
@@ -54,6 +54,8 @@
 
 
 	<!-- scripts concatenated and minified via build script -->
+	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/jquery.nivo.slider.pack.js"></script>
+	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/jquery.placeholder.min.js"></script>
 	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/plugins.js"></script>
 	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/script.js"></script>
 	<!-- end scripts -->

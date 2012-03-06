@@ -1,0 +1,8 @@
+Required Plugins:
+
+Search Custom Fields
+http://guff.szub.net/2006/04/21/search-custom-fields/
+
+Permalinks for Hierarchical Custom Post Types
+qTranslate
+WP Maintenance Mode

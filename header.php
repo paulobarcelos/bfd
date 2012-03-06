@@ -3,9 +3,8 @@
 	$settings_options = get_option('settings_options');
 
 	if( !$META_IMAGE ) $META_IMAGE =  get_bloginfo('stylesheet_directory') . 'img/default.png';
-
-#print_pre($settings_options);
-#print_pre($q_config);
+	if( !$META_FB_APP_ID ) $META_FB_APP_ID = $settings_options['facebook_app_id'];
+	if( !$META_FB_ADMINS ) $META_FB_ADMINS = $settings_options['facebook_admins'];
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
@@ -39,6 +38,14 @@
 
 	<?php if( isset ( $META_TYPE ) ) : if( $META_TYPE ) : ?>
 		<meta property="og:type" content="<?php echo $META_TYPE; ?>" />
+	<?php endif; endif;?>
+
+	<?php if( isset ( $META_FB_ADMINS ) ) : if( $META_FB_ADMINS ) : ?>
+		<meta property="fb:admins" content="<?php echo $META_FB_ADMINS; ?>" />
+	<?php endif; endif;?>
+
+	<?php if( isset ( $META_FB_APP_ID ) ) : if( $META_FB_APP_ID ) : ?>
+		<meta property="fb:app_id" content="<?php echo $META_FB_APP_ID; ?>" />
 	<?php endif; endif;?>
 	
 
@@ -173,6 +180,10 @@
 			<span><?php echo $settings_options['exhibition_address_' . $q_config['language']];?></span>
 		</div>
 
+		<?php # PRODUCT SEARCH ?>
+		<form action="/" method="get">
+			<input type="hidden" name="post_type" value="product" />
+			<input type="hidden" name="key" value="product_material_en" />
+		    <input type="text" name="s" placeholder="<?php echo $settings_options['product_search_internal_title_' . $q_config['language']];?>" value="<?php the_search_query(); ?>" />
+		</form>
 	</header>
-
-	<?php #get_search_form(); ?>

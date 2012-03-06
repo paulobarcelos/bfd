@@ -752,10 +752,9 @@
 				'name' => 'File '. ($i + 1),
 				'desc' => '',
 				'id' => 'download_file_'. $i . '_' . $language_code,
-				'type' => 'text_medium'
-				/*'type' => 'file',
+				'type' => 'file',
 				'save_id' => true,
-				'allow' => array( 'url' )*/
+				//'allow' => array( 'attachment', 'url' )
 			);
 		return $array;
 	}
@@ -805,6 +804,18 @@
 		<iframe src="http://player.vimeo.com/video/<?php echo $id;?>" width="<?php echo $width;?>" height="<?php echo $height;?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		<?php
 	}
+/**
+* display_facebook_like
+* @param $url - url to like
+* @param $app_id - facebook app id
+*/
+	function display_facebook_like( $url, $app_id ) {
+		$url = urlencode($url);
+		?>
+			<iframe src="//www.facebook.com/plugins/like.php?<?php echo ($url) ? 'href='.$url : '';?>&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35<?php echo ($app_id) ? '&amp;appId=' . $app_id : '';?>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
+		<?php
+	}
+
 
 /**
 * Hide admin bar
@@ -1036,6 +1047,14 @@ if ( function_exists( 'add_image_size' ) ) {
 					<input type="text" size="40" name="settings_options[twitter_user]" value="<?php echo $options['twitter_user']; ?>" />
 					<br>
 					
+					<h3>Facebook App ID</h3>
+					<input type="text" size="40" name="settings_options[facebook_app_id]" value="<?php echo $options['facebook_app_id']; ?>" />
+					<br>
+
+					<h3>Facebook Admins</h3>
+					<input type="text" size="40" name="settings_options[facebook_admins]" value="<?php echo $options['facebook_admins']; ?>" />
+					<br>
+
 					<h3>Facebook Like URL</h3>
 					<input type="text" size="40" name="settings_options[facebook_like_url]" value="<?php echo $options['facebook_like_url']; ?>" />
 					<br>
