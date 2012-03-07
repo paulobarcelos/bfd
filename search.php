@@ -8,7 +8,7 @@
 <article>
 	<?php # HEADER ?>
 	<header>
-		<h1><?php echo$settings_options['product_search_internal_title_' . $q_config['language']]  . ': ' . get_search_query();?></h1>
+		<h1><?php echo $settings_options['product_search_internal_title_' . $q_config['language']]  . ': ' . get_search_query();?></h1>
 	</header>
 
 

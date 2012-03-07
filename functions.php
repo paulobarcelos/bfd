@@ -1,5 +1,6 @@
 <?php 
-
+// INCLUDES
+require_once('lib/twitter/twitter.class.php');
 // CUSTOM POST TYPES
 /**
 * Info
@@ -1043,8 +1044,8 @@ if ( function_exists( 'add_image_size' ) ) {
 					<input type="text" size="10" name="settings_options[video_vimeo_id]" value="<?php echo $options['video_vimeo_id']; ?>" />
 					<br>
 
-					<h3>Twitter user</h3>
-					<input type="text" size="40" name="settings_options[twitter_user]" value="<?php echo $options['twitter_user']; ?>" />
+					<h3>Twitter News Search Term</h3>
+					<input type="text" size="40" name="settings_options[twitter_search_term]" value="<?php echo $options['twitter_search_term']; ?>" />
 					<br>
 					
 					<h3>Facebook App ID</h3>

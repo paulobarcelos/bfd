@@ -67,8 +67,25 @@
 <?php display_vimeo_video( $settings_options['video_vimeo_id'], 100, 100);?>
 
 <?php # NEWS?>
-<section>
-	<h1><?php echo $settings_options['news_internal_title_' . $q_config['language']];?></h1>
-</section>
+<?php
+	$twitter = new Twitter;
+	$results = array();
+	try {
+		$results = $twitter->search($settings_options['twitter_search_term']);
+	} catch (Exception $e) {}
+?>
+<?php if( $results ):?>
+	<section>
+		<h1><?php echo $settings_options['news_internal_title_' . $q_config['language']];?></h1>
+		<ul>
+		
+		<?php foreach ($results as $result): ?>
+			<li><span class="date"><?php echo date("d/m/y ", strtotime($result->created_at)) ?></span>
+				<?php echo Twitter::clickable($result->text) ?>			
+			</li>
+		<?php endforeach ?>
+		</ul>
+	</section>
+<?php endif;?>
 
 <?php get_footer(); ?>
