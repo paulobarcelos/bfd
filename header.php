@@ -183,7 +183,7 @@
 		<?php # PRODUCT SEARCH ?>
 		<form action="/" method="get">
 			<input type="hidden" name="post_type" value="product" />
-			<input type="hidden" name="key" value="product_material_en" />
+			<input type="hidden" name="key" value="_search" />
 		    <input type="text" name="s" placeholder="<?php echo $settings_options['product_search_internal_title_' . $q_config['language']];?>" value="<?php the_search_query(); ?>" />
 		</form>
 	</header>

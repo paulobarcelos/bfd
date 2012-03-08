@@ -451,6 +451,39 @@ require_once('lib/twitter/twitter.class.php');
 				);
 		return $array;
 	}
+	/**
+	* Add a action hook when the post is edited, saving all the keywords in a separeted custom field used for searching
+	*/
+	function generate_product_search_terms($post_ID)  {
+		global $q_config;
+		if( get_post_type( $post_ID ) == 'product' ){
+			$custom = get_post_custom( $post_ID );
+			$terms = '';
+			$terms .= get_the_title( $post_ID ) . ' ';
+			$terms .= get_the_content( $post_ID ) . ' ';
+
+			if( isset( $custom['designed_by'] ) ){
+				$terms .= get_the_title( $custom['designed_by'][0] ) . ' ';
+			}
+
+			foreach ($q_config['enabled_languages'] as $language_code ) {
+				if( isset( $custom['product_date_' . $language_code] ) ){
+					$terms .= $custom['product_date_' . $language_code][0] . ' ';
+				}
+				if( isset( $custom['product_material_' . $language_code] ) ){
+					$terms .= $custom['product_material_' . $language_code][0] . ' ';
+				}
+				if( isset( $custom['product_specifications_' . $language_code] ) ){
+					$terms .= $custom['product_specifications_' . $language_code][0] . ' ';
+				}
+			}
+
+			$terms = str_replace('-', ' ', sanitize_title( $terms ) );
+			update_post_meta($post_ID, '_search', $terms);
+		}
+	}
+
+	add_action('edit_post', 'generate_product_search_terms');
 /**
 * Event
 */
@@ -1045,7 +1078,7 @@ if ( function_exists( 'add_image_size' ) ) {
 					<br>
 
 					<h3>Twitter News Search Term</h3>
-					<input type="text" size="40" name="settings_options[twitter_search_term]" value="<?php echo $options['twitter_search_term']; ?>" />
+					<input type="text" size="40" name="settings_options[twitter_search_term]" value="<?php echo $options['twitter_search_term	']; ?>" />
 					<br>
 					
 					<h3>Facebook App ID</h3>
