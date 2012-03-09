@@ -2,50 +2,60 @@
 	global $q_config;
 	$settings_options = get_option('settings_options');
 ?>
-
-<?php # FACEBOOK?>
-<?php display_facebook_like($settings_options['facebook_like_url'], $settings_options['facebook_app_id']);?>
-
-
-<?php # BOTTOM NAV?>
-<nav>
-	<ul>
-		<?php 
-			$nav_items = array();
-			$item = $settings_options['menu_item_footer_1_id'];
-			if($item) $nav_items[] = $item;
-			$item = $settings_options['menu_item_footer_2_id'];
-			if($item) $nav_items[] = $item;
-			$item = $settings_options['menu_item_footer_3_id'];
-			if($item) $nav_items[] = $item;
-			$item = $settings_options['menu_item_footer_4_id'];
-			if($item) $nav_items[] = $item;
-		 ?>
-		<?php foreach ($nav_items as $nav_item): ?>
-			<?php $item_url = get_permalink( $nav_item );?>
-			<?php $item_active = ( $item_url == $q_config['url_info']['url'] );?>
-			<li class="<?php echo ($item_active) ? 'active' : '';?>">
-				<?php if (!$item_active):?><a href="<?php echo $item_url;?>"><?php endif;?>
-					<span><?php echo get_the_title( $nav_item );?></span>
-				<?php if (!$item_active):?></a><?php endif;?>
-			</li>
-		<?php endforeach;?>
-		<?php # MAILING ?>
-		<li>
-			<a href="<?php echo $settings_options['mailing_url'];?>">
-				<span><?php echo $settings_options['mailing_internal_title_' . $q_config['language']];?></span>
-			</a>
-		</li>
-	</ul>
-</nav>
+	<footer id="footer" class="clearfix">
+		<?php # FACEBOOK?>
+		<div class='g1'>
+			<?php display_facebook_like($settings_options['facebook_like_url'], $settings_options['facebook_app_id']);?>
+		</div>
 
 
-<?php # COPYRIGHT?>
-<span><?php echo $settings_options['copyright_internal_title_' . $q_config['language']];?></span>
+		<?php # BOTTOM NAV?>
+		<div class='g5'>
+			<nav>
+				<ul>
+					<?php 
+						$nav_items = array();
+						$item = $settings_options['menu_item_footer_1_id'];
+						if($item) $nav_items[] = $item;
+						$item = $settings_options['menu_item_footer_2_id'];
+						if($item) $nav_items[] = $item;
+						$item = $settings_options['menu_item_footer_3_id'];
+						if($item) $nav_items[] = $item;
+						$item = $settings_options['menu_item_footer_4_id'];
+						if($item) $nav_items[] = $item;
+					 ?>
+					<?php foreach ($nav_items as $nav_item): ?>
+						<?php $item_url = get_permalink( $nav_item );?>
+						<?php $item_active = ( $item_url == $q_config['url_info']['url'] );?>
+						<li class="<?php echo ($item_active) ? 'active' : '';?>">
+							<?php if (!$item_active):?><a href="<?php echo $item_url;?>"><?php endif;?>
+								<span><?php echo get_the_title( $nav_item );?></span>
+							<?php if (!$item_active):?></a><?php endif;?>
+						</li>
+					<?php endforeach;?>
+					<?php # MAILING ?>
+					<li>
+						<a href="<?php echo $settings_options['mailing_url'];?>">
+							<span><?php echo $settings_options['mailing_internal_title_' . $q_config['language']];?></span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 
-<?php # LOGOS?>
-<a class="vanishing-points " href="<?php echo $settings_options['vanishing_points_url'];?>">Vanishing Points</a>
-<a class="zeitlos " href="<?php echo $settings_options['zeitlos_url'];?>">Zeitlos</a>
+		<?php # COPYRIGHT?>
+		<div class='g1'>
+			<span><?php echo $settings_options['copyright_internal_title_' . $q_config['language']];?></span>
+		</div>
+
+		<?php # LOGOS?>
+		<div class='g1'>
+			<a class="vanishing-points " href="<?php echo $settings_options['vanishing_points_url'];?>">Vanishing Points</a>
+			<a class="zeitlos " href="<?php echo $settings_options['zeitlos_url'];?>">Zeitlos</a>
+		</div>
+	</footer>
+
+</div><?php #END .wrapper?>
 
 
 <?php # SCRIPTS?>
@@ -54,6 +64,7 @@
 
 
 	<!-- scripts concatenated and minified via build script -->
+	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/jquery.flexslider-min.js"></script>
 	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/jquery.nivo.slider.pack.js"></script>
 	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/jquery.placeholder.min.js"></script>
 	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/plugins.js"></script>

@@ -10,8 +10,8 @@
 
 <?php # SLIDEDSHOW ?>
 <?php $products = get_posts( array('post_type' => 'product') );?>
-<section>
-	<ul>
+<nav id="slideshow" class="clearfix flexslider">
+	<ul class="g8 slides">
 		<?php foreach ($products as $product) : ?>
 			<?php $product_custom =  get_post_custom($product->ID);?>
 			<?php if( isset( $product_custom['feature_in_slideshow'] ) ) : if( $product_custom['feature_in_slideshow'][0] == 'on' ) : ?>
@@ -31,7 +31,7 @@
 								</a>
 							</div>
 							<a href="<?php echo get_permalink( $product_designer->ID );?>">
-								<img src='<?php echo $product_image[0];?>' alt='<?php echo __($product->post_title);?>' width='<?php echo $product_image[1];?>' height='<?php echo $product_image[2];?>'/>
+								<img src='<?php echo $product_image[0];?>' alt='<?php echo __($product->post_title);?>' width='100%'/>
 							</a>
 						</article>
 					</li>
@@ -39,53 +39,59 @@
 			<?php endif; endif;?>
 		<?php endforeach;?>
 	</ul>
-</section>
+</nav>
 
 <?php # CATEGORIES ?>
 <?php $categories = get_posts( array('post_type' => 'category') );?>
-<section>
-	<ul>
+<nav class="clearfix">
+	<ul class="modules">
 		<?php foreach ($categories as $category) : ?>
 			<?php $category_custom =  get_post_custom($category->ID);?>
-			<?php if( isset( $category_custom['featured_image_id'] ) ) : $category_image = wp_get_attachment_image_src( $category_custom['featured_image_id'][0], 'thumbnail' ); endif; ?>
+			<?php if( isset( $category_custom['featured_image_id'] ) ) : $category_image = wp_get_attachment_image_src( $category_custom['featured_image_id'][0], 'tb' ); endif; ?>
 			<?php if( $category_image ):?>
-				<li>
+				<li class="g2">
 					<article>
 						<a href="<?php echo get_permalink( $category->ID );?>">
 							<h1><?php echo __($category->post_title);?></h1>
-							<img src='<?php echo $category_image[0];?>' alt='<?php echo __($category->post_title);?>' width='<?php echo $category_image[1];?>' height='<?php echo $category_image[2];?>'/>
+							<img src='<?php echo $category_image[0];?>' alt='<?php echo __($category->post_title);?>' width='100%'/>
 						</a>
 					</article>
 				</li>
 			<?php endif;?>
 		<?php endforeach;?>
 	</ul>
-</section>
+</nav>
 
+<div class="clearfix">
+	<?php # VIDEO?>
+	<div class="g5">
+		<?php display_vimeo_video( $settings_options['video_vimeo_id'], '100%', '300');?>
+	</div>
 
-<?php # VIDEO?>
-<?php display_vimeo_video( $settings_options['video_vimeo_id'], 100, 100);?>
-
-<?php # NEWS?>
-<?php
-	$twitter = new Twitter;
-	$results = array();
-	try {
-		$results = $twitter->search($settings_options['twitter_search_term']);
-	} catch (Exception $e) {}
-?>
-<?php if( $results ):?>
-	<section>
-		<h1><?php echo $settings_options['news_internal_title_' . $q_config['language']];?></h1>
-		<ul>
-		
-		<?php foreach ($results as $result): ?>
-			<li><span class="date"><?php echo date("d/m/y ", strtotime($result->created_at)) ?></span>
-				<?php echo Twitter::clickable($result->text) ?>			
-			</li>
-		<?php endforeach ?>
-		</ul>
-	</section>
-<?php endif;?>
-
+	<?php # NEWS?>
+	<div class="g3">
+		<?php
+			$twitter = new Twitter;
+			$results = array();
+			try {
+				$results = $twitter->search($settings_options['twitter_search_term']);
+			} catch (Exception $e) {}
+		?>
+		<?php if( $results ):?>
+			<section id='news'>
+				<h1><?php echo $settings_options['news_internal_title_' . $q_config['language']];?></h1>
+				<ul>
+				
+				<?php $i = 0; foreach ($results as $result): ?>
+					<?php if($i < 3):?>
+						<li><span class="date"><?php echo date("d/m/y ", strtotime($result->created_at)) ?></span>
+							<?php echo Twitter::clickable($result->text) ?>			
+						</li>
+					<?php endif;?>
+				<?php $i++; endforeach; ?>
+				</ul>
+			</section>
+		<?php endif;?>
+	</div>
+</div>
 <?php get_footer(); ?>

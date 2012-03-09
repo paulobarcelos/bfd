@@ -846,7 +846,7 @@ require_once('lib/twitter/twitter.class.php');
 	function display_facebook_like( $url, $app_id ) {
 		$url = urlencode($url);
 		?>
-			<iframe src="//www.facebook.com/plugins/like.php?<?php echo ($url) ? 'href='.$url : '';?>&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35<?php echo ($app_id) ? '&amp;appId=' . $app_id : '';?>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
+			<iframe src="//www.facebook.com/plugins/like.php?<?php echo ($url) ? 'href='.$url : '';?>&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21<?php echo ($app_id) ? '&amp;appId=' . $app_id : '';?>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width: 90px; height:21px;" allowTransparency="true"></iframe>
 		<?php
 	}
 
@@ -881,8 +881,8 @@ require_once('lib/twitter/twitter.class.php');
 // CUSTOM IMAGE SIZES --------------------------------------------------------------
 if ( function_exists( 'add_image_size' ) ) { 
 	add_image_size( 'slideshow', 864, 484, true ); 
-	add_image_size( 'medium', 532, 298, true );
-	add_image_size( 'thumbnail', 211, 118, true );
+	add_image_size( 'side', 532, 298, true );
+	add_image_size( 'tb', 211, 118, true );
 	add_image_size( 'mini', 105, 59, true );
 }
 

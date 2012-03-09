@@ -1,5 +1,9 @@
 $(function(){
     $('input[placeholder], textarea[placeholder]').placeholder();
+    $('.flexslider').flexslider({
+        directionNav: false,
+        controlNav: false, 
+    });
     $('.nivoSlider').nivoSlider({
     	effect:"fade",
     	slices: 1, // For slice animations
