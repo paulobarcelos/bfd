@@ -465,6 +465,7 @@ require_once('lib/twitter/twitter.class.php');
 	function generate_product_search_terms($post_ID)  {
 		global $q_config;
 		if( get_post_type( $post_ID ) == 'product' ){
+			$post = get_post($post_ID);
 			$custom = get_post_custom( $post_ID );
 			$terms = '';
 			$terms .= get_the_title( $post_ID ) . ' ';
@@ -472,6 +473,12 @@ require_once('lib/twitter/twitter.class.php');
 
 			if( isset( $custom['designed_by'] ) ){
 				$terms .= get_the_title( $custom['designed_by'][0] ) . ' ';
+			}
+
+			$parent_id = $post->post_parent;
+
+			if( $parent_id ){
+				$terms .= get_the_title( $parent_id ) . ' ';
 			}
 
 			foreach ($q_config['enabled_languages'] as $language_code ) {
