@@ -1,6 +1,12 @@
 <?php
 	global $q_config, $META_TITLE, $META_DESCRIPTION, $META_URL, $META_IMAGE, $META_TYPE;
 	$settings_options = get_option('settings_options');
+	if( isset($settings_options['maintenece_mode'])){
+		if($settings_options['maintenece_mode'] == 'on'){
+			echo '<meta HTTP-EQUIV="REFRESH" content="0; url=/exhibition/en">';
+	  		exit();
+		}
+	}
 
 	if( !$META_IMAGE ) $META_IMAGE =  get_bloginfo('stylesheet_directory') . '/img/default.png';
 	if( !$META_FB_APP_ID ) $META_FB_APP_ID = $settings_options['facebook_app_id'];

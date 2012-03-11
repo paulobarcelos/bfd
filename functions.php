@@ -886,11 +886,11 @@ require_once('lib/twitter/twitter.class.php');
 /**
 * Redirect to exhibition page when on maintence mode
 */
-	function maintece_mode_redirect() {
+/*	function maintece_mode_redirect() {
 	    echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://brazilianfurnituredesign.com/exhibition/en">';
 	    exit();
 	}
-	add_action( 'wm_head', 'maintece_mode_redirect' );
+	add_action( 'wm_head', 'maintece_mode_redirect' );*/
 
 
 // CUSTOM IMAGE SIZES --------------------------------------------------------------
@@ -1122,6 +1122,10 @@ if ( function_exists( 'add_image_size' ) ) {
 
 					<h3>Google Analytics Tracker</h3>
 					<input type="text" size="40" name="settings_options[google_analytics_tracker]" value="<?php echo $options['google_analytics_tracker']; ?>" />
+					<br>
+
+					<h3>Maintenece Mode</h3>
+					<input type="text" size="40" name="settings_options[maintenece_mode]" value="<?php echo $options['maintenece_mode']; ?>" />
 					<br>
 
 
