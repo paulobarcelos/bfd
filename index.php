@@ -80,7 +80,7 @@
 		?>
 		<?php if( $results ):?>
 			<section id='news'>
-				<h1><?php echo $settings_options['news_internal_title_' . $q_config['language']];?></h1>
+				<h1 class="brackets"><?php echo $settings_options['news_internal_title_' . $q_config['language']];?></h1>
 				<ul>
 				
 				<?php $i = 0; foreach ($results as $result): ?>

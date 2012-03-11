@@ -225,12 +225,23 @@ td { vertical-align: top; }
 /* #news */
 	#news {
 		text-align: right;
+		color: #000;
+	}
+	#news h1{
+		font-size: 20px;
 	}
 	#news ul{
 		list-style: none;
 	}
+	#news li{
+		font-size: 12px;
+		margin-bottom: 20px;
+	}
 	#news .date{
 		display: block;
+		color: #999;
+		font-size: 15px;
+		margin-bottom: 10px;
 	}
 /* #footer */
 	#footer{
@@ -277,7 +288,37 @@ td { vertical-align: top; }
 		margin-top: 22px;
 		font-size: 10px;
 	}
-	
+/* #productcontent*/
+	#productcontent{
+		float: right;
+		text-align: right;
+		color: #000;
+		text-transform: lowercase;
+	}
+	#productcontent a{
+		color: #999;
+	}
+	#productcontent h1{
+		font-size: 20px;
+		text-transform: none;
+	}
+	#productcontent .details{
+		margin-top: -10px;
+		font-size: 12px;
+		line-height: 20px;
+	}
+	@media only screen and (max-width: 700px) {
+		#bigimage {
+			display: none;
+		}
+	}
+	.smallimages {
+		margin-top: 20px;
+	}
+	.smallimages img{
+		cursor: pointer;
+	}
+
 /* .topbar */
 	.topbar{
 		background-color: #000;
@@ -476,42 +517,7 @@ td { vertical-align: top; }
 	@media only screen and (max-width: 320px) {
 		.single .video{	height: 170px;	}
 	}
-/* single-product */
-	.single-product .nivoSliderWrapper {
-		height:416px; 
-	}
-	.single-product .nivoSlider {
-		width:532px;
-		height:298px; 
-	}
-	.single-product .nivo-controlNav {
-		top: 298px;
-		height:118px; 
-	}
 
-/* nivoSlider */
-	.nivoSlider img {
-		position:absolute;
-		top:0px;
-		left:0px;
-		display:none;
-	}
-	.nivoSlider .nivo-slice{
-		position:absolute;
-		top:0px;
-		left:0px;
-	}
-	.nivoSlider .nivo-controlNav img {
-		position:relative;
-		display:inline-block;
-	}
-	.nivoSlider {
-		position:relative;
-		background:url(../img/loading.gif) no-repeat 50% 50%;
-	}
-	.nivo-controlNav {
-		position:relative;
-	}
 /* FlexSlider */
 	.flexslider {width: 100%; margin: 0; padding: 0;}
 	.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
