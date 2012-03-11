@@ -14,7 +14,7 @@
 								<h1><?php echo get_the_title( $designer->ID );?></h1>
 								<?php if( isset( $designer_custom['featured_image_id'] ) ) : ?>
 									<?php $product_image = wp_get_attachment_image_src( $designer_custom['featured_image_id'][0], 'tb' ); ?>
-									<img src="<?php echo $product_image[0];?>" width="<?php echo $product_image[1];?>" height="<?php echo $product_image[2];?>" alt="<?php echo get_the_title( $designer->ID );?>"/>
+									<img src="<?php echo $product_image[0];?>" width="100%" alt="<?php echo get_the_title( $designer->ID );?>"/>
 								<?php endif; ?>
 							</a>
 						</article>
