@@ -1089,8 +1089,11 @@ if ( function_exists( 'add_image_size' ) ) {
 					<!-- Other -->
 					<h2>Other</h2>
 					<h3>Video Vimeo ID</h3>
-					<input type="text" size="10" name="settings_options[video_vimeo_id]" value="<?php echo $options['video_vimeo_id']; ?>" />
-					<br>
+					<?php foreach ($q_config['enabled_languages'] as $language_code ):?>
+						<span><?php echo $q_config['language_name'][$language_code];?></span><br>
+						<input type="text" size="10" name="settings_options[video_vimeo_id_<?php echo $language_code;?>]" value="<?php echo $options['video_vimeo_id_'.$language_code]; ?>" />
+						<br>
+					<?php endforeach;?>
 
 					<h3>Twitter News Search Term</h3>
 					<input type="text" size="40" name="settings_options[twitter_search_term]" value="<?php echo $options['twitter_search_term']; ?>" />
@@ -1155,5 +1158,62 @@ if ( function_exists( 'add_image_size' ) ) {
 		}
 		return $links;
 	}
+
+
+/**
+* Hack to fix problem with qtranslate removing tags from the editor.
+* Note there is also a fix on the wp-content/plugins/qtranslate/qtranslate_wphacks.php 
+* More info: http://www.teslina.com/748/wordpress/qtranslate-code-syntax-bugfix/#comment-6
+*/
+
+// Remove WordPress Auto P
+remove_filter( 'the_content', 'wpautop' );
+
+// function aus advanced tinymce plugin
+if ( ! function_exists('tmce_replace') ) {
+        function tmce_replace() {
+                $tadv_options = get_option('tadv_options', array());
+                $tadv_plugins = get_option('tadv_plugins', array());
+
+?>
+<script type="text/javascript">
+if ( typeof(jQuery) != 'undefined' ) {
+  jQuery('body').bind('afterPreWpautop', function(e, o){
+    o.data = o.unfiltered
+    .replace(/caption\]\ +?<\/object>/g, function(a) {
+      return a.replace(/[\r\n]+/g, ' ');
+    });
+  }).bind('afterWpautop', function(e, o){
+    o.data = o.unfiltered;
+  });
+}
+</script>
+<?php
+        }
+        add_action( 'after_wp_tiny_mce', 'tmce_replace' );
+}
+// eof advanced tinymce plugin
+
+// http://tinymce.moxiecode.com/wiki.php/Configuration
+function teslina_tinymce_config( $init ) {
+
+// Change code cleanup/content filtering config
+
+    // Don't remove line breaks
+    $init['remove_linebreaks'] = false;
+    // Convert newline characters to BR tags
+    //$init['convert_newlines_to_brs'] = true;
+    //$init['force_br_newlines '] = true;
+
+    // With this option set to false, the line breaks are stripped from the HTML source.
+    $init['apply_source_formatting'] = true;
+    // Preserve tab/space whitespace
+    $init['preformatted'] = true;
+    // Do not remove redundant BR tags
+    $init['remove_redundant_brs'] = false;
+
+    return $init;
+}
+add_filter('tiny_mce_before_init', 'teslina_tinymce_config');
 
 ?>

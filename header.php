@@ -1,7 +1,7 @@
 <?php
 	global $q_config, $META_TITLE, $META_DESCRIPTION, $META_URL, $META_IMAGE, $META_TYPE;
 	$settings_options = get_option('settings_options');
-	if( isset($settings_options['maintenece_mode'])){
+	if( !is_user_logged_in() && isset($settings_options['maintenece_mode'])){
 		if($settings_options['maintenece_mode'] == 'on'){
 			echo '<meta HTTP-EQUIV="REFRESH" content="0; url=/exhibition/en">';
 	  		exit();

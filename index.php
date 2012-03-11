@@ -66,7 +66,7 @@
 <div class="clearfix">
 	<?php # VIDEO?>
 	<div id="homevideo" class="g5">
-		<?php display_vimeo_video( $settings_options['video_vimeo_id'], '100%', '100%');?>
+		<?php display_vimeo_video( $settings_options['video_vimeo_id_' . $q_config['language']], '100%', '100%');?>
 	</div>
 
 	<?php # NEWS?>
