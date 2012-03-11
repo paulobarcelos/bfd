@@ -168,7 +168,7 @@
 
 						<?php qtrans_generateLanguageSelectCode();?>
 					</div>
-					<div class="g2">
+					<div class="_g2">
 						<?php # PRODUCT SEARCH ?>
 						<form action="/" method="get">
 							<input type="hidden" name="post_type" value="product" />

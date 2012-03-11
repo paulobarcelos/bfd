@@ -4,13 +4,13 @@
 ?>
 	<footer id="footer" class="clearfix">
 		<?php # FACEBOOK?>
-		<div class='g1'>
+		<div id="facebook" class='g1'>
 			<?php display_facebook_like($settings_options['facebook_like_url'], $settings_options['facebook_app_id']);?>
 		</div>
 
 
 		<?php # BOTTOM NAV?>
-		<div class='g5'>
+		<div class='g4'>
 			<nav>
 				<ul>
 					<?php 
@@ -29,29 +29,29 @@
 						<?php $item_active = ( $item_url == $q_config['url_info']['url'] );?>
 						<li class="<?php echo ($item_active) ? 'active' : '';?>">
 							<?php if (!$item_active):?><a href="<?php echo $item_url;?>"><?php endif;?>
-								<span><?php echo get_the_title( $nav_item );?></span>
+								<span class="brackets"><?php echo get_the_title( $nav_item );?></span>
 							<?php if (!$item_active):?></a><?php endif;?>
 						</li>
 					<?php endforeach;?>
 					<?php # MAILING ?>
 					<li>
 						<a href="<?php echo $settings_options['mailing_url'];?>">
-							<span><?php echo $settings_options['mailing_internal_title_' . $q_config['language']];?></span>
+							<span  class="brackets"><?php echo $settings_options['mailing_internal_title_' . $q_config['language']];?></span>
 						</a>
 					</li>
 				</ul>
 			</nav>
 		</div>
 
-		<?php # COPYRIGHT?>
-		<div class='g1'>
-			<span><?php echo $settings_options['copyright_internal_title_' . $q_config['language']];?></span>
-		</div>
+		<div class='g3'>
+			<?php # COPYRIGHT?>
+		
+			<span id="copyright"><?php echo $settings_options['copyright_internal_title_' . $q_config['language']];?></span>
 
-		<?php # LOGOS?>
-		<div class='g1'>
-			<a class="vanishing-points " href="<?php echo $settings_options['vanishing_points_url'];?>">Vanishing Points</a>
-			<a class="zeitlos " href="<?php echo $settings_options['zeitlos_url'];?>">Zeitlos</a>
+			<?php # LOGOS?>
+			<a class="zeitlos ir" href="<?php echo $settings_options['zeitlos_url'];?>">Zeitlos</a>	
+			<a class="vanishingpoints ir" href="<?php echo $settings_options['vanishing_points_url'];?>">Vanishing Points</a>
+			
 		</div>
 	</footer>
 

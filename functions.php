@@ -730,8 +730,8 @@ require_once('lib/twitter/twitter.class.php');
 					'name' => 'Content ('.$q_config['language_name'][$language_code].')',
 					'desc' => '',
 					'id'   => 'extra_text_1_'.$language_code,
-					'type' => 'wysiwyg',
-					'options' => array(
+					'type' => 'textarea_small',
+					/*'options' => array(
 					    //'wpautop' => true, // use wpautop?
 					    'media_buttons' => false, // show insert/upload button(s)
 					    //'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
@@ -739,11 +739,11 @@ require_once('lib/twitter/twitter.class.php');
 					    //'tabindex' => '',
 					    //'editor_css' => '', // intended for extra types for both visual and HTML editors buttons, needs to include the <type> tags, can use "scoped".
 					   // 'editor_class' => '', // add extra class(es) to the editor textarea
-					   'teeny' => true, // output the minimal editor config used in Press This
+					  // 'teeny' => true, // output the minimal editor config used in Press This
 					   // 'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
-					    'tinymce' => false, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+					   // 'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
 					    //'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()	
-					),
+					)*/
 				);
 		return $array;
 	}
@@ -1078,7 +1078,7 @@ if ( function_exists( 'add_image_size' ) ) {
 					<br>
 
 					<h3>Twitter News Search Term</h3>
-					<input type="text" size="40" name="settings_options[twitter_search_term]" value="<?php echo $options['twitter_search_term	']; ?>" />
+					<input type="text" size="40" name="settings_options[twitter_search_term]" value="<?php echo $options['twitter_search_term']; ?>" />
 					<br>
 					
 					<h3>Facebook App ID</h3>

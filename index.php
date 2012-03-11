@@ -10,7 +10,8 @@
 
 <?php # SLIDEDSHOW ?>
 <?php $products = get_posts( array('post_type' => 'product') );?>
-<nav id="slideshow" class="clearfix flexslider">
+
+<nav id="slideshow" class="row flexslider">
 	<ul class="g8 slides">
 		<?php foreach ($products as $product) : ?>
 			<?php $product_custom =  get_post_custom($product->ID);?>
@@ -64,8 +65,8 @@
 
 <div class="clearfix">
 	<?php # VIDEO?>
-	<div class="g5">
-		<?php display_vimeo_video( $settings_options['video_vimeo_id'], '100%', '300');?>
+	<div id="homevideo" class="g5">
+		<?php display_vimeo_video( $settings_options['video_vimeo_id'], '100%', '100%');?>
 	</div>
 
 	<?php # NEWS?>
@@ -94,4 +95,5 @@
 		<?php endif;?>
 	</div>
 </div>
+
 <?php get_footer(); ?>
