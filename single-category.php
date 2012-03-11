@@ -2,32 +2,36 @@
 <?php get_header(); ?>
 <article>
 	<?php # HEADER ?>
-	<header>
-		<h1><?php echo get_the_title( $current_post->ID );?></h1>
-	</header>
+	<div class="clearfix">
+		<div class="g8">
+			<header>
+				<h1 class="brackets"><?php echo get_the_title( $current_post->ID );?></h1>
+			</header>
+		</div>
+	</div>
 
 
 	<?php #PRODUCTS ?>
 	<?php $products = get_children( array( 'post_parent' => $current_post->ID, 'post_type' => 'product' ) ); ?>
 	<?php if( count( $products ) ): ?>
-		<section>
-			<ul>
+		<nav class="clearfix">
+			<ul class="modules clearfix">
 				<?php foreach ( $products as $product ):?>
 					<?php $product_custom = get_post_custom($product->ID);?>
-					<li>
+					<li class="g2">
 						<article>
 							<a href="<?php echo get_permalink( $product->ID );?>">
-								<h3><?php echo get_the_title( $product->ID );?></h3>
+								<h1><?php echo get_the_title( $product->ID );?></h1>
 								<?php if( isset( $product_custom['featured_image_id'] ) ) : ?>
-									<?php $product_image = wp_get_attachment_image_src( $product_custom['featured_image_id'][0], 'thumbnail' ); ?>
-									<img src="<?php echo $product_image[0];?>" width="<?php echo $product_image[1];?>" height="<?php echo $product_image[2];?>" alt="<?php echo get_the_title( $product->ID );?>"/>
+									<?php $product_image = wp_get_attachment_image_src( $product_custom['featured_image_id'][0], 'tb' ); ?>
+									<img src="<?php echo $product_image[0];?>" width="100%" alt="<?php echo get_the_title( $product->ID );?>"/>
 								<?php endif; ?>
 							</a>
 						</article>
 					</li>
 				<?php endforeach;?>
 			</ul>
-		</section>
+		</nav>
 	<?php endif;?>
 
 
