@@ -2,17 +2,29 @@
 <?php get_header(); ?>
 <article>
 	<?php # HEADER ?>
-	<header>
-		<h1><?php echo get_the_title( $current_post->ID );?></h1>
-	</header>
-
-	<?php #VIDEO ?>
-	<?php if( isset( $post_custom['vimeo_video_id'] ) ) $vimeo = $post_custom['vimeo_video_id'][0]; ?>
-	<?php if( $vimeo ): ?>
-		<div class="video">
-			<?php display_vimeo_video( $vimeo, '100%', '100%');?>
+	<div class="clearfix">
+		<div class="g8">
+			<header>
+				<h1 class="brackets"><?php echo get_the_title( $current_post->ID );?></h1>
+			</header>
 		</div>
-	<?php endif;?>
+	</div>
+
+	<?php #VIDEO OR IMAGE?>
+	<div class="clearfix">
+		<div class="emptyg1">&nbsp</div>
+		<?php if( isset( $post_custom['vimeo_video_id_' . $q_config['language']] ) ) $vimeo = $post_custom['vimeo_video_id_' . $q_config['language']][0]; ?>
+		<?php if( $vimeo ): ?>
+			<div class="g6 video">
+				<?php display_vimeo_video( $vimeo, '100%', '100%');?>
+			</div>
+		<?php elseif ( isset( $post_custom['featured_image_id'] ) ) : $image = wp_get_attachment_image_src( $post_custom['featured_image_id'][0], 'slideshow' );?>
+			<div class="g6">
+				<img src='<?php echo $image[0];?>' alt='<?php echo get_the_title( $current_post->ID );?>' width='100%'/>
+			</div>
+		<?php endif; ?>
+		<div class="emptyg1">&nbsp</div>
+	</div>
 
 	<?php #PRODUCTS ?>
 	<?php
@@ -28,24 +40,24 @@
 		}
 	?>
 	<?php if( count( $designer_products ) ): ?>
-		<section>
-			<ul>
+		<nav class="clearfix">
+			<ul class="modules clearfix">
 				<?php foreach ( $designer_products as $designer_product ):?>
 					<?php $designer_product_custom =  get_post_custom($designer->ID);?>
-					<li>
+					<li class="g2">
 						<article>
 							<a href="<?php echo get_permalink( $designer_product->ID );?>">
-								<h3><?php echo get_the_title( $designer_product->ID );?></h3>
+								<h1><?php echo get_the_title( $designer_product->ID );?></h1>
 								<?php if( isset( $designer_product_custom['featured_image_id'] ) ) : ?>
-									<?php $product_image = wp_get_attachment_image_src( $designer_product_custom['featured_image_id'][0], 'thumbnail' ); ?>
-									<img src="<?php echo $product_image[0];?>" width="<?php echo $product_image[1];?>" height="<?php echo $product_image[2];?>" alt="<?php echo get_the_title( $designer_product->ID );?>"/>
+									<?php $product_image = wp_get_attachment_image_src( $designer_product_custom['featured_image_id'][0], 'tb' ); ?>
+									<img src="<?php echo $product_image[0];?>" width="100%"  alt="<?php echo get_the_title( $designer_product->ID );?>"/>
 								<?php endif; ?>
 							</a>
 						</article>
 					</li>
 				<?php endforeach;?>
 			</ul>
-		</section>
+		</nav>
 	<?php endif;?>
 
 	<section>

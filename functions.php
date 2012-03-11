@@ -192,13 +192,9 @@ require_once('lib/twitter/twitter.class.php');
 		$fields = array();
 
 		// Video 
-		$fields[] = array(
-			'name' => 'Vimeo Video ID',
-			'desc' => '',
-			'id' => 'vimeo_video_id',
-			'type' => 'text_small'
-		);
-
+		foreach ($q_config['enabled_languages'] as $language_code ) {
+			$fields[] = designer_video_field_creator( $language_code );
+		}
 
 		$meta_boxes[] = array(
 			'id'         => 'designer_metaboxes',
@@ -211,6 +207,18 @@ require_once('lib/twitter/twitter.class.php');
 		);
 
 		return $meta_boxes;
+	}
+
+	function designer_video_field_creator($language_code){
+		global $q_config;
+
+		$array = array(
+			'name' => 'Vimeo Video ID ('.$q_config['language_name'][$language_code].')',
+			'desc' => '',
+			'id' => 'vimeo_video_id_'.$language_code,
+			'type' => 'text_small'
+		);
+		return $array;
 	}
 
 /**
