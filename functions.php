@@ -887,7 +887,7 @@ require_once('lib/twitter/twitter.class.php');
 * Redirect to exhibition page when on maintence mode
 */
 	function maintece_mode_redirect() {
-	    echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://wordpress.dev/exhibition/en">';
+	    echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://brazilianfurnituredesign.com/exhibition/en">';
 	    exit();
 	}
 	add_action( 'wm_head', 'maintece_mode_redirect' );
