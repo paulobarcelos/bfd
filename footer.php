@@ -62,7 +62,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="<?php bloginfo('stylesheet_directory');?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
-
+google_analytics_tracker
 	<!-- scripts concatenated and minified via build script -->
 	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/jquery.flexslider-min.js"></script>
 	<script defer src="<?php echo get_bloginfo('stylesheet_directory');?>/js/jquery.placeholder.min.js"></script>
@@ -71,7 +71,7 @@
 	<!-- end scripts -->
 
 	<script>
-		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+		var _gaq=[['_setAccount','<?php echo $settings_options["google_analytics_tracker"];?>'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		s.parentNode.insertBefore(g,s)}(document,'script'));

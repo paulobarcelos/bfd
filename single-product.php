@@ -17,6 +17,7 @@
 				<?php if( isset( $post_custom['product_date_' . $q_config['language']] ) ) : ?><?php echo $post_custom['product_date_' . $q_config['language']][0]; endif;?>
 				<?php if( isset( $post_custom['product_material_' . $q_config['language']] ) ) : ?><br><?php echo $post_custom['product_material_' . $q_config['language']][0]; endif;?>
 				<?php if( isset( $post_custom['product_specifications_' . $q_config['language']] ) ) : ?><br><?php echo $post_custom['product_specifications_' . $q_config['language']][0]; endif;?>
+				<?php if( isset( $post_custom['product_copyright_' . $q_config['language']] ) ) : ?><br><?php echo $post_custom['product_copyright_' . $q_config['language']][0]; endif;?>
 			</p>
 		</div>
 

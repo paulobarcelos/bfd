@@ -367,6 +367,7 @@ require_once('lib/twitter/twitter.class.php');
 			$fields[] = product_year_field_creator( $language_code );
 			$fields[] = product_material_field_creator( $language_code );
 			$fields[] = product_specifications_field_creator( $language_code );
+			$fields[] = product_copyright_field_creator( $language_code );
 		}
 
 		// Feature in slideshow
@@ -455,6 +456,16 @@ require_once('lib/twitter/twitter.class.php');
 					'name' => 'Product Specifications ('.$q_config['language_name'][$language_code].')',
 					'desc' => '',
 					'id'   => 'product_specifications_'.$language_code,
+					'type' => 'text'
+				);
+		return $array;
+	}
+	function product_copyright_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Product Copyright ('.$q_config['language_name'][$language_code].')',
+					'desc' => '',
+					'id'   => 'product_copyright_'.$language_code,
 					'type' => 'text'
 				);
 		return $array;
