@@ -64,7 +64,7 @@ td { vertical-align: top; }
 	body{
 		font-family:'Orator W01 Medium';
 		font-size: 14px;
-		color: #666;
+		color: #000;
 		line-height: 15px;
 	}
 	em, i{
@@ -150,6 +150,18 @@ td { vertical-align: top; }
 			display: 
 		}
 	}
+/* grid2 */
+	.gfive{
+		position: relative;
+		float: left;
+		margin: 0 1%;
+		width: 18%;
+	}
+	@media only screen and (max-width: 700px) {
+		.gfive{
+			width: 48%;
+		}
+	}
 /* #header */
 	#header .logo {
 		margin: 0 0 70px 0;
@@ -190,13 +202,21 @@ td { vertical-align: top; }
 	}
 	#exhibitiondate .bigdate{
 		display: block;
-		font-size: 25px;
-		letter-spacing: -2px;
+		font-size: 24px;
+		letter-spacing: -3px;
 		margin: 4px 0 3px 0 ;
 	}
 /* #slideshow */
+
 	#slideshow article{
 		position: relative;
+	}
+	#slideshow p{
+		font-size: 12px;
+	}
+	#slideshow h1{
+		font-size: 14px;
+		margin-bottom: 5px;
 	}
 	#slideshow a,
 	#slideshow a:visited{
@@ -245,14 +265,14 @@ td { vertical-align: top; }
 	}
 	#news .date{
 		display: block;
-		color: #666;
+		color: #000;
 		font-size: 15px;
 		margin-bottom: 10px;
 	}
 /* #footer */
 	#footer{
 		color: #000;
-		margin-top: 30px;
+		margin: 30px 0;
 	}
 	#footer a{
 		color: #000;
@@ -304,7 +324,7 @@ td { vertical-align: top; }
 		margin-top: 50px;
 	}
 	#productcontent a{
-		color: #666;
+		color: #000;
 	}
 	#productcontent h1{
 		font-size: 20px;
@@ -326,7 +346,10 @@ td { vertical-align: top; }
 	.smallimages img{
 		cursor: pointer;
 	}
-
+/* #categories */
+	#categories{
+		margin-bottom: 20px;
+	}
 /* .topbar */
 	.topbar{
 		background-color: #000;

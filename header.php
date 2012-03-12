@@ -94,7 +94,7 @@
 							</li>
 
 							<?php # Types(designers) ?>
-							<?php $types = get_posts( array('post_type' => 'type') );?>
+							<?php $types = get_posts( array('post_type' => 'type', 'numberposts' => 999) );?>
 							<?php $types_active = false;?>
 							<?php ob_start();?>
 							<?php foreach ($types as $type) : ?>
@@ -117,7 +117,7 @@
 							</li>
 
 							<?php # Categories(products) ?>
-							<?php $categories = get_posts( array('post_type' => 'category') );?>
+							<?php $categories = get_posts( array('post_type' => 'category', 'numberposts' => 999) );?>
 							<?php $categories_active = false;?>
 							<?php ob_start();?>
 							<?php foreach ($categories as $category) : ?>
@@ -140,7 +140,7 @@
 							</li>
 
 							<?php # Events ?>
-							<?php $events = get_posts( array('post_type' => 'event') );?>
+							<?php $events = get_posts( array('post_type' => 'event', 'numberposts' => 999) );?>
 							<?php $events_active = false;?>
 							<?php ob_start();?>
 							<?php foreach ($events as $event) : ?>

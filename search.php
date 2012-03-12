@@ -25,7 +25,7 @@
 					$s = (isset($_REQUEST['s'])) ? $_REQUEST['s'] : '';
 					$s = sanitize_title( $s );
 					$s = explode( '-', $s );
-					$args = array('post_type' => $post_type );
+					$args = array('post_type' => $post_type, 'numberposts' => 999 );
 					query_posts( $args );
 				?>
 				<?php while ( have_posts() ) : the_post(); ?>

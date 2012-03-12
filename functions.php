@@ -576,7 +576,7 @@ require_once('lib/twitter/twitter.class.php');
 		$post_type_object = get_post_type_object($post->post_type);
 		if ( $post_type_object->hierarchical ) {
 			$current_parent_id = $post->post_parent;
-			$posts = get_posts ( array( 'post_type' => $type ) );
+			$posts = get_posts ( array( 'post_type' => $type, 'numberposts' => 999 ) );
 			?>
 				<select name="post_parent">
 					<option>None</option>

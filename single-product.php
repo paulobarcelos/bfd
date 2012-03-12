@@ -13,12 +13,7 @@
 				<?php #TITLE ?>	
 				<h1><?php echo __( get_the_title( $current_post->ID ) );?></h1>
 			</header>
-			<p class="details">
-				<?php if( isset( $post_custom['product_date_' . $q_config['language']] ) ) : ?><?php echo $post_custom['product_date_' . $q_config['language']][0]; endif;?>
-				<?php if( isset( $post_custom['product_material_' . $q_config['language']] ) ) : ?><br><?php echo $post_custom['product_material_' . $q_config['language']][0]; endif;?>
-				<?php if( isset( $post_custom['product_specifications_' . $q_config['language']] ) ) : ?><br><?php echo $post_custom['product_specifications_' . $q_config['language']][0]; endif;?>
-				<?php if( isset( $post_custom['product_copyright_' . $q_config['language']] ) ) : ?><br><?php echo $post_custom['product_copyright_' . $q_config['language']][0]; endif;?>
-			</p>
+			<p class="details"><?php if( isset( $post_custom['product_date_' . $q_config['language']] ) ) : ?><?php echo $post_custom['product_date_' . $q_config['language']][0]; endif;?><?php if( isset( $post_custom['product_material_' . $q_config['language']] ) ) : ?><br><?php echo $post_custom['product_material_' . $q_config['language']][0]; endif;?><?php if( isset( $post_custom['product_specifications_' . $q_config['language']] ) ) : ?><br><?php echo $post_custom['product_specifications_' . $q_config['language']][0]; endif;?><?php if( isset( $post_custom['product_copyright_' . $q_config['language']] ) ) : ?><br><?php echo $post_custom['product_copyright_' . $q_config['language']][0]; endif;?></p>
 		</div>
 
 		<?php #IMAGE GALLERY ?>
@@ -47,7 +42,7 @@
 	<?php if( count( $images ) ):?>
 		<div class="clearfix smallimages">
 			<?php foreach ($images as $image):?>
-				<div class="_g2">
+				<div class="_g1">
 					<img data-big="<?php echo $image['slideshow'][0];?>" src="<?php echo $image['slideshow'][0];?>" width="100%" alt="<?php echo __( get_the_title( $current_post->ID ) );?>" />
 				</div>
 			<?php endforeach;?>

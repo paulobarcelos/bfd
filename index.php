@@ -9,9 +9,9 @@
 <?php get_header(); ?>
 
 <?php # SLIDEDSHOW ?>
-<?php $products = get_posts( array('post_type' => 'product') );?>
+<?php $products = get_posts( array('post_type' => 'product', 'numberposts' => 999) );?>
 
-<nav id="slideshow" class="row flexslider">
+<nav id="slideshow" class="row flexslider clearfix">
 	<ul class="g8 slides">
 		<?php foreach ($products as $product) : ?>
 			<?php $product_custom =  get_post_custom($product->ID);?>
@@ -43,14 +43,14 @@
 </nav>
 
 <?php # CATEGORIES ?>
-<?php $categories = get_posts( array('post_type' => 'category') );?>
-<nav class="clearfix">
+<?php $categories = get_posts( array('post_type' => 'category', 'numberposts' => 999) );?>
+<nav id="categories" class="clearfix">
 	<ul class="modules">
 		<?php foreach ($categories as $category) : ?>
 			<?php $category_custom =  get_post_custom($category->ID);?>
 			<?php if( isset( $category_custom['featured_image_id'] ) ) : $category_image = wp_get_attachment_image_src( $category_custom['featured_image_id'][0], 'tb' ); endif; ?>
 			<?php if( $category_image ):?>
-				<li class="g2">
+				<li class="gfive">
 					<article>
 						<a href="<?php echo get_permalink( $category->ID );?>">
 							<h1><?php echo __($category->post_title);?></h1>
