@@ -1068,7 +1068,7 @@ if ( function_exists( 'add_image_size' ) ) {
 					<input type="text" size="5" name="settings_options[menu_item_about_id]" value="<?php echo $options['menu_item_about_id']; ?>" />
 
 					<h3>Press ID</h3>
-					<input type="text" size="5" name="settings_options[menu_item_press_id]" value="<?php echo $options['menu_item_about_id']; ?>" />
+					<input type="text" size="5" name="settings_options[menu_item_press_id]" value="<?php echo $options['menu_item_press_id']; ?>" />
 
 					<h3>Footer 1 ID</h3>
 					<input type="text" size="5" name="settings_options[menu_item_footer_1_id]" value="<?php echo $options['menu_item_footer_1_id']; ?>" />
