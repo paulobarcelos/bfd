@@ -419,7 +419,7 @@ require_once('lib/twitter/twitter.class.php');
 				'value' => 0
 			);
 
-			$designer_posts = get_posts ( array( 'post_type' => 'designer' ) );
+			$designer_posts = get_posts ( array( 'post_type' => 'designer', 'numberposts' => 100) );
 			foreach ($designer_posts as $designer_post){
 				$array[] = array( 
 					'name' => get_the_title($designer_post->ID), 
@@ -745,7 +745,7 @@ require_once('lib/twitter/twitter.class.php');
 					'name' => 'Content ('.$q_config['language_name'][$language_code].')',
 					'desc' => '',
 					'id'   => 'extra_text_1_'.$language_code,
-					'type' => 'textarea_small',
+					'type' => 'textarea',
 					/*'options' => array(
 					    //'wpautop' => true, // use wpautop?
 					    'media_buttons' => false, // show insert/upload button(s)
@@ -778,8 +778,8 @@ require_once('lib/twitter/twitter.class.php');
 					'name' => 'Content ('.$q_config['language_name'][$language_code].')',
 					'desc' => '',
 					'id'   => 'extra_text_2_'.$language_code,
-					'type' => 'wysiwyg',
-					'options' => array(
+					'type' => 'textarea',
+					/*'options' => array(
 					    'wpautop' => true, // use wpautop?
 					    'media_buttons' => FALSE, // show insert/upload button(s)
 					    'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
@@ -791,7 +791,7 @@ require_once('lib/twitter/twitter.class.php');
 					    'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
 					    'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
 					    'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()	
-					),
+					),*/
 				);
 		return $array;
 	}

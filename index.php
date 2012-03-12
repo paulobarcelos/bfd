@@ -58,7 +58,7 @@
 						</a>
 					</article>
 				</li>
-			<?php endif;?>
+			<?php endif; $category_image = NULL;?>
 		<?php endforeach;?>
 	</ul>
 </nav>

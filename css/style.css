@@ -198,11 +198,17 @@ td { vertical-align: top; }
 	#slideshow article{
 		position: relative;
 	}
+	#slideshow a,
+	#slideshow a:visited{
+		color:#000;
+	}
 	#slideshow article > div{
+		background-color: rgba(255,255,255, 0.4);
 		position: absolute;
 		text-align: right;
-		bottom: 0;
-		right: 5%;
+		bottom: 10%;
+		right: 0;
+		color: #000;
 	}
 	@media only screen and (max-width: 700px) {
 		#slideshow article > div{
@@ -246,6 +252,7 @@ td { vertical-align: top; }
 /* #footer */
 	#footer{
 		color: #000;
+		margin-top: 30px;
 	}
 	#footer a{
 		color: #000;
@@ -294,6 +301,7 @@ td { vertical-align: top; }
 		text-align: right;
 		color: #000;
 		text-transform: lowercase;
+		margin-top: 50px;
 	}
 	#productcontent a{
 		color: #999;

@@ -47,7 +47,7 @@
 		<div class="clearfix smallimages">
 			<?php foreach ($images as $image):?>
 				<div class="_g2">
-					<img data-big="<?php echo $image['slideshow'][0];?>" src="<?php echo $image['tb'][0];?>" width="100%" alt="<?php echo __( get_the_title( $current_post->ID ) );?>" />
+					<img data-big="<?php echo $image['slideshow'][0];?>" src="<?php echo $image['slideshow'][0];?>" width="100%" alt="<?php echo __( get_the_title( $current_post->ID ) );?>" />
 				</div>
 			<?php endforeach;?>
 		</div>

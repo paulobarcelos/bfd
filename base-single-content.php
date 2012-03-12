@@ -53,7 +53,7 @@
 						<?php endif;?>
 					</header>
 					<?php if ( $extra['content'] ): ?>
-						<?php echo apply_filters('the_content',$extra['content']); ?>
+						<?php echo htmlspecialchars_decode(apply_filters('the_content',$extra['content'])); ?>
 					<?php endif;?>
 				</article>
 			<?php endforeach;?>

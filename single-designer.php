@@ -28,7 +28,7 @@
 
 	<?php #PRODUCTS ?>
 	<?php
-		$products = get_posts( array('post_type' => 'product') );
+		$products = get_posts( array('post_type' => 'product', 'numberposts' => 100) );
 		$designer_products = array();
 		foreach ($products as $product) {
 			$product_custom = get_post_custom($product->ID);
@@ -43,7 +43,7 @@
 		<nav class="clearfix">
 			<ul class="modules clearfix">
 				<?php foreach ( $designer_products as $designer_product ):?>
-					<?php $designer_product_custom =  get_post_custom($designer->ID);?>
+					<?php $designer_product_custom =  get_post_custom($designer_product->ID);?>
 					<li class="g2">
 						<article>
 							<a href="<?php echo get_permalink( $designer_product->ID );?>">
