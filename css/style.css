@@ -289,6 +289,7 @@ td { vertical-align: top; }
 		font-size: 13px;
 		margin-right: 10px;
 		white-space:nowrap;
+		float: left;
 	}
 	#footer .logos{
 		display: inline-block;
@@ -381,20 +382,14 @@ td { vertical-align: top; }
 	.topbar li{
 		display: inline-block;
 		position: relative;
-		white-space:nowrap;
 	}
-
-	/*.touch .topbar ul,
-	.touch .topbar li{
-		display: block;
-	}
-	.touch .topbar li{
-		width: 100%;
-		border-bottom: solid 1px #999;
-	}*/	
-
 	.topbar li{
+		white-space:nowrap;
 		margin: 0 10px 0 0;
+	}
+	.touch .topbar ul,
+	.touch .topbar li{
+		white-space:normal;
 	}
 	.topbar li.active{
 		color: #fff;
@@ -417,7 +412,6 @@ td { vertical-align: top; }
 		visibility: visible;
 		top: 0;
 		left: 0;
-		display: inline;
 		z-index:2;
 	}
 	.touch .topbar .dropdown > span {
@@ -450,13 +444,8 @@ td { vertical-align: top; }
 		border-bottom: none;
 		background-color: #000;
 		padding: 0;
-		color:#999;
-	}
-	.touch .topbar .dropdown li::before{
-		content: '('attr(data-type)')';
-		font-size: 8px;
-		line-height: 8px;
-		position: absolute;
+		color:#666;
+		font-size: 15px;
 	}
 
 	.touch .topbar .dropdown li.active,
