@@ -67,7 +67,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(get_bloginfo('language')); ?>>
+<body <?php body_class(get_bloginfo('language')); ?> >
 	<header id="header">
 		<?php # MAIN NAVIGATION;?>
 		<nav class="topbar">
