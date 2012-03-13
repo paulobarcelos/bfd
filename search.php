@@ -25,15 +25,16 @@
 					$s = (isset($_REQUEST['s'])) ? $_REQUEST['s'] : '';
 					$s = sanitize_title( $s );
 					$s = explode( '-', $s );
-					$args = array('post_type' => $post_type, 'numberposts' => 999 );
+					$args = array('post_type' => $post_type, 'posts_per_page' => 9999 );
 					query_posts( $args );
 				?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php $product_custom = get_post_custom();?>
+
 					<?php
 					$found = false;
 						foreach ($s as $term) {
-							if( strripos( $product_custom[$key][0], $term ) ){
+							if( is_numeric(strripos( $product_custom[$key][0], $term )) ){
 								$found = true;
 								break;
 							}

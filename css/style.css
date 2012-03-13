@@ -194,6 +194,7 @@ td { vertical-align: top; }
 		text-align:right;
 		line-height: 17px;
 		color: #000;
+		margin-bottom: 20px;
 	}
 	@media only screen and (max-width: 700px) {
 		#exhibitiondate{
@@ -314,6 +315,10 @@ td { vertical-align: top; }
 		display: inline-block;	
 		margin-top: 22px;
 		font-size: 10px;
+	}
+/* #maincontent */
+	#maincontent{
+		text-align: justify;
 	}
 /* #productcontent*/
 	#productcontent{
@@ -506,6 +511,9 @@ td { vertical-align: top; }
 		visibility: visible;
 	}
 /* .downloads */
+	.downloads{
+		margin-bottom: 30px;
+	}
 	.downloads ul{
 		list-style: none;
 	}

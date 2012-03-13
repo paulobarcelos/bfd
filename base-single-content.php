@@ -1,3 +1,14 @@
+	<?php #FREE HTML?>
+	<?php if ( $free_html ):?>
+		<div class="clearfix">
+			<div class="emptyg1">&nbsp</div>		
+				<div class="g6">
+					<?php echo htmlspecialchars_decode(apply_filters('the_content', $free_html));?>
+				</div>		
+			<div class="emptyg1">&nbsp</div>
+		</div>
+	<?php endif; ?>
+
 	<div class="clearfix">
 		<div class="g8">
 			<? # HEADING ?>
@@ -13,7 +24,9 @@
 			<?php endif;?>
 			
 			<? # CONTENT ?>
-			<?php the_content(); ?>
+			<div id="maincontent">
+				<?php the_content(); ?>
+			</div>
 
 			<? # CLOSURE ?>
 			<?php if ( $closure ): ?>

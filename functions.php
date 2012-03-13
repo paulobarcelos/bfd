@@ -633,6 +633,7 @@ require_once('lib/twitter/twitter.class.php');
 			$fields[] = text_title_field_creator( $language_code );
 			$fields[] = text_heading_continuation_field_creator( $language_code );
 			$fields[] = text_closure_field_creator( $language_code );
+			$fields[] = text_free_html_field_creator( $language_code );
 		}
 		// Extra text 1 
 		$fields[] = array(
@@ -737,6 +738,16 @@ require_once('lib/twitter/twitter.class.php');
 					'desc' => 'The closing line at the end of the text.',
 					'id'   => 'text_signature_'.$language_code,
 					'type' => 'text'
+				);
+		return $array;
+	}
+	function text_free_html_field_creator($language_code){
+		global $q_config;
+		$array = array(
+					'name' => 'Free HTML ('.$q_config['language_name'][$language_code].')',
+					'desc' => 'If provided, this content will be inserted with no validation. Be sure to use valid HTML5 markup.',
+					'id'   => 'text_free_html_'.$language_code,
+					'type' => 'textarea_small'
 				);
 		return $array;
 	}

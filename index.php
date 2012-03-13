@@ -24,10 +24,7 @@
 							<div>
 								<a href="<?php echo get_permalink( $product_designer->ID );?>">
 									<h1><?php echo __($product_designer->post_title);?></h1>
-									<p>
-										<?php echo __($product->post_title);?>
-										<?php if( isset( $product_custom['product_date_' . $q_config['language']] ) ) : ?>| <?php echo $product_custom['product_date_' . $q_config['language']][0]; endif;?>
-										<?php if( isset( $product_custom['product_material_' . $q_config['language']] ) ) : ?><br><?php echo $product_custom['product_material_' . $q_config['language']][0]; endif;?>
+									<p><?php echo __($product->post_title);?><?php if( isset( $product_custom['product_date_' . $q_config['language']] ) ) : ?>| <?php echo $product_custom['product_date_' . $q_config['language']][0]; endif;?><?php if( isset( $product_custom['product_material_' . $q_config['language']] ) ) : ?><br><?php echo $product_custom['product_material_' . $q_config['language']][0]; endif;?>
 									</p>
 								</a>
 							</div>

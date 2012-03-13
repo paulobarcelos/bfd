@@ -44,6 +44,9 @@
 	if( isset( $post_custom['text_signature_' . $q_config['language']] ) ){
 		$closure = $post_custom['text_signature_' . $q_config['language']][0];
 	}
+	if( isset( $post_custom['text_free_html_' . $q_config['language']] ) ){
+		$free_html = $post_custom['text_free_html_' . $q_config['language']][0];
+	}
 
 	$extras = array();
 	for( $i = 1; $i <= 2; $i ++){
