@@ -60,37 +60,40 @@
 	</ul>
 </nav>
 
-<div class="clearfix">
-	<?php # VIDEO?>
-	<div id="homevideo" class="g5">
-		<?php display_vimeo_video( $settings_options['video_vimeo_id_' . $q_config['language']], '100%', '100%');?>
-	</div>
+<?php # last minut disable...?>
+<?php if(0):?>
+	<div class="clearfix">
+		<?php # VIDEO?>
+		<div id="homevideo" class="g5">
+			<?php display_vimeo_video( $settings_options['video_vimeo_id_' . $q_config['language']], '100%', '100%');?>
+		</div>
 
-	<?php # NEWS?>
-	<div class="g3">
-		<?php
-			$twitter = new Twitter;
-			$results = array();
-			try {
-				$results = $twitter->search($settings_options['twitter_search_term']);
-			} catch (Exception $e) {}
-		?>
-		<?php if( $results ):?>
-			<section id='news'>
-				<h1 class="brackets"><?php echo $settings_options['news_internal_title_' . $q_config['language']];?></h1>
-				<ul>
-				
-				<?php $i = 0; foreach ($results as $result): ?>
-					<?php if($i < 3):?>
-						<li><span class="date"><?php echo date("d/m/y ", strtotime($result->created_at)) ?></span>
-							<?php echo Twitter::clickable($result->text) ?>			
-						</li>
-					<?php endif;?>
-				<?php $i++; endforeach; ?>
-				</ul>
-			</section>
-		<?php endif;?>
+		<?php # NEWS?>
+		<div class="g3">
+			<?php
+				$twitter = new Twitter;
+				$results = array();
+				try {
+					$results = $twitter->search($settings_options['twitter_search_term']);
+				} catch (Exception $e) {}
+			?>
+			<?php if( $results ):?>
+				<section id='news'>
+					<h1 class="brackets"><?php echo $settings_options['news_internal_title_' . $q_config['language']];?></h1>
+					<ul>
+					
+					<?php $i = 0; foreach ($results as $result): ?>
+						<?php if($i < 3):?>
+							<li><span class="date"><?php echo date("d/m/y ", strtotime($result->created_at)) ?></span>
+								<?php echo Twitter::clickable($result->text) ?>			
+							</li>
+						<?php endif;?>
+					<?php $i++; endforeach; ?>
+					</ul>
+				</section>
+			<?php endif;?>
+		</div>
 	</div>
-</div>
+<?php endif;?>
 
 <?php get_footer(); ?>
