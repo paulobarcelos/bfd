@@ -11,6 +11,7 @@
 	if( !$META_IMAGE ) $META_IMAGE =  get_bloginfo('stylesheet_directory') . '/img/default.png';
 	if( !$META_FB_APP_ID ) $META_FB_APP_ID = $settings_options['facebook_app_id'];
 	if( !$META_FB_ADMINS ) $META_FB_ADMINS = $settings_options['facebook_admins'];
+	if( !$META_TYPE ) $META_TYPE = 'website';
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
