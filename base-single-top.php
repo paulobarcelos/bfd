@@ -71,7 +71,7 @@
 	$downloads = array();
 	$downloads_heading = $post_custom['downloads_heading_' . $q_config['language']][0];
 
-	for( $i = 0; $i < 10; $i ++){
+	for( $i = 0; $i < 20; $i ++){
 		
 		$download_title = '';
 		$download_url = '';

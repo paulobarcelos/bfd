@@ -208,7 +208,9 @@ td { vertical-align: top; }
 		margin: 4px 0 3px 0 ;
 	}
 /* #slideshow */
-
+	#slideshow {
+		margin-top: -35px;
+	}
 	#slideshow article{
 		position: relative;
 	}

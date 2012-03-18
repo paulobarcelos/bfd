@@ -672,7 +672,7 @@ require_once('lib/twitter/twitter.class.php');
 				'type' => 'text',
 				'id' => 'downloads_heading_' . $language_code
 			);
-			for($i = 0; $i < 10; $i++){
+			for($i = 0; $i < 20; $i++){
 				$fields[] = download_file_field_creator( $language_code, $i );
 				$fields[] = download_title_field_creator( $language_code, $i );
 			}
