@@ -179,6 +179,9 @@ td { vertical-align: top; }
 	.de-DE #header .logo a{
 		background: url('../img/logo_de.png') no-repeat 0 0;
 	}
+	.pt-BR #header .logo a{
+		background: url('../img/logo_pt.png') no-repeat 0 0;
+	}
 	@media only screen and (max-width: 460px) {
 		#header .logo a{
 			width: 287px;
@@ -187,6 +190,9 @@ td { vertical-align: top; }
 		}
 		.de-DE #header .logo a{
 			background: url('../img/mobile_logo_de.png') no-repeat 0 0;
+		}
+		.pt-BR  #header .logo a{
+			background: url('../img/mobile_logo_pt.png') no-repeat 0 0;
 		}
 	}
 /* #exhibitiondate */
