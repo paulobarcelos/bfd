@@ -1,4 +1,5 @@
 <?php 
+error_reporting(E_ERROR | E_PARSE);
 // INCLUDES
 require_once('lib/twitter/twitter.class.php');
 // CUSTOM POST TYPES
