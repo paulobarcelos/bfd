@@ -58,6 +58,8 @@
 
 	<!-- Mobile viewport optimized: h5bp.com/viewport -->
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	<script type="text/javascript" src="http://fast.fonts.net/jsapi/3153e115-47d2-411f-8456-f6fe759a9bcd.js"></script>
 
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory');?>/favicon.ico">
 
